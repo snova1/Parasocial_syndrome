@@ -1,0 +1,16 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1733434772
+icon.svg::CompressedTexture2D::8032004134552388556::1733428314::1733428449::1::::<><>::
+initial.tscn::PackedScene::8720572180870102233::1733434771::0::1::::<><>::uid://mxvq8r62c0re::::res://jugador.tscn
+jugador.tscn::PackedScene::891052202527254666::1733434771::0::1::::<><>::uid://b1d0s0br5vroq::::res://Assets/Jugador/spritexb-3905.png<>res://Scripts/Jugador/jugador.gd
+menu.gd::GDScript::-1::1733432357::0::1::::<>Control<>::
+menu.tscn::PackedScene::5492120156006866595::1733434772::0::1::::<><>::res://menu.gd
+menu_opciones.tscn::PackedScene::844300014404656835::1733434772::0::1::::<><>::res://menu_opciones.gd
+menu_opciones.gd::GDScript::-1::1733432357::0::1::::<>Control<>::
+::res://Assets/::1733436014
+titulo.png::CompressedTexture2D::3343145348146629156::1733435989::1733436016::1::::<><>::
+::res://Assets/Jugador/::1733428449
+spritexb-3905.png::CompressedTexture2D::4219075136095467928::1733428314::1733428449::1::::<><>::
+::res://Scripts/::1733428314
+::res://Scripts/Jugador/::1733428314
+jugador.gd::GDScript::-1::1733428314::0::1::::Jugador<>CharacterBody2D<>::
