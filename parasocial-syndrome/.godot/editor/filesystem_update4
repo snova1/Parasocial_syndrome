@@ -1,6 +1,5 @@
 res://initial.tscn
-res://menu.gd
 res://jugador.tscn
 res://menu.tscn
-res://menu_opciones.gd
 res://menu_opciones.tscn
+res://Scripts/Jugador/jugador.gd
