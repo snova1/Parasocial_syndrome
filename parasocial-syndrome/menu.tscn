@@ -1,7 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckioofsq8ei0b"]
+[gd_scene load_steps=15 format=3 uid="uid://ckioofsq8ei0b"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_4o7kl"]
-[ext_resource type="Texture2D" uid="uid://bnvpd6pon63ky" path="res://Assets/titulo.png" id="2_jw08i"]
+[ext_resource type="Texture2D" uid="uid://ck2qr3rqxetsj" path="res://Assets/titulo2.png" id="2_54kdd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rokjx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0u70"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_00qov"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2evvo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rs5sp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xvj3s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x1xfo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o1ki0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6p2m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1erlj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xi286"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w4ysm"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -12,6 +36,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4o7kl")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -19,10 +52,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 80
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 80
-theme_override_constants/margin_bottom = 80
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 70
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -32,22 +65,42 @@ layout_mode = 2
 
 [node name="Titulo" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_jw08i")
+texture = ExtResource("2_54kdd")
 
 [node name="Iniciar" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rokjx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_m0u70")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_00qov")
 text = "Iniciar"
 
 [node name="Cargar" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2evvo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rs5sp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xvj3s")
 text = "Cargar"
 
 [node name="Opciones" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxEmpty_x1xfo")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_o1ki0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v6p2m")
 text = "Opciones"
 
 [node name="Salir" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1erlj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xi286")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w4ysm")
 text = "Salir"
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
