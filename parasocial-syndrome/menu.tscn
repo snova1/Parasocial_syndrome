@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://ckioofsq8ei0b"]
+[gd_scene load_steps=16 format=3 uid="uid://ckioofsq8ei0b"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_4o7kl"]
 [ext_resource type="Texture2D" uid="uid://ck2qr3rqxetsj" path="res://Assets/titulo2.png" id="2_54kdd"]
+[ext_resource type="Texture2D" uid="uid://62y61l0xv50s" path="res://Assets/menu_image.png" id="3_t67xh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rokjx"]
 
@@ -105,6 +106,10 @@ text = "Salir"
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("3_t67xh")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Cargar" to="." method="_on_cargar_pressed"]
