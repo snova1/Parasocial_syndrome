@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwiksxqqrbg2t"]
+[gd_scene load_steps=3 format=3 uid="uid://dwiksxqqrbg2t"]
 
 [ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://jugador.tscn" id="1_qhaxb"]
+[ext_resource type="Texture2D" uid="uid://cubchby3avbfu" path="res://Assets/sótano.png" id="1_we8tt"]
 
 [node name="Initial" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 140.0
+offset_top = 4.0
+offset_right = 806.0
+offset_bottom = 539.0
+texture = ExtResource("1_we8tt")
+
 [node name="Jugador" parent="." instance=ExtResource("1_qhaxb")]
-position = Vector2(460, 230)
+position = Vector2(472, 309)

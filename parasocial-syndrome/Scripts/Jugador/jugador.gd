@@ -2,7 +2,7 @@ class_name Jugador extends CharacterBody2D
 
 var cardinal_direction: Vector2=Vector2.DOWN
 var direction: Vector2=Vector2.ZERO
-var move_speed: float=100.0
+var move_speed: float=200.0
 var state: String="still"
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
