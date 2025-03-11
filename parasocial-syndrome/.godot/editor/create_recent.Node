@@ -1,4 +1,8 @@
+AnimationPlayer
+AudioStreamPlayer2D
 ColorRect
+CanvasLayer
+Button
 NavigationAgent2D
 NavigationRegion2D
 RayCast2D
@@ -8,7 +12,3 @@ Sprite2D
 CollisionPolygon2D
 StaticBody2D
 TileMap
-Jugador
-TextureRect
-AnimationPlayer
-CenterContainer

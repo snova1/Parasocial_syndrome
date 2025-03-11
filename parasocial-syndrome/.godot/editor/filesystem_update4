@@ -1,7 +1,9 @@
-res://initial.tscn
-res://menu.gd
-res://jugador.tscn
 res://menu.tscn
+res://initial.tscn
+res://jugador.tscn
 res://menu_opciones.tscn
 res://hallway.tscn
 res://antagonista.tscn
+res://transicion.gd
+res://transicion.tscn
+res://menu.gd

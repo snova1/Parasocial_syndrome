@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd6y3haaclpqd"
-path="res://.godot/imported/sótano.png-0ee8591a1fae7d8718e35ab8de9b7f10.ctex"
+uid="uid://dcngmn7k7p2gl"
+path="res://.godot/imported/menu_image2.png-6a1508d69a3281ca536f9dccb345f474.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sótano.png"
-dest_files=["res://.godot/imported/sótano.png-0ee8591a1fae7d8718e35ab8de9b7f10.ctex"]
+source_file="res://Assets/menu_image2.png"
+dest_files=["res://.godot/imported/menu_image2.png-6a1508d69a3281ca536f9dccb345f474.ctex"]
 
 [params]
 

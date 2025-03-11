@@ -4,6 +4,9 @@ var buttons = []
 var selected_index = -1
 var hovered_index= -1
 @onready var v_box_container: VBoxContainer = $MarginContainer/HBoxContainer/VBoxContainer
+@onready var sonido_risas: AudioStreamPlayer2D = $SonidoRisas
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var color_rect_2: ColorRect = $ColorRect2
 
 func _ready():
 	buttons = v_box_container.get_children().filter(func(child): return child is Button)
@@ -41,6 +44,10 @@ func _on_button_unhovered(index):
 	update_selection()
 
 func _on_iniciar_pressed() -> void:
+	color_rect_2.visible=true
+	animation_player.play("fade_to_black")
+	sonido_risas.play()
+	await animation_player.animation_finished	
 	get_tree().change_scene_to_file("res://initial.tscn")
 
 

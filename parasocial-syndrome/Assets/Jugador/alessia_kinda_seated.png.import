@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd6y3haaclpqd"
-path="res://.godot/imported/sótano.png-0ee8591a1fae7d8718e35ab8de9b7f10.ctex"
+uid="uid://bh0d37qvoq7dl"
+path="res://.godot/imported/alessia_kinda_seated.png-af1518e94b93b88d83bb088f46219ece.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sótano.png"
-dest_files=["res://.godot/imported/sótano.png-0ee8591a1fae7d8718e35ab8de9b7f10.ctex"]
+source_file="res://Assets/Jugador/alessia_kinda_seated.png"
+dest_files=["res://.godot/imported/alessia_kinda_seated.png-af1518e94b93b88d83bb088f46219ece.ctex"]
 
 [params]
 
