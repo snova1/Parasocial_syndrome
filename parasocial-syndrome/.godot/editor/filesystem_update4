@@ -1,9 +1,7 @@
-res://menu.tscn
+res://antagonista.tscn
 res://initial.tscn
+res://Scripts/TextManager.gd
 res://jugador.tscn
+res://menu.tscn
 res://menu_opciones.tscn
 res://hallway.tscn
-res://antagonista.tscn
-res://transicion.gd
-res://transicion.tscn
-res://menu.gd

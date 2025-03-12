@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1741718497
+::res://::1741816808
 antagonista.gd::GDScript::-1::1740171243::0::1::::<>CharacterBody2D<>::
-antagonista.tscn::PackedScene::3827019256029218620::1741718417::0::1::::<><>::res://antagonista.gd<>uid://b1d0s0br5vroq::::res://Assets/Jugador/spritexb-3905.png
+antagonista.tscn::PackedScene::3827019256029218620::1741817320::0::1::::<><>::res://antagonista.gd<>uid://b1d0s0br5vroq::::res://Assets/Jugador/spritexb-3905.png
 hallway.tscn::PackedScene::5485544812950441294::1741718417::0::1::::<><>::uid://cp0wupiobthnt::::res://Assets/Pasillo.png<>uid://mxvq8r62c0re::::res://jugador.tscn<>uid://bur3ph5w7mtcm::::res://antagonista.tscn
 icon.svg::CompressedTexture2D::8032004134552388556::1733428314::1733428449::1::::<><>::
 initial.tscn::PackedScene::8720572180870102233::1741718416::0::1::::<><>::uid://mxvq8r62c0re::::res://jugador.tscn<>uid://bd6y3haaclpqd::::res://Assets/sótano.png
@@ -17,7 +17,7 @@ Pasillo.png::CompressedTexture2D::5878655756374017489::1740163691::1740163697::1
 sótano.png::CompressedTexture2D::2662490502705357399::1741715664::1741715743::1::::<><>::
 titulo2.png::CompressedTexture2D::5531471331180147977::1739113299::1739113299::1::::<><>::
 titulo.png::CompressedTexture2D::3343145348146629156::1733435989::1733436016::1::::<><>::
-::res://Assets/Jugador/::1741718496
+::res://Assets/Jugador/::1741718497
 alessia_kinda_seated.png::CompressedTexture2D::2929585892656052465::1741718490::1741718497::1::::<><>::
 Alessia_spritesV1.png::CompressedTexture2D::4351173417129634083::1740156011::1740156016::1::::<><>::
 spritexb-3905.png::CompressedTexture2D::4219075136095467928::1733428314::1733428449::1::::<><>::
