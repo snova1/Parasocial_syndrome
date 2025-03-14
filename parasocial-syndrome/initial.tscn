@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwiksxqqrbg2t"]
+[gd_scene load_steps=7 format=3 uid="uid://dwiksxqqrbg2t"]
 
 [ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://jugador.tscn" id="1_qhaxb"]
 [ext_resource type="Texture2D" uid="uid://bd6y3haaclpqd" path="res://Assets/sótano.png" id="1_we8tt"]
+[ext_resource type="PackedScene" uid="uid://cgwthx1srigte" path="res://interactuable.tscn" id="2_vf0yb"]
+[ext_resource type="Resource" uid="uid://dgowpg570bn6l" path="res://Dialogue/dialogue.dialogue" id="3_atjn4"]
+[ext_resource type="AudioStream" uid="uid://cg6je5w4y5vig" path="res://Assets/Sonidos/cutting_free.wav" id="4_0d3pj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehraf"]
+size = Vector2(130, 150)
 
 [node name="Initial" type="Node2D"]
 
@@ -10,13 +16,28 @@ offset_right = 960.0
 offset_bottom = 540.0
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 203.0
-offset_top = 3.0
-offset_right = 773.0
-offset_bottom = 536.0
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(207, 1)
+scale = Vector2(0.81, 0.81)
 texture = ExtResource("1_we8tt")
-expand_mode = 1
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+light_mask = 2
+polygon = PackedVector2Array(283, 378, 361, 378, 374, 457, 370, 506, 368, 477, 277, 480, 276, 505, 274, 458)
+
+[node name="Interactuable" parent="." instance=ExtResource("2_vf0yb")]
+dialogue_resource = ExtResource("3_atjn4")
+dialogue_start = "table"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactuable"]
+position = Vector2(325, 448)
+shape = SubResource("RectangleShape2D_ehraf")
 
 [node name="Jugador" parent="." instance=ExtResource("1_qhaxb")]
-position = Vector2(472, 309)
+position = Vector2(474, 475)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0d3pj")

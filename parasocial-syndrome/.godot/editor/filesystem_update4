@@ -1,7 +1,13 @@
-res://antagonista.tscn
 res://initial.tscn
-res://Scripts/TextManager.gd
 res://jugador.tscn
 res://menu.tscn
 res://menu_opciones.tscn
 res://hallway.tscn
+res://antagonista.tscn
+res://Scripts/Jugador/jugador.gd
+res://interactuable.gd
+res://interactuable.tscn
+res://Scripts/TextManager.gd
+res://Scripts/Status.gd
+res://Dialogue/balloon.tscn
+res://Scripts/interactuable.gd

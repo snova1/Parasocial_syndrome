@@ -1,0 +1,86 @@
+~ table
+if table_status=="atada":
+	Hay un vaso, y otros menajes de mesa.
+	Alessia: Podría utilizar ese vaso para romper mis ataduras
+	Deseas romper el vaso?
+	- Si
+		set table_status="libre"
+		do release_player(false)
+		Alessia: Por fin libre
+		Alessia: Ahora a encontrar la forma de salir de este sótano
+	- No
+		Alessia: El vidrio roto es peligroso
+		Alessia: Aunque no se que más podría usar para librarme de esta cuerda
+else:
+	Hay trozos de vidrio, junto a otros menajes de mesa
+	Alessia: Por mucho que quisiera algo con lo que defenderme. Correr con un vidrio roto por la casa no me parece muy seguro
+
+=> END
+
+~ door
+if door_status=="default":
+	Está cerrada
+	Alessia: Quizás haya algo aquí abajo con lo que abrir la cerradura
+else:
+	Está cerrada
+	Quieres intentar usar la llave?
+	- Si
+		Door opened
+
+=> END
+
+~ cloth
+Hay cajas, y otros objetos bajo la tela. Pero nada que sea útil
+=> END
+
+~ bookcase
+if bookcase_status== "default":
+	Hay una caja metálica sobre la estantería
+	Alessia: Necesito algo con lo que subir
+else:
+	Está llena de libros, algunos de tu autoría
+	Alessia: Algunos de estos son mis inspiraciones
+	Alessia: Cómo averiguó mis libros favoritos?
+
+=> END
+
+~ lamp
+La tenue luz de la lámpara a penas ilumina el sótano
+=> END
+
+~ chair
+if chair_status=="default":
+	Quieres empujar la silla?
+	- Si
+		set chair_status="push"
+	- No
+=> END
+
+~ curtain
+if curtain_status=="default":
+	Quieres abrirla?
+	- Si
+		set curtain_status="open"
+		Alessia: P-PERO ¿QUÉ?
+		Alessia: ¿Esa...soy yo?
+		Alessia: Maldición, este tipo en serio está desquiciado si me ve de esta forma
+		Alessia: Tengo que salir de aquí cuanto antes
+	- No
+else:
+	Tras una inspección más cercana, notas unos números tenuemente grabados en el mural
+	Una enorme cortina roja.
+=> END
+
+~ metalBox
+Tiene un candado numérico
+- Incorrecta
+	Esa no era la clave
+- Correcta
+	Dentro de la caja había una llave
+	Obtuviste una llave
+
+=> END
+
+~ box
+La caja contiene libros, en su mayoría de misterio
+=> END
