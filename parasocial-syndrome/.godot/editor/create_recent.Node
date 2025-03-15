@@ -1,4 +1,8 @@
+AnimationPlayer
+ColorRect
 CollisionShape2D
+Sprite2D
+RigidBody2D
 Area2D
 Marker2D
 Button
@@ -7,8 +11,5 @@ MarginContainer
 Panel
 StaticBody2D
 AudioStreamPlayer2D
-Sprite2D
 Label
 HBoxContainer
-CanvasLayer
-CollisionPolygon2D

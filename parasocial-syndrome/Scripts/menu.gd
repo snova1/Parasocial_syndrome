@@ -47,7 +47,7 @@ func _on_iniciar_pressed() -> void:
 	color_rect_2.visible=true
 	animation_player.play("fade_to_black")
 	sonido_risas.play()
-	await animation_player.animation_finished	
+	await animation_player.animation_finished
 	get_tree().change_scene_to_file("res://initial.tscn")
 
 

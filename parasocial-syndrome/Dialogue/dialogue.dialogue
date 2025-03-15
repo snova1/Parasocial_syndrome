@@ -5,6 +5,7 @@ if table_status=="atada":
 	Deseas romper el vaso?
 	- Si
 		set table_status="libre"
+		set chair_status[0]="visible"
 		do release_player(false)
 		Alessia: Por fin libre
 		Alessia: Ahora a encontrar la forma de salir de este sótano
@@ -49,11 +50,12 @@ La tenue luz de la lámpara a penas ilumina el sótano
 => END
 
 ~ chair
-if chair_status=="default":
-	Quieres empujar la silla?
-	- Si
-		set chair_status="push"
-	- No
+if chair_status[0]!="hidden":
+	if chair_status[1]=="default":
+		Quieres empujar la silla?
+		- Si
+			set chair_status[1]="push"
+		- No
 => END
 
 ~ curtain

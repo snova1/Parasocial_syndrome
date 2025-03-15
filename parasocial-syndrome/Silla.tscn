@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://3w8u7nr6tcsg"]
+
+[ext_resource type="Texture2D" uid="uid://b0xdt04etugj" path="res://Assets/chair.png" id="1_emxov"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aa6ku"]
+size = Vector2(39, 48)
+
+[node name="Silla" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_emxov")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_aa6ku")

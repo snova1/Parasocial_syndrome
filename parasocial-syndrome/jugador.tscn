@@ -100,8 +100,8 @@ _data = {
 "caminar_izquierda": SubResource("Animation_fe817")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_31mrv"]
-radius = 43.2897
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dplq"]
+size = Vector2(60, 87)
 
 [node name="Jugador" type="CharacterBody2D"]
 collision_layer = 2
@@ -136,4 +136,5 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Int_area/Finder_interaccion"]
-shape = SubResource("CircleShape2D_31mrv")
+position = Vector2(-1, 1.5)
+shape = SubResource("RectangleShape2D_3dplq")

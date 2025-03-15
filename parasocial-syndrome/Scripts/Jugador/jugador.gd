@@ -10,6 +10,7 @@ var direction: Vector2=Vector2.ZERO
 var move_speed: float
 var state: String="still"
 
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func set_estado_atada(atada: bool):
@@ -24,14 +25,17 @@ func set_estado_atada(atada: bool):
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_estado_atada(is_tied)
-	Status.player_free.connect(_on_player_free)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-
-
 func _physics_process(delta: float) -> void:
 	velocity=direction*move_speed
+	for i in get_slide_collision_count():
+		var c := get_slide_collision(i)
+		if c.get_collider() is RigidBody2D and Status.chair_status[1] == "push":
+			var push_dir = -c.get_normal()
+			var target_velocity = self.velocity.project(push_dir)
+			c.get_collider().linear_velocity = 0.5*target_velocity
 	move_and_slide()
 	
 	if state == "moving":
@@ -63,6 +67,3 @@ func _unhandled_input(event: InputEvent) -> void:
 	else:
 		state = "still"
 	pass	
-
-func _on_player_free(atada: bool):
-	set_estado_atada(atada)
