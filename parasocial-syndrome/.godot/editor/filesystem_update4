@@ -1,8 +1,8 @@
+res://controles.tscn
 res://initial.tscn
 res://Dialogue/balloon.tscn
-res://Silla.tscn
-res://Scripts/Status.gd
-res://initial.gd
-res://Scripts/Jugador/jugador.gd
-res://Scripts/menu.gd
-res://jugador.tscn
+res://menu.tscn
+res://end.tscn
+res://menu_opciones.tscn
+res://controles.gd
+res://Scripts/menu_opciones.gd

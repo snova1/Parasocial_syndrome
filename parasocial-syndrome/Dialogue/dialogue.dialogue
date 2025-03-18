@@ -26,7 +26,7 @@ else:
 	Está cerrada
 	Quieres intentar usar la llave?
 	- Si
-		Door opened
+		do end_demo()
 
 => END
 

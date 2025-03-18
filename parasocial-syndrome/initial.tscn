@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dwiksxqqrbg2t"]
+[gd_scene load_steps=25 format=3 uid="uid://dwiksxqqrbg2t"]
 
 [ext_resource type="Script" path="res://initial.gd" id="1_dsbi2"]
 [ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://jugador.tscn" id="1_qhaxb"]
@@ -8,26 +8,38 @@
 [ext_resource type="AudioStream" uid="uid://cg6je5w4y5vig" path="res://Assets/Sonidos/cutting_free.wav" id="4_0d3pj"]
 [ext_resource type="PackedScene" uid="uid://3w8u7nr6tcsg" path="res://Silla.tscn" id="6_tobga"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhb3n"]
+size = Vector2(81, 185)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67c38"]
+size = Vector2(56, 51.5)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_heahe"]
+normal = Vector2(0.999991, -0.00423725)
+distance = 208.996
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5xcuh"]
+normal = Vector2(-1, 0)
+distance = -743.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rmwfo"]
+distance = -540.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_adrmy"]
+normal = Vector2(0, 1)
+distance = 133.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j13dp"]
+size = Vector2(342.834, 154.783)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjl0n"]
+size = Vector2(174, 178)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehraf"]
 size = Vector2(111, 146)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnqk4"]
 size = Vector2(47, 55)
-
-[sub_resource type="Animation" id="Animation_rqvcg"]
-resource_name = "fade_to_black"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Fader:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
 
 [sub_resource type="Animation" id="Animation_bf5v8"]
 length = 0.001
@@ -42,6 +54,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rqvcg"]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fader:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_67d26"]
@@ -66,6 +93,15 @@ _data = {
 "fade_to_normal": SubResource("Animation_67d26")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uq3tp"]
+size = Vector2(101, 183)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aoavg"]
+size = Vector2(80, 176)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wa71v"]
+size = Vector2(43, 178)
+
 [node name="Initial" type="Node2D"]
 script = ExtResource("1_dsbi2")
 
@@ -86,11 +122,47 @@ centered = false
 light_mask = 2
 polygon = PackedVector2Array(283, 378, 361, 378, 374, 457, 370, 506, 368, 477, 277, 480, 276, 505, 274, 458)
 
-[node name="Interactuable" parent="." instance=ExtResource("2_vf0yb")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(700, 269.5)
+shape = SubResource("RectangleShape2D_jhb3n")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(673, 436.25)
+shape = SubResource("RectangleShape2D_67c38")
+
+[node name="Bound1" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 138)
+scale = Vector2(0.985655, 0.97795)
+shape = SubResource("WorldBoundaryShape2D_heahe")
+
+[node name="Bound2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 138)
+scale = Vector2(0.998767, 1)
+shape = SubResource("WorldBoundaryShape2D_5xcuh")
+
+[node name="Bound3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(500, 0)
+shape = SubResource("WorldBoundaryShape2D_rmwfo")
+
+[node name="Bound4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(500, 0)
+shape = SubResource("WorldBoundaryShape2D_adrmy")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(301.5, 89)
+scale = Vector2(0.545453, 1.15)
+shape = SubResource("RectangleShape2D_j13dp")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(654, 90)
+scale = Vector2(0.996678, 1)
+shape = SubResource("RectangleShape2D_hjl0n")
+
+[node name="Mesa" parent="." instance=ExtResource("2_vf0yb")]
 dialogue_resource = ExtResource("3_atjn4")
 dialogue_start = "table"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactuable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mesa"]
 position = Vector2(324.5, 446)
 shape = SubResource("RectangleShape2D_ehraf")
 
@@ -121,3 +193,28 @@ color = Color(0, 0, 0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_ucwug")
 }
+
+[node name="Estantería" parent="." instance=ExtResource("2_vf0yb")]
+dialogue_resource = ExtResource("3_atjn4")
+dialogue_start = "bookcase"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Estantería"]
+visible = false
+position = Vector2(682.5, 268.5)
+shape = SubResource("RectangleShape2D_uq3tp")
+
+[node name="Area2D" type="Area2D" parent="Estantería"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Estantería/Area2D"]
+position = Vector2(689, 270)
+shape = SubResource("RectangleShape2D_aoavg")
+
+[node name="Puerta" parent="." instance=ExtResource("2_vf0yb")]
+dialogue_resource = ExtResource("3_atjn4")
+dialogue_start = "door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta"]
+position = Vector2(398.5, 89)
+shape = SubResource("RectangleShape2D_wa71v")
+
+[connection signal="body_entered" from="Estantería/Area2D" to="." method="_on_area_2d_body_entered"]

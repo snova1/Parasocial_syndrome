@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_pr4ba"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_q0cu5"]
 
 [resource]
-script = ExtResource("1_pr4ba")
+script = ExtResource("1_q0cu5")
 using_states = PackedStringArray()
 titles = {
 "bookcase": "38",
@@ -253,17 +253,18 @@ lines = {
 "type": &"response"
 },
 "29": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
 "id": "29",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "end_demo",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
 "next_id": "31",
-"notes": "",
 "parent_id": "28",
-"tags": PackedStringArray(),
-"text": "Door opened",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Door opened",
-"type": &"dialogue"
+"type": &"mutation"
 },
 "3": {
 "character": "",
@@ -987,7 +988,7 @@ else:
 	Está cerrada
 	Quieres intentar usar la llave?
 	- Si
-		Door opened
+		do end_demo()
 
 => END
 
