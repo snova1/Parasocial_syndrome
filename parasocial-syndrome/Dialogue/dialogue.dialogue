@@ -91,7 +91,7 @@ if door_status != "key"
 	else:
 		Esa no era la clave
 else: 
-	Me pregunto para que sera esta llaved
+	Me pregunto para que sera esta llave
 	
 => END
 

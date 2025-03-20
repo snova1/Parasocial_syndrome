@@ -1,8 +1,9 @@
-res://controles.tscn
 res://initial.tscn
 res://Dialogue/balloon.tscn
 res://menu.tscn
 res://end.tscn
 res://menu_opciones.tscn
-res://controles.gd
-res://Scripts/menu_opciones.gd
+res://controles.tscn
+res://Dialogue/balloon.gd
+res://jugador.tscn
+res://interactuables_manager.gd

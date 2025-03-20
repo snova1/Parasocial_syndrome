@@ -1,19 +1,19 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_q0cu5"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_dm6qf"]
 
 [resource]
-script = ExtResource("1_q0cu5")
+script = ExtResource("1_dm6qf")
 using_states = PackedStringArray()
 titles = {
 "bookcase": "38",
-"box": "87",
+"box": "99",
 "chair": "53",
 "cloth": "34",
 "curtain": "62",
 "door": "22",
 "lamp": "49",
-"metalBox": "77",
+"metalBox": "83",
 "table": "2"
 }
 character_names = PackedStringArray("Alessia")
@@ -37,6 +37,12 @@ lines = {
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Por fin libre",
 "type": &"dialogue"
+},
+"100": {
+"id": "100",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
 },
 "11": {
 "character": "Alessia",
@@ -253,18 +259,17 @@ lines = {
 "type": &"response"
 },
 "29": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
 "id": "29",
-"mutation": {
-"expression": Array[Dictionary]([{
-"function": "end_demo",
-"type": &"function",
-"value": Array[Array]([])
-}]),
-"is_blocking": true
-},
 "next_id": "31",
+"notes": "",
 "parent_id": "28",
-"type": &"mutation"
+"tags": PackedStringArray(),
+"text": "Door opened",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Door opened",
+"type": &"dialogue"
 },
 "3": {
 "character": "",
@@ -629,9 +634,9 @@ lines = {
 }])
 },
 "id": "62",
-"next_conditional_id": "71",
+"next_conditional_id": "74",
 "next_id": "63",
-"next_id_after": "74",
+"next_id_after": "79",
 "type": &"condition"
 },
 "63": {
@@ -642,9 +647,9 @@ lines = {
 "notes": "",
 "parent_id": "62",
 "tags": PackedStringArray(),
-"text": "Quieres abrirla?",
+"text": "Una enorme cortina roja.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Quieres abrirla?",
+"translation_key": "Una enorme cortina roja.",
 "type": &"dialogue"
 },
 "64": {
@@ -652,18 +657,31 @@ lines = {
 "character_replacements": Array[Dictionary]([]),
 "id": "64",
 "next_id": "65",
-"next_id_after": "74",
 "notes": "",
 "parent_id": "62",
-"responses": PackedStringArray("64", "70"),
+"tags": PackedStringArray(),
+"text": "Quieres abrirla?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Quieres abrirla?",
+"type": &"dialogue"
+},
+"65": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "65",
+"next_id": "66",
+"next_id_after": "79",
+"notes": "",
+"parent_id": "62",
+"responses": PackedStringArray("65", "73"),
 "tags": PackedStringArray(),
 "text": "Si",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Si",
 "type": &"response"
 },
-"65": {
-"id": "65",
+"66": {
+"id": "66",
 "mutation": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -677,35 +695,26 @@ lines = {
 }]),
 "is_blocking": true
 },
-"next_id": "66",
-"parent_id": "64",
+"next_id": "67",
+"parent_id": "65",
 "type": &"mutation"
 },
-"66": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "66",
-"next_id": "67",
-"notes": "",
-"parent_id": "64",
-"tags": PackedStringArray(),
-"text": "P-PERO ¿QUÉ?",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "P-PERO ¿QUÉ?",
-"type": &"dialogue"
-},
 "67": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
 "id": "67",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "open_curtain",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "true"
+}])])
+}]),
+"is_blocking": true
+},
 "next_id": "68",
-"notes": "",
-"parent_id": "64",
-"tags": PackedStringArray(),
-"text": "¿Esa...soy yo?",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "¿Esa...soy yo?",
-"type": &"dialogue"
+"parent_id": "65",
+"type": &"mutation"
 },
 "68": {
 "character": "Alessia",
@@ -713,24 +722,24 @@ lines = {
 "id": "68",
 "next_id": "69",
 "notes": "",
-"parent_id": "64",
+"parent_id": "65",
 "tags": PackedStringArray(),
-"text": "Maldición, este tipo en serio está desquiciado si me ve de esta forma",
+"text": "P-PERO ¿QUÉ?",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Maldición, este tipo en serio está desquiciado si me ve de esta forma",
+"translation_key": "P-PERO ¿QUÉ?",
 "type": &"dialogue"
 },
 "69": {
 "character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
 "id": "69",
-"next_id": "74",
+"next_id": "70",
 "notes": "",
-"parent_id": "64",
+"parent_id": "65",
 "tags": PackedStringArray(),
-"text": "Tengo que salir de aquí cuanto antes",
+"text": "¿Esa...soy yo?",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Tengo que salir de aquí cuanto antes",
+"translation_key": "¿Esa...soy yo?",
 "type": &"dialogue"
 },
 "7": {
@@ -753,11 +762,54 @@ lines = {
 "type": &"mutation"
 },
 "70": {
-"character": "",
+"character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
 "id": "70",
-"next_id": "74",
-"next_id_after": "74",
+"next_id": "71",
+"notes": "",
+"parent_id": "65",
+"tags": PackedStringArray(),
+"text": "Maldición, este tipo en serio está desquiciado si me ve de esta forma",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Maldición, este tipo en serio está desquiciado si me ve de esta forma",
+"type": &"dialogue"
+},
+"71": {
+"character": "Alessia",
+"character_replacements": Array[Dictionary]([]),
+"id": "71",
+"next_id": "72",
+"notes": "",
+"parent_id": "65",
+"tags": PackedStringArray(),
+"text": "Tengo que salir de aquí cuanto antes",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tengo que salir de aquí cuanto antes",
+"type": &"dialogue"
+},
+"72": {
+"id": "72",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "open_curtain",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "false"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "79",
+"parent_id": "65",
+"type": &"mutation"
+},
+"73": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "73",
+"next_id": "79",
+"next_id_after": "79",
 "notes": "",
 "parent_id": "62",
 "tags": PackedStringArray(),
@@ -766,89 +818,65 @@ lines = {
 "translation_key": "No",
 "type": &"response"
 },
-"71": {
-"id": "71",
-"next_conditional_id": "74",
-"next_id": "72",
-"next_id_after": "74",
+"74": {
+"id": "74",
+"next_conditional_id": "79",
+"next_id": "75",
+"next_id_after": "79",
 "type": &"condition"
 },
-"72": {
+"75": {
+"id": "75",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "open_curtain",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "true"
+}])])
+}]),
+"is_blocking": true
+},
+"next_id": "76",
+"parent_id": "74",
+"type": &"mutation"
+},
+"76": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "72",
-"next_id": "73",
+"id": "76",
+"next_id": "77",
 "notes": "",
-"parent_id": "71",
+"parent_id": "74",
 "tags": PackedStringArray(),
 "text": "Tras una inspección más cercana, notas unos números tenuemente grabados en el mural",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Tras una inspección más cercana, notas unos números tenuemente grabados en el mural",
 "type": &"dialogue"
 },
-"73": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "73",
-"next_id": "74",
-"notes": "",
-"parent_id": "71",
-"tags": PackedStringArray(),
-"text": "Una enorme cortina roja.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Una enorme cortina roja.",
-"type": &"dialogue"
+"77": {
+"id": "77",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "open_curtain",
+"type": &"function",
+"value": Array[Array]([Array[Dictionary]([{
+"type": "variable",
+"value": "false"
+}])])
+}]),
+"is_blocking": true
 },
-"74": {
-"id": "74",
+"next_id": "79",
+"parent_id": "74",
+"type": &"mutation"
+},
+"79": {
+"id": "79",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
-},
-"76": {
-"id": "76",
-"next_id": "77",
-"text": "metalBox",
-"type": &"title"
-},
-"77": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "77",
-"next_id": "78",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Tiene un candado numérico",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Tiene un candado numérico",
-"type": &"dialogue"
-},
-"78": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "78",
-"next_id": "79",
-"next_id_after": "84",
-"notes": "",
-"responses": PackedStringArray("78", "80"),
-"tags": PackedStringArray(),
-"text": "Incorrecta",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Incorrecta",
-"type": &"response"
-},
-"79": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "79",
-"next_id": "84",
-"notes": "",
-"parent_id": "78",
-"tags": PackedStringArray(),
-"text": "Esa no era la clave",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Esa no era la clave",
-"type": &"dialogue"
 },
 "8": {
 "id": "8",
@@ -873,74 +901,108 @@ lines = {
 "parent_id": "6",
 "type": &"mutation"
 },
-"80": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "80",
-"next_id": "81",
-"next_id_after": "84",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Correcta",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Correcta",
-"type": &"response"
-},
 "81": {
+"id": "81",
+"next_id": "83",
+"text": "metalBox",
+"type": &"title"
+},
+"83": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "door_status"
+}, {
+"type": "comparison",
+"value": "!="
+}, {
+"type": "string",
+"value": "key"
+}])
+},
+"id": "83",
+"next_conditional_id": "93",
+"next_id": "84",
+"next_id_after": "96",
+"type": &"condition"
+},
+"84": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "81",
-"next_id": "82",
+"id": "84",
+"next_id": "85",
 "notes": "",
-"parent_id": "80",
+"parent_id": "83",
+"tags": PackedStringArray(),
+"text": "Tiene un candado numérico",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tiene un candado numérico",
+"type": &"dialogue"
+},
+"85": {
+"id": "85",
+"mutation": {
+"expression": Array[Dictionary]([{
+"function": "open_keypad",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
+"next_id": "87",
+"parent_id": "83",
+"type": &"mutation"
+},
+"87": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": &"group",
+"value": Array[Dictionary]([{
+"type": "variable",
+"value": "metalbox_status"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "string",
+"value": "correct"
+}])
+}, {
+"type": "colon"
+}])
+},
+"id": "87",
+"next_conditional_id": "91",
+"next_id": "88",
+"next_id_after": "96",
+"parent_id": "83",
+"type": &"condition"
+},
+"88": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "88",
+"next_id": "89",
+"notes": "",
+"parent_id": "87",
 "tags": PackedStringArray(),
 "text": "Dentro de la caja había una llave",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Dentro de la caja había una llave",
 "type": &"dialogue"
 },
-"82": {
+"89": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "82",
-"next_id": "84",
+"id": "89",
+"next_id": "90",
 "notes": "",
-"parent_id": "80",
+"parent_id": "87",
 "tags": PackedStringArray(),
 "text": "Obtuviste una llave",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Obtuviste una llave",
 "type": &"dialogue"
-},
-"84": {
-"id": "84",
-"is_snippet": false,
-"next_id": "end",
-"type": &"goto"
-},
-"86": {
-"id": "86",
-"next_id": "87",
-"text": "box",
-"type": &"title"
-},
-"87": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "87",
-"next_id": "88",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "La caja contiene libros, en su mayoría de misterio",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "La caja contiene libros, en su mayoría de misterio",
-"type": &"dialogue"
-},
-"88": {
-"id": "88",
-"is_snippet": false,
-"next_id": "end",
-"type": &"goto"
 },
 "9": {
 "id": "9",
@@ -958,6 +1020,90 @@ lines = {
 "next_id": "10",
 "parent_id": "6",
 "type": &"mutation"
+},
+"90": {
+"id": "90",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "door_status"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "string",
+"value": "key"
+}]),
+"is_blocking": true
+},
+"next_id": "96",
+"parent_id": "87",
+"type": &"mutation"
+},
+"91": {
+"id": "91",
+"next_conditional_id": "96",
+"next_id": "92",
+"next_id_after": "96",
+"parent_id": "83",
+"type": &"condition"
+},
+"92": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "92",
+"next_id": "96",
+"notes": "",
+"parent_id": "91",
+"tags": PackedStringArray(),
+"text": "Esa no era la clave",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Esa no era la clave",
+"type": &"dialogue"
+},
+"93": {
+"id": "93",
+"next_conditional_id": "96",
+"next_id": "94",
+"next_id_after": "96",
+"type": &"condition"
+},
+"94": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "94",
+"next_id": "96",
+"notes": "",
+"parent_id": "93",
+"tags": PackedStringArray(),
+"text": "Me pregunto para que sera esta llave",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Me pregunto para que sera esta llave",
+"type": &"dialogue"
+},
+"96": {
+"id": "96",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"98": {
+"id": "98",
+"next_id": "99",
+"text": "box",
+"type": &"title"
+},
+"99": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "99",
+"next_id": "100",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "La caja contiene libros, en su mayoría de misterio",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "La caja contiene libros, en su mayoría de misterio",
+"type": &"dialogue"
 }
 }
 raw_text = "~ table
@@ -988,7 +1134,7 @@ else:
 	Está cerrada
 	Quieres intentar usar la llave?
 	- Si
-		do end_demo()
+		Door opened
 
 => END
 
@@ -1022,30 +1168,43 @@ if chair_status[0]!=\"hidden\":
 
 ~ curtain
 if curtain_status==\"default\":
+	Una enorme cortina roja.
 	Quieres abrirla?
 	- Si
 		set curtain_status=\"open\"
+		do open_curtain(true)		
 		Alessia: P-PERO ¿QUÉ?
 		Alessia: ¿Esa...soy yo?
 		Alessia: Maldición, este tipo en serio está desquiciado si me ve de esta forma
 		Alessia: Tengo que salir de aquí cuanto antes
+		do open_curtain(false)
 	- No
 else:
+	do open_curtain(true)
 	Tras una inspección más cercana, notas unos números tenuemente grabados en el mural
-	Una enorme cortina roja.
+	do open_curtain(false)
+	
 => END
 
 ~ metalBox
-Tiene un candado numérico
-- Incorrecta
-	Esa no era la clave
-- Correcta
-	Dentro de la caja había una llave
-	Obtuviste una llave
 
+if door_status != \"key\"
+	Tiene un candado numérico
+	do open_keypad()
+
+	if (metalbox_status == \"correct\"):
+		Dentro de la caja había una llave
+		Obtuviste una llave
+		set door_status = \"key\"
+	else:
+		Esa no era la clave
+else: 
+	Me pregunto para que sera esta llave
+	
 => END
 
 ~ box
 La caja contiene libros, en su mayoría de misterio
-=> END"
+=> END
+"
 metadata/dialogue_manager_version = "2.45.0"
