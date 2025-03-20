@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dwiksxqqrbg2t"]
+[gd_scene load_steps=22 format=3 uid="uid://dwiksxqqrbg2t"]
 
 [ext_resource type="Script" path="res://initial.gd" id="1_dsbi2"]
 [ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://jugador.tscn" id="1_qhaxb"]
@@ -6,40 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://cgwthx1srigte" path="res://interactuable.tscn" id="2_vf0yb"]
 [ext_resource type="Resource" uid="uid://dgowpg570bn6l" path="res://Dialogue/dialogue.dialogue" id="3_atjn4"]
 [ext_resource type="AudioStream" uid="uid://cg6je5w4y5vig" path="res://Assets/Sonidos/cutting_free.wav" id="4_0d3pj"]
+[ext_resource type="Script" path="res://interactuables_manager.gd" id="5_wlkpb"]
 [ext_resource type="PackedScene" uid="uid://3w8u7nr6tcsg" path="res://Silla.tscn" id="6_tobga"]
+[ext_resource type="Texture2D" uid="uid://62y61l0xv50s" path="res://Assets/menu_image.png" id="9_rreqm"]
+[ext_resource type="PackedScene" uid="uid://d0qh6dk3jleo4" path="res://keypad.tscn" id="10_p8yxc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhb3n"]
-size = Vector2(81, 185)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2cir"]
+size = Vector2(68.25, 83)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_67c38"]
-size = Vector2(56, 51.5)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_heahe"]
-normal = Vector2(0.999991, -0.00423725)
-distance = 208.996
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5xcuh"]
-normal = Vector2(-1, 0)
-distance = -743.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rmwfo"]
-distance = -540.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_adrmy"]
-normal = Vector2(0, 1)
-distance = 133.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j13dp"]
-size = Vector2(342.834, 154.783)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjl0n"]
-size = Vector2(174, 178)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehraf"]
-size = Vector2(111, 146)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnqk4"]
-size = Vector2(47, 55)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocne8"]
+size = Vector2(56, 48)
 
 [sub_resource type="Animation" id="Animation_bf5v8"]
 length = 0.001
@@ -93,14 +69,20 @@ _data = {
 "fade_to_normal": SubResource("Animation_67d26")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uq3tp"]
-size = Vector2(101, 183)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tumgp"]
+size = Vector2(74.8515, 58.25)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aoavg"]
-size = Vector2(80, 176)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78jb1"]
+size = Vector2(51.1875, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wa71v"]
-size = Vector2(43, 178)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnqk4"]
+size = Vector2(47, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6021"]
+size = Vector2(156, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_moopr"]
+size = Vector2(45, 44.5)
 
 [node name="Initial" type="Node2D"]
 script = ExtResource("1_dsbi2")
@@ -110,72 +92,34 @@ offset_right = 960.0
 offset_bottom = 540.0
 color = Color(0, 0, 0, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="colisiones" type="StaticBody2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="colisiones"]
 position = Vector2(207, 1)
 scale = Vector2(0.81, 0.81)
 texture = ExtResource("1_we8tt")
 centered = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="table" type="CollisionPolygon2D" parent="colisiones"]
 light_mask = 2
 polygon = PackedVector2Array(283, 378, 361, 378, 374, 457, 370, 506, 368, 477, 277, 480, 276, 505, 274, 458)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(700, 269.5)
-shape = SubResource("RectangleShape2D_jhb3n")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisiones"]
+light_mask = 3
+position = Vector2(262, 300)
+polygon = PackedVector2Array(-12, 12, 10, 24, 51, 24, 70, 7, 47, -19, 3, -13)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(673, 436.25)
-shape = SubResource("RectangleShape2D_67c38")
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="colisiones"]
+position = Vector2(478, 290)
+polygon = PackedVector2Array(-266, -108, -93, -108, -94, -118, -83, -118, -83, -155, 87, -155, 87, -109, 263, -109, 263, 246, -273, 249, -272, -106, -329, -165, -325, 287, 309, 291, 303, -175, -329, -171)
 
-[node name="Bound1" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 138)
-scale = Vector2(0.985655, 0.97795)
-shape = SubResource("WorldBoundaryShape2D_heahe")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colisiones"]
+position = Vector2(693.875, 317.5)
+shape = SubResource("RectangleShape2D_u2cir")
 
-[node name="Bound2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 138)
-scale = Vector2(0.998767, 1)
-shape = SubResource("WorldBoundaryShape2D_5xcuh")
-
-[node name="Bound3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(500, 0)
-shape = SubResource("WorldBoundaryShape2D_rmwfo")
-
-[node name="Bound4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(500, 0)
-shape = SubResource("WorldBoundaryShape2D_adrmy")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(301.5, 89)
-scale = Vector2(0.545453, 1.15)
-shape = SubResource("RectangleShape2D_j13dp")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(654, 90)
-scale = Vector2(0.996678, 1)
-shape = SubResource("RectangleShape2D_hjl0n")
-
-[node name="Mesa" parent="." instance=ExtResource("2_vf0yb")]
-dialogue_resource = ExtResource("3_atjn4")
-dialogue_start = "table"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mesa"]
-position = Vector2(324.5, 446)
-shape = SubResource("RectangleShape2D_ehraf")
-
-[node name="Silla" parent="." instance=ExtResource("6_tobga")]
-position = Vector2(574, 406)
-
-[node name="Interactuable" parent="Silla" instance=ExtResource("2_vf0yb")]
-dialogue_resource = ExtResource("3_atjn4")
-dialogue_start = "chair"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Silla/Interactuable"]
-position = Vector2(0.5, -0.5)
-shape = SubResource("RectangleShape2D_pnqk4")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="colisiones"]
+position = Vector2(673, 435)
+shape = SubResource("RectangleShape2D_ocne8")
 
 [node name="Jugador" parent="." instance=ExtResource("1_qhaxb")]
 position = Vector2(474, 475)
@@ -194,27 +138,87 @@ libraries = {
 "": SubResource("AnimationLibrary_ucwug")
 }
 
-[node name="Estantería" parent="." instance=ExtResource("2_vf0yb")]
-dialogue_resource = ExtResource("3_atjn4")
-dialogue_start = "bookcase"
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 270)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Estantería"]
+[node name="interactuables" type="Node" parent="."]
+script = ExtResource("5_wlkpb")
+
+[node name="box" parent="interactuables" instance=ExtResource("2_vf0yb")]
+position = Vector2(675, 438)
+dialogue_resource = ExtResource("3_atjn4")
+dialogue_start = "box"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/box"]
+position = Vector2(-2, -4)
+shape = SubResource("RectangleShape2D_tumgp")
+
+[node name="lamp" parent="interactuables" instance=ExtResource("2_vf0yb")]
+position = Vector2(483, 136)
+dialogue_resource = ExtResource("3_atjn4")
+dialogue_start = "lamp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/lamp"]
+shape = SubResource("RectangleShape2D_78jb1")
+
+[node name="table" parent="interactuables" instance=ExtResource("2_vf0yb")]
+position = Vector2(321, 430)
+dialogue_resource = ExtResource("3_atjn4")
+dialogue_start = "table"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="interactuables/table"]
+polygon = PackedVector2Array(-43, -57, 45, -57, 60, 28, 54, 86, 4, 55, -50, 83, -52, 30)
+
+[node name="cloth" parent="interactuables" instance=ExtResource("2_vf0yb")]
+position = Vector2(267, 310)
+dialogue_resource = ExtResource("3_atjn4")
+dialogue_start = "cloth"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="interactuables/cloth"]
+position = Vector2(-14, -12)
+scale = Vector2(1.34633, 1.49456)
+polygon = PackedVector2Array(-12, 12, 10, 24, 51, 24, 70, 7, 47, -19, 3, -13)
+
+[node name="Silla" parent="interactuables" instance=ExtResource("6_tobga")]
+position = Vector2(574, 406)
+
+[node name="Interactuable" parent="interactuables/Silla" instance=ExtResource("2_vf0yb")]
+dialogue_resource = ExtResource("3_atjn4")
+dialogue_start = "chair"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/Silla/Interactuable"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_pnqk4")
+
+[node name="curtain" parent="interactuables" instance=ExtResource("2_vf0yb")]
+position = Vector2(653, 180)
+dialogue_resource = ExtResource("3_atjn4")
+dialogue_start = "curtain"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/curtain"]
+shape = SubResource("RectangleShape2D_s6021")
+
+[node name="Sprite2D" type="Sprite2D" parent="interactuables/curtain"]
 visible = false
-position = Vector2(682.5, 268.5)
-shape = SubResource("RectangleShape2D_uq3tp")
+position = Vector2(2, -84)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_rreqm")
 
-[node name="Area2D" type="Area2D" parent="Estantería"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Estantería/Area2D"]
-position = Vector2(689, 270)
-shape = SubResource("RectangleShape2D_aoavg")
-
-[node name="Puerta" parent="." instance=ExtResource("2_vf0yb")]
+[node name="metalbox" parent="interactuables" instance=ExtResource("2_vf0yb")]
+position = Vector2(595, 250)
 dialogue_resource = ExtResource("3_atjn4")
-dialogue_start = "door"
+dialogue_start = "metalBox"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta"]
-position = Vector2(398.5, 89)
-shape = SubResource("RectangleShape2D_wa71v")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/metalbox"]
+shape = SubResource("RectangleShape2D_moopr")
 
-[connection signal="body_entered" from="Estantería/Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(474, 267)
+
+[node name="keypad" parent="Node2D" instance=ExtResource("10_p8yxc")]
+visible = false
+z_index = 10
+offset_left = -257.0
+offset_top = -269.0
+offset_right = 276.0
+offset_bottom = 267.0
