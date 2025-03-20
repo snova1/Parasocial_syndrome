@@ -8,6 +8,7 @@ var door_status: String="default"
 
 signal player_free
 signal demo_end
+signal end_screen
 
 func release_player(atada: bool):
 	var initial_scene = get_tree().current_scene
@@ -17,3 +18,6 @@ func release_player(atada: bool):
 
 func end_demo():
 	demo_end.emit()
+
+func screen_end():
+	end_screen.emit()

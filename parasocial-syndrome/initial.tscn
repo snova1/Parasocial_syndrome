@@ -167,6 +167,7 @@ position = Vector2(324.5, 446)
 shape = SubResource("RectangleShape2D_ehraf")
 
 [node name="Silla" parent="." instance=ExtResource("6_tobga")]
+visible = false
 position = Vector2(574, 406)
 
 [node name="Interactuable" parent="Silla" instance=ExtResource("2_vf0yb")]

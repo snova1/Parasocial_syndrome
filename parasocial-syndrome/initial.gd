@@ -4,6 +4,8 @@ extends Node2D
 @onready var jugador: Jugador = $Jugador
 @onready var cutting_free: AudioStreamPlayer2D = $CuttingFree
 @onready var fader: ColorRect = $Fader
+const Balloon = preload("res://Dialogue/balloon.tscn")
+var resource = load("res://Dialogue/dialogue.dialogue")
 
 
 signal cutscene_finished
@@ -13,6 +15,7 @@ func _ready() -> void:
 	silla.get_node("CollisionShape2D").disabled = true
 	Status.player_free.connect(_on_player_free)
 	Status.demo_end.connect(_on_demo_end)
+	Status.end_screen.connect(_on_end_screen)
 
 func _on_player_free(atada: bool):
 	fader.visible=true
@@ -50,5 +53,11 @@ func _on_demo_end():
 	fader.visible=true
 	animation_player.play("fade_to_black")
 	await animation_player.animation_finished
+	await get_tree().create_timer(1.0).timeout
+	var balloon: Node= Balloon.instantiate()
+	get_tree().current_scene.add_child(balloon)
+	await balloon.start(resource,"demo")
+
+func _on_end_screen():
 	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://end.tscn")

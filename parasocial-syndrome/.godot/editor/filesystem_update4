@@ -1,8 +1,8 @@
 res://controles.tscn
-res://initial.tscn
 res://Dialogue/balloon.tscn
+res://initial.tscn
+res://initial.gd
 res://menu.tscn
 res://end.tscn
 res://menu_opciones.tscn
-res://controles.gd
-res://Scripts/menu_opciones.gd
+res://Scripts/Status.gd
