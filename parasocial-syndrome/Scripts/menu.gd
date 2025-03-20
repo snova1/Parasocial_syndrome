@@ -32,8 +32,6 @@ func _input(event):
 		selected_index = (selected_index - 1 + buttons.size()) % buttons.size()
 		hovered_index= -1
 		update_selection()
-	elif event.is_action_pressed("Interact"):
-		pass
 
 func _on_button_hovered(index):
 	hovered_index= index

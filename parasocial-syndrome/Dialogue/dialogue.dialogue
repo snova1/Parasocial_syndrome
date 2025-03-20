@@ -26,7 +26,7 @@ else:
 	Está cerrada
 	Quieres intentar usar la llave?
 	- Si
-		do end_demo()
+		Door opened
 
 => END
 
@@ -64,23 +64,34 @@ if curtain_status=="default":
 	Quieres abrirla?
 	- Si
 		set curtain_status="open"
+		do open_curtain(true)		
 		Alessia: P-PERO ¿QUÉ?
 		Alessia: ¿Esa...soy yo?
 		Alessia: Maldición, este tipo en serio está desquiciado si me ve de esta forma
 		Alessia: Tengo que salir de aquí cuanto antes
+		do open_curtain(false)
 	- No
 else:
+	do open_curtain(true)
 	Tras una inspección más cercana, notas unos números tenuemente grabados en el mural
+	do open_curtain(false)
 => END
 
 ~ metalBox
-Tiene un candado numérico
-- Incorrecta
-	Esa no era la clave
-- Correcta
-	Dentro de la caja había una llave
-	Obtuviste una llave
 
+if door_status != "key"
+	Tiene un candado numérico
+	do open_keypad()
+
+	if (metalbox_status == "correct"):
+		Dentro de la caja había una llave
+		Obtuviste una llave
+		set door_status = "key"
+	else:
+		Esa no era la clave
+else: 
+	Me pregunto para que sera esta llave
+	
 => END
 
 ~ box
@@ -115,3 +126,4 @@ Alessia: De lo contrario tendré que escapar de él, ya sea por las buenas
 Alessia: …O por las malas
 do screen_end()
 => END
+
