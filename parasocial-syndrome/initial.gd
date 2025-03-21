@@ -3,6 +3,7 @@ extends Node2D
 
 @onready var initial: Node2D = $"."
 @onready var silla: RigidBody2D = $Silla
+@onready var curtain: Area2D = $curtain
 @onready var jugador: Jugador = $Jugador
 @onready var cutting_free: AudioStreamPlayer2D = $CuttingFree
 @onready var fader: ColorRect = $Fader
@@ -15,14 +16,20 @@ var resource = load("res://Dialogue/dialogue.dialogue")
 var key = preload("res://keypad.tscn")
 
 signal cutscene_finished
+signal mural_shown
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	initial.get_node("curtain/Sprite2D").visible=false
+	initial.get_node("TextureRect").visible=false
 	silla.visible=false
 	silla.get_node("CollisionShape2D").disabled = true
+	initial.get_node("colisiones/CollisionShape2D3").disabled=true
 	Status.player_free.connect(_on_player_free)
 	Status.demo_end.connect(_on_demo_end)
 	Status.end_screen.connect(_on_end_screen)
 	Status.keypad.connect(_on_keypad)
+	Status.curtain_big.connect(_on_curtain_open)
+	Status.mural.connect(_on_show_mural)
 
 func _on_player_free(atada: bool):
 	fader.visible=true
@@ -36,8 +43,8 @@ func _on_player_free(atada: bool):
 	jugador.set_global_position(jugador.get_global_position()-Vector2(-20,30))
 	silla.set_global_position(jugador.get_global_position()+Vector2(20,30))
 	animation_player.play("fade_to_normal")	
+	await animation_player.animation_finished	
 	fader.visible=false	
-	await animation_player.animation_finished
 	cutscene_finished.emit()
 
 
@@ -46,8 +53,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		fader.visible=true
 		animation_player.play("fade_to_black")
 		await animation_player.animation_finished
+		initial.get_node("colisiones/CollisionShape2D3").disabled=false
+		initial.get_node("colisiones/box_down").visible=true
 		Status.bookcase_status=""
-		Status.door_status="has_key"
 		silla.set_global_position(silla.get_global_position()+Vector2(48,190))
 		jugador.set_global_position(jugador.get_global_position()+Vector2(20,0))
 		await get_tree().create_timer(2.0).timeout
@@ -69,6 +77,32 @@ func _on_end_screen():
 	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://end.tscn")
 	
+
+func _on_curtain_open():
+	initial.get_node("curtain/Sprite2D").visible=true
+	var sprite = $TextureRect
+	sprite.visible=true
+	await get_tree().create_timer(1.0).timeout
+	sprite.visible=false
+	mural_shown.emit()
+
+func _on_show_mural():
+	var sprite = $TextureRect
+	var label=$TextureRect/Label
+	sprite.visible=true
+	label.visible=true
+	get_tree().paused = true
+	await wait_for_escape()
+	sprite.visible=false
+	label.visible=false
+
+func wait_for_escape():
+	while true:
+		await get_tree().process_frame
+		if Input.is_action_just_pressed("Escape"):
+			get_tree().paused = false
+			return  
+
 func _on_keypad():
 	if !(keypad.visible):
 		keypad.visible = true

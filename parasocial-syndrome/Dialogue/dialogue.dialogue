@@ -26,7 +26,7 @@ else:
 	Está cerrada
 	Quieres intentar usar la llave?
 	- Si
-		Door opened
+		do demo_end()
 
 => END
 
@@ -64,17 +64,15 @@ if curtain_status=="default":
 	Quieres abrirla?
 	- Si
 		set curtain_status="open"
-		do open_curtain(true)		
+		do open_curtain()
 		Alessia: P-PERO ¿QUÉ?
 		Alessia: ¿Esa...soy yo?
 		Alessia: Maldición, este tipo en serio está desquiciado si me ve de esta forma
 		Alessia: Tengo que salir de aquí cuanto antes
-		do open_curtain(false)
 	- No
 else:
-	do open_curtain(true)
 	Tras una inspección más cercana, notas unos números tenuemente grabados en el mural
-	do open_curtain(false)
+	do show_mural()
 => END
 
 ~ metalBox

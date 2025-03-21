@@ -1,21 +1,27 @@
-[gd_scene load_steps=22 format=3 uid="uid://dwiksxqqrbg2t"]
+[gd_scene load_steps=26 format=3 uid="uid://dwiksxqqrbg2t"]
 
 [ext_resource type="Script" path="res://initial.gd" id="1_dsbi2"]
 [ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://jugador.tscn" id="1_qhaxb"]
 [ext_resource type="Texture2D" uid="uid://bd6y3haaclpqd" path="res://Assets/sótano.png" id="1_we8tt"]
 [ext_resource type="PackedScene" uid="uid://cgwthx1srigte" path="res://interactuable.tscn" id="2_vf0yb"]
 [ext_resource type="Resource" uid="uid://dgowpg570bn6l" path="res://Dialogue/dialogue.dialogue" id="3_atjn4"]
+[ext_resource type="Texture2D" uid="uid://bwe01osmole0s" path="res://Assets/sótano2.png" id="3_xdd32"]
 [ext_resource type="AudioStream" uid="uid://cg6je5w4y5vig" path="res://Assets/Sonidos/cutting_free.wav" id="4_0d3pj"]
-[ext_resource type="Script" path="res://interactuables_manager.gd" id="5_wlkpb"]
 [ext_resource type="PackedScene" uid="uid://3w8u7nr6tcsg" path="res://Silla.tscn" id="6_tobga"]
 [ext_resource type="Texture2D" uid="uid://tlfaypx8w2k0" path="res://Assets/mural.png" id="9_co7yk"]
 [ext_resource type="PackedScene" uid="uid://d0qh6dk3jleo4" path="res://keypad.tscn" id="10_p8yxc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2cir"]
-size = Vector2(68.25, 83)
+size = Vector2(68.25, 176)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ocne8"]
 size = Vector2(56, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p15kf"]
+size = Vector2(34.5, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6021"]
+size = Vector2(156, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnqk4"]
 size = Vector2(47, 55)
@@ -24,13 +30,19 @@ size = Vector2(47, 55)
 size = Vector2(74.8515, 58.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78jb1"]
-size = Vector2(51.1875, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6021"]
-size = Vector2(156, 20)
+size = Vector2(51.1875, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_moopr"]
-size = Vector2(45, 44.5)
+size = Vector2(45, 26.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wa5n0"]
+size = Vector2(29, 170)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3k7j6"]
+size = Vector2(84, 124)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jd8os"]
+size = Vector2(85, 153)
 
 [sub_resource type="Animation" id="Animation_bf5v8"]
 length = 0.001
@@ -45,6 +57,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("curtain/Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_rqvcg"]
@@ -61,6 +85,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("curtain/Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_67d26"]
 resource_name = "fade_to_normal"
@@ -76,6 +112,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("curtain/Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ucwug"]
 _data = {
@@ -85,6 +133,7 @@ _data = {
 }
 
 [node name="Initial" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_dsbi2")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -94,11 +143,17 @@ color = Color(0, 0, 0, 1)
 
 [node name="colisiones" type="StaticBody2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="colisiones"]
+[node name="box_up" type="Sprite2D" parent="colisiones"]
 position = Vector2(207, 1)
 scale = Vector2(0.81, 0.81)
 texture = ExtResource("1_we8tt")
 centered = false
+
+[node name="box_down" type="Sprite2D" parent="colisiones"]
+visible = false
+position = Vector2(475, 271)
+scale = Vector2(0.81, 0.81)
+texture = ExtResource("3_xdd32")
 
 [node name="table" type="CollisionPolygon2D" parent="colisiones"]
 light_mask = 2
@@ -110,16 +165,35 @@ position = Vector2(262, 300)
 polygon = PackedVector2Array(-33, -2, 10, 24, 51, 24, 70, 7, 51, -105, 16, -115)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="colisiones"]
+visible = false
 position = Vector2(478, 290)
 polygon = PackedVector2Array(-266, -108, -93, -108, -94, -118, -83, -118, -83, -155, 87, -155, 87, -109, 263, -109, 263, 246, -273, 249, -272, -106, -329, -165, -325, 287, 309, 291, 303, -175, -329, -171)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="colisiones"]
-position = Vector2(693.875, 317.5)
+position = Vector2(693.875, 271)
 shape = SubResource("RectangleShape2D_u2cir")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="colisiones"]
 position = Vector2(673, 435)
 shape = SubResource("RectangleShape2D_ocne8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="colisiones"]
+position = Vector2(600, 268)
+shape = SubResource("RectangleShape2D_p15kf")
+
+[node name="curtain" parent="." instance=ExtResource("2_vf0yb")]
+position = Vector2(653, 180)
+dialogue_resource = ExtResource("3_atjn4")
+dialogue_start = "curtain"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="curtain"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_s6021")
+
+[node name="Sprite2D" type="Sprite2D" parent="curtain"]
+position = Vector2(2.95639e-05, -84)
+scale = Vector2(0.541667, 0.666667)
+texture = ExtResource("9_co7yk")
 
 [node name="Silla" parent="." instance=ExtResource("6_tobga")]
 position = Vector2(574, 406)
@@ -136,7 +210,6 @@ shape = SubResource("RectangleShape2D_pnqk4")
 position = Vector2(474, 475)
 
 [node name="interactuables" type="Node" parent="."]
-script = ExtResource("5_wlkpb")
 
 [node name="box" parent="interactuables" instance=ExtResource("2_vf0yb")]
 position = Vector2(675, 438)
@@ -153,6 +226,7 @@ dialogue_resource = ExtResource("3_atjn4")
 dialogue_start = "lamp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/lamp"]
+position = Vector2(0, -11.5)
 shape = SubResource("RectangleShape2D_78jb1")
 
 [node name="table" parent="interactuables" instance=ExtResource("2_vf0yb")]
@@ -173,27 +247,39 @@ position = Vector2(-14, -12)
 scale = Vector2(1.34633, 1.49456)
 polygon = PackedVector2Array(-23.7683, -1.33818, 10, 24, 51, 24, 70, 7, 46.7939, -78.2839, 16.3407, -78.953)
 
-[node name="curtain" parent="interactuables" instance=ExtResource("2_vf0yb")]
-position = Vector2(653, 180)
-dialogue_resource = ExtResource("3_atjn4")
-dialogue_start = "curtain"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/curtain"]
-shape = SubResource("RectangleShape2D_s6021")
-
-[node name="Sprite2D" type="Sprite2D" parent="interactuables/curtain"]
-visible = false
-position = Vector2(2.95639e-05, -84)
-scale = Vector2(0.541667, 0.666667)
-texture = ExtResource("9_co7yk")
-
 [node name="metalbox" parent="interactuables" instance=ExtResource("2_vf0yb")]
 position = Vector2(595, 250)
 dialogue_resource = ExtResource("3_atjn4")
 dialogue_start = "metalBox"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/metalbox"]
+position = Vector2(3, 19.125)
 shape = SubResource("RectangleShape2D_moopr")
+
+[node name="Puerta" parent="interactuables" instance=ExtResource("2_vf0yb")]
+position = Vector2(389, 96)
+dialogue_resource = ExtResource("3_atjn4")
+dialogue_start = "door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/Puerta"]
+position = Vector2(4.5, -9)
+shape = SubResource("RectangleShape2D_wa5n0")
+
+[node name="Estanteria" parent="interactuables" instance=ExtResource("2_vf0yb")]
+position = Vector2(692, 270)
+dialogue_resource = ExtResource("3_atjn4")
+dialogue_start = "bookcase"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/Estanteria"]
+position = Vector2(-2, 31)
+shape = SubResource("RectangleShape2D_3k7j6")
+
+[node name="Area2D" type="Area2D" parent="interactuables/Estanteria"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/Estanteria/Area2D"]
+visible = false
+position = Vector2(-1.5, 17.5)
+shape = SubResource("RectangleShape2D_jd8os")
 
 [node name="CuttingFree" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_0d3pj")
@@ -222,3 +308,30 @@ offset_left = -257.0
 offset_top = -269.0
 offset_right = 276.0
 offset_bottom = 267.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = 229.0
+offset_top = 46.0
+offset_right = 469.0
+offset_bottom = 286.0
+scale = Vector2(2, 2)
+texture = ExtResource("9_co7yk")
+
+[node name="Label" type="Label" parent="TextureRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.5
+offset_top = -23.0
+offset_right = 100.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Presiona Esc para salir"
+
+[connection signal="body_entered" from="interactuables/Estanteria/Area2D" to="." method="_on_area_2d_body_entered"]

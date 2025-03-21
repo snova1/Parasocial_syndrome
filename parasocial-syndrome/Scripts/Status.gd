@@ -10,8 +10,13 @@ var metalbox_status: String="default"
 
 
 signal player_free
+signal curtain_big
+signal mural
+signal keypad
+signal ok_pressed
 signal demo_end
 signal end_screen
+
 
 func release_player(atada: bool):
 	var initial_scene = get_tree().current_scene
@@ -19,8 +24,7 @@ func release_player(atada: bool):
 	if initial_scene.has_signal("cutscene_finished"):
 		await initial_scene.cutscene_finished
 		
-signal curtain_big
-signal curtain_small
+
 
 func end_demo():
 	demo_end.emit()
@@ -28,14 +32,15 @@ func end_demo():
 func screen_end():
 	end_screen.emit()
 
-func open_curtain(big: bool):	
-	if big:
-		curtain_big.emit()
-	else:
-		curtain_small.emit()
+func open_curtain():
+	var initial_scene = get_tree().current_scene
+	curtain_big.emit()
+	if initial_scene.has_signal("mural_shown"):
+		await initial_scene.mural_shown
 
-signal keypad
-signal ok_pressed
+func show_mural():
+	print("Señal emitida")
+	mural.emit()
 
 func open_keypad():
 	keypad.emit()

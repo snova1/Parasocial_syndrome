@@ -1,1 +1,5 @@
 res://initial.tscn
+res://jugador.tscn
+res://initial.gd
+res://keypad.gd
+res://Scripts/Status.gd
