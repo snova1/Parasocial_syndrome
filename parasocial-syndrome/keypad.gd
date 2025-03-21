@@ -1,7 +1,7 @@
 extends Control
 @onready var label: Label = $VBoxContainer/MarginContainer/Label
 
-const password = "2104"
+const password = "2401"
 # Called when the node enters the scene tree for the first time.
 
 signal ok_pressed
@@ -58,14 +58,9 @@ func _on_button_0_pressed() -> void:
 
 
 func _on_button_pressed() -> void:
-	if (len(label.text) == 4):
-		print(label.text)
-		
+	if (len(label.text) == 4):		
 		if label.text == password:
-			print("hi")
 			Status.metalbox_status = "correct"
-			Status.door_status="has_key"
-			print(Status.metalbox_status)
 		label.text = ""
 		Status.ok_pressed.emit()
 	pass

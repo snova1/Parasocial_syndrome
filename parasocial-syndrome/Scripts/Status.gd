@@ -39,7 +39,6 @@ func open_curtain():
 		await initial_scene.mural_shown
 
 func show_mural():
-	print("Señal emitida")
 	mural.emit()
 
 func open_keypad():

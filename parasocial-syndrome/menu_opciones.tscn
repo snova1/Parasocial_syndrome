@@ -60,4 +60,5 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Volver"
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Controles" to="." method="_on_controles_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Atras" to="." method="_on_atras_pressed"]

@@ -7,6 +7,9 @@ extends Node2D
 @onready var jugador: Jugador = $Jugador
 @onready var cutting_free: AudioStreamPlayer2D = $CuttingFree
 @onready var fader: ColorRect = $Fader
+@onready var tutorial: Label = $Tutorial
+var estado = 0  # 0 = Movimiento, 1 = Interacción
+
 const Balloon = preload("res://Dialogue/balloon.tscn")
 var resource = load("res://Dialogue/dialogue.dialogue")
 
@@ -30,6 +33,11 @@ func _ready() -> void:
 	Status.keypad.connect(_on_keypad)
 	Status.curtain_big.connect(_on_curtain_open)
 	Status.mural.connect(_on_show_mural)
+	tutorial.text="Muévete con WASD hacia la mesa"
+
+func _process(delta):
+	if estado==1 and Input.is_action_just_pressed("Interact"):
+		tutorial.visible=false
 
 func _on_player_free(atada: bool):
 	fader.visible=true
@@ -101,10 +109,16 @@ func wait_for_escape():
 		await get_tree().process_frame
 		if Input.is_action_just_pressed("Escape"):
 			get_tree().paused = false
-			return  
+			return 
 
 func _on_keypad():
 	if !(keypad.visible):
 		keypad.visible = true
 	else:
 		keypad.visible = false
+
+
+func _on_table_body_entered(body: Node2D) -> void:
+	if body.name=="Jugador":
+		estado=1
+		tutorial.text = "Interactúa con la mesa con Z"

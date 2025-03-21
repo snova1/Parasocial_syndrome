@@ -1,5 +1,8 @@
 res://initial.tscn
-res://jugador.tscn
-res://initial.gd
+res://Scripts/menu_opciones.gd
+res://menu_opciones.tscn
 res://keypad.gd
 res://Scripts/Status.gd
+res://jugador.tscn
+res://keypad.tscn
+res://initial.gd

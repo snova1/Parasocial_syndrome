@@ -231,11 +231,12 @@ shape = SubResource("RectangleShape2D_78jb1")
 
 [node name="table" parent="interactuables" instance=ExtResource("2_vf0yb")]
 position = Vector2(321, 430)
+collision_mask = 2
 dialogue_resource = ExtResource("3_atjn4")
 dialogue_start = "table"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="interactuables/table"]
-polygon = PackedVector2Array(-43, -57, 45, -57, 60, 28, 54, 86, 4, 55, -50, 83, -52, 30)
+polygon = PackedVector2Array(-50, -61, 50, -61, 66, 29, 56, 90, 4, 55, -50, 83, -52, 30)
 
 [node name="cloth" parent="interactuables" instance=ExtResource("2_vf0yb")]
 position = Vector2(267, 310)
@@ -333,5 +334,19 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Presiona Esc para salir"
+horizontal_alignment = 1
 
+[node name="Tutorial" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 243.0
+offset_top = 188.0
+offset_right = 728.0
+offset_bottom = 230.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="interactuables/table" to="." method="_on_table_body_entered"]
 [connection signal="body_entered" from="interactuables/Estanteria/Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_axsl3"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_i8mt0"]
 
 [resource]
-script = ExtResource("1_axsl3")
+script = ExtResource("1_i8mt0")
 using_states = PackedStringArray()
 titles = {
 "bookcase": "38",
@@ -406,9 +406,9 @@ Kiran <3",
 "notes": "",
 "parent_id": "15",
 "tags": PackedStringArray(),
-"text": "Hay trozos de vidrio, junto a otros menajes de mesa",
+"text": "Hay trozos de vidrio, junto a una vela sobre la mesa",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Hay trozos de vidrio, junto a otros menajes de mesa",
+"translation_key": "Hay trozos de vidrio, junto a una vela sobre la mesa",
 "type": &"dialogue"
 },
 "17": {
@@ -556,7 +556,7 @@ Kiran <3",
 "id": "29",
 "mutation": {
 "expression": Array[Dictionary]([{
-"function": "demo_end",
+"function": "end_demo",
 "type": &"function",
 "value": Array[Array]([])
 }]),
@@ -574,9 +574,9 @@ Kiran <3",
 "notes": "",
 "parent_id": "2",
 "tags": PackedStringArray(),
-"text": "Hay un vaso, y otros menajes de mesa.",
+"text": "Hay un vaso, y una vela sobre la mesa.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Hay un vaso, y otros menajes de mesa.",
+"translation_key": "Hay un vaso, y una vela sobre la mesa.",
 "type": &"dialogue"
 },
 "31": {
@@ -1375,7 +1375,7 @@ Kiran <3",
 }
 raw_text = "~ table
 if table_status==\"atada\":
-	Hay un vaso, y otros menajes de mesa.
+	Hay un vaso, y una vela sobre la mesa.
 	Alessia: Podría utilizar ese vaso para romper mis ataduras
 	Deseas romper el vaso?
 	- Si
@@ -1388,7 +1388,7 @@ if table_status==\"atada\":
 		Alessia: El vidrio roto es peligroso
 		Alessia: Aunque no se que más podría usar para librarme de esta cuerda
 else:
-	Hay trozos de vidrio, junto a otros menajes de mesa
+	Hay trozos de vidrio, junto a una vela sobre la mesa
 	Alessia: Por mucho que quisiera algo con lo que defenderme. Correr con un vidrio roto por la casa no me parece muy seguro
 
 => END
@@ -1401,7 +1401,7 @@ else:
 	Está cerrada
 	Quieres intentar usar la llave?
 	- Si
-		do demo_end()
+		do end_demo()
 
 => END
 
