@@ -231,12 +231,11 @@ shape = SubResource("RectangleShape2D_78jb1")
 
 [node name="table" parent="interactuables" instance=ExtResource("2_vf0yb")]
 position = Vector2(321, 430)
-collision_mask = 2
 dialogue_resource = ExtResource("3_atjn4")
 dialogue_start = "table"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="interactuables/table"]
-polygon = PackedVector2Array(-50, -61, 50, -61, 66, 29, 56, 90, 4, 55, -50, 83, -52, 30)
+polygon = PackedVector2Array(-42, -56, 44, -56, 58, 28, 50, 88, 4, 55, -46, 82, -52, 30)
 
 [node name="cloth" parent="interactuables" instance=ExtResource("2_vf0yb")]
 position = Vector2(267, 310)

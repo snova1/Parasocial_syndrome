@@ -27,6 +27,7 @@ func _ready() -> void:
 	silla.visible=false
 	silla.get_node("CollisionShape2D").disabled = true
 	initial.get_node("colisiones/CollisionShape2D3").disabled=true
+	initial.get_node("interactuables/metalbox/CollisionShape2D").disabled=true
 	Status.player_free.connect(_on_player_free)
 	Status.demo_end.connect(_on_demo_end)
 	Status.end_screen.connect(_on_end_screen)
@@ -63,6 +64,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		await animation_player.animation_finished
 		initial.get_node("colisiones/CollisionShape2D3").disabled=false
 		initial.get_node("colisiones/box_down").visible=true
+		initial.get_node("interactuables/metalbox/CollisionShape2D").disabled=false
 		Status.bookcase_status=""
 		silla.set_global_position(silla.get_global_position()+Vector2(48,190))
 		jugador.set_global_position(jugador.get_global_position()+Vector2(20,0))

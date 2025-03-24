@@ -129,7 +129,7 @@ scale = Vector2(1.5, 1.4375)
 texture = ExtResource("3_em7vu")
 
 [node name="Int_area" type="Marker2D" parent="."]
-position = Vector2(0, -28)
+position = Vector2(0, -29)
 
 [node name="Finder_interaccion" type="Area2D" parent="Int_area"]
 collision_layer = 0
