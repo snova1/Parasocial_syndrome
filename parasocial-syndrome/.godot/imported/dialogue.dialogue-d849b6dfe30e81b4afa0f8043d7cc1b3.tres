@@ -1,20 +1,20 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_i8mt0"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_yjh5h"]
 
 [resource]
-script = ExtResource("1_i8mt0")
+script = ExtResource("1_yjh5h")
 using_states = PackedStringArray()
 titles = {
 "bookcase": "38",
-"box": "96",
+"box": "99",
 "chair": "53",
 "cloth": "34",
 "curtain": "62",
-"demo": "100",
+"demo": "103",
 "door": "22",
 "lamp": "49",
-"metalBox": "80",
+"metalBox": "81",
 "table": "2"
 }
 character_names = PackedStringArray("Alessia")
@@ -40,40 +40,16 @@ lines = {
 "type": &"dialogue"
 },
 "100": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
 "id": "100",
-"next_id": "101",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Ugh…finalmente fuera de ese maldito sótano",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Ugh…finalmente fuera de ese maldito sótano",
-"type": &"dialogue"
-},
-"101": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "101",
-"next_id": "102",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "*suspiro* Parece que ese loco me llevó a su casa",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "*suspiro* Parece que ese loco me llevó a su casa",
-"type": &"dialogue"
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
 },
 "102": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
 "id": "102",
 "next_id": "103",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Bueno, igualmente debe haber una forma de escapar",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Bueno, igualmente debe haber una forma de escapar",
-"type": &"dialogue"
+"text": "demo",
+"type": &"title"
 },
 "103": {
 "character": "Alessia",
@@ -82,21 +58,21 @@ lines = {
 "next_id": "104",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "O por lo menos de contactar a la policía e informar mi secuestro",
+"text": "Ugh…finalmente fuera de ese maldito sótano",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "O por lo menos de contactar a la policía e informar mi secuestro",
+"translation_key": "Ugh…finalmente fuera de ese maldito sótano",
 "type": &"dialogue"
 },
 "104": {
-"character": "",
+"character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
 "id": "104",
 "next_id": "105",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "*swish*",
+"text": "*suspiro* Parece que ese loco me llevó a su casa",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "*swish*",
+"translation_key": "*suspiro* Parece que ese loco me llevó a su casa",
 "type": &"dialogue"
 },
 "105": {
@@ -106,9 +82,9 @@ lines = {
 "next_id": "106",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Eh?",
+"text": "Bueno, igualmente debe haber una forma de escapar",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Eh?",
+"translation_key": "Bueno, igualmente debe haber una forma de escapar",
 "type": &"dialogue"
 },
 "106": {
@@ -118,9 +94,9 @@ lines = {
 "next_id": "107",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Una nota? No había visto eso cuando salí",
+"text": "O por lo menos de contactar a la policía e informar mi secuestro",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Una nota? No había visto eso cuando salí",
+"translation_key": "O por lo menos de contactar a la policía e informar mi secuestro",
 "type": &"dialogue"
 },
 "107": {
@@ -130,33 +106,33 @@ lines = {
 "next_id": "108",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "\"Querida Alessia,",
+"text": "*swish*",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "\"Querida Alessia,",
+"translation_key": "*swish*",
 "type": &"dialogue"
 },
 "108": {
-"character": "",
+"character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
 "id": "108",
 "next_id": "109",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Si estás leyendo esto, significa que has sido tan brillante como siempre, y has encontrado una forma de salir del sótano.",
+"text": "Eh?",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Si estás leyendo esto, significa que has sido tan brillante como siempre, y has encontrado una forma de salir del sótano.",
+"translation_key": "Eh?",
 "type": &"dialogue"
 },
 "109": {
-"character": "",
+"character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
 "id": "109",
 "next_id": "110",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "¡No me sorprende en absoluto! Aunque probablemente es porque olvidé la copia de la llave ahí abajo, o algo por el estilo.",
+"text": "Una nota? No había visto eso cuando salí",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "¡No me sorprende en absoluto! Aunque probablemente es porque olvidé la copia de la llave ahí abajo, o algo por el estilo.",
+"translation_key": "Una nota? No había visto eso cuando salí",
 "type": &"dialogue"
 },
 "11": {
@@ -179,9 +155,9 @@ lines = {
 "next_id": "111",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Sé que todo esto debe parecerte un poco raro, pero créeme, solo quiero que estemos juntos.",
+"text": "\"Querida Alessia,",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Sé que todo esto debe parecerte un poco raro, pero créeme, solo quiero que estemos juntos.",
+"translation_key": "\"Querida Alessia,",
 "type": &"dialogue"
 },
 "111": {
@@ -191,9 +167,9 @@ lines = {
 "next_id": "112",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Me has inspirado tanto en mis momentos de oscuridad… y sé que con el tiempo, tú también verás lo bonito que podemos ser juntos.",
+"text": "Si estás leyendo esto, significa que has sido tan brillante como siempre, y has encontrado una forma de salir del sótano.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Me has inspirado tanto en mis momentos de oscuridad… y sé que con el tiempo, tú también verás lo bonito que podemos ser juntos.",
+"translation_key": "Si estás leyendo esto, significa que has sido tan brillante como siempre, y has encontrado una forma de salir del sótano.",
 "type": &"dialogue"
 },
 "112": {
@@ -203,9 +179,9 @@ lines = {
 "next_id": "113",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Así que por favor, querida, vuelve al sótano.",
+"text": "¡No me sorprende en absoluto! Aunque probablemente es porque olvidé la copia de la llave ahí abajo, o algo por el estilo.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Así que por favor, querida, vuelve al sótano.",
+"translation_key": "¡No me sorprende en absoluto! Aunque probablemente es porque olvidé la copia de la llave ahí abajo, o algo por el estilo.",
 "type": &"dialogue"
 },
 "113": {
@@ -215,9 +191,9 @@ lines = {
 "next_id": "114",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Si decides explorar más de lo que deberías, podríamos terminar en una situación que ninguno de los dos desea.",
+"text": "Sé que todo esto debe parecerte un poco raro, pero créeme, solo quiero que estemos juntos.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Si decides explorar más de lo que deberías, podríamos terminar en una situación que ninguno de los dos desea.",
+"translation_key": "Sé que todo esto debe parecerte un poco raro, pero créeme, solo quiero que estemos juntos.",
 "type": &"dialogue"
 },
 "114": {
@@ -227,16 +203,52 @@ lines = {
 "next_id": "115",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "No quiero tener que tomar medidas drásticas, te lo prometo.",
+"text": "Me has inspirado tanto en mis momentos de oscuridad… y sé que con el tiempo, tú también verás lo bonito que podemos ser juntos.",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "No quiero tener que tomar medidas drásticas, te lo prometo.",
+"translation_key": "Me has inspirado tanto en mis momentos de oscuridad… y sé que con el tiempo, tú también verás lo bonito que podemos ser juntos.",
 "type": &"dialogue"
 },
 "115": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
 "id": "115",
+"next_id": "116",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Así que por favor, querida, vuelve al sótano.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Así que por favor, querida, vuelve al sótano.",
+"type": &"dialogue"
+},
+"116": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "116",
+"next_id": "117",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Si decides explorar más de lo que deberías, podríamos terminar en una situación que ninguno de los dos desea.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Si decides explorar más de lo que deberías, podríamos terminar en una situación que ninguno de los dos desea.",
+"type": &"dialogue"
+},
+"117": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "117",
 "next_id": "118",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "No quiero tener que tomar medidas drásticas, te lo prometo.",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "No quiero tener que tomar medidas drásticas, te lo prometo.",
+"type": &"dialogue"
+},
+"118": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "118",
+"next_id": "121",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Con amor,
@@ -246,30 +258,6 @@ Kiran <3",
 "translation_key": "Con amor,
 Tu más grande admirador,
 Kiran <3",
-"type": &"dialogue"
-},
-"118": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "118",
-"next_id": "119",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "P.D: Hazlo por nosotros. Y por tu admirador. No me hagas hacer algo que no quiero hacer… te lo pido por favor.\"",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "P.D: Hazlo por nosotros. Y por tu admirador. No me hagas hacer algo que no quiero hacer… te lo pido por favor.\"",
-"type": &"dialogue"
-},
-"119": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "119",
-"next_id": "120",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "…",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "…",
 "type": &"dialogue"
 },
 "12": {
@@ -286,28 +274,16 @@ Kiran <3",
 "translation_key": "No",
 "type": &"response"
 },
-"120": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "120",
-"next_id": "121",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Si ese psicópata piensa que eso me va a detener está más que equivocado",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Si ese psicópata piensa que eso me va a detener está más que equivocado",
-"type": &"dialogue"
-},
 "121": {
-"character": "Alessia",
+"character": "",
 "character_replacements": Array[Dictionary]([]),
 "id": "121",
 "next_id": "122",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Pero en lo posible debo evitar encontrármelo",
+"text": "P.D: Hazlo por nosotros. Y por tu admirador. No me hagas hacer algo que no quiero hacer… te lo pido por favor.\"",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Pero en lo posible debo evitar encontrármelo",
+"translation_key": "P.D: Hazlo por nosotros. Y por tu admirador. No me hagas hacer algo que no quiero hacer… te lo pido por favor.\"",
 "type": &"dialogue"
 },
 "122": {
@@ -317,9 +293,9 @@ Kiran <3",
 "next_id": "123",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Tengo que estar atenta y esconderme si siento que está cerca",
+"text": "…",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Tengo que estar atenta y esconderme si siento que está cerca",
+"translation_key": "…",
 "type": &"dialogue"
 },
 "123": {
@@ -329,9 +305,9 @@ Kiran <3",
 "next_id": "124",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "De lo contrario tendré que escapar de él, ya sea por las buenas",
+"text": "Si ese psicópata piensa que eso me va a detener está más que equivocado",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "De lo contrario tendré que escapar de él, ya sea por las buenas",
+"translation_key": "Si ese psicópata piensa que eso me va a detener está más que equivocado",
 "type": &"dialogue"
 },
 "124": {
@@ -341,13 +317,49 @@ Kiran <3",
 "next_id": "125",
 "notes": "",
 "tags": PackedStringArray(),
+"text": "Pero en lo posible debo evitar encontrármelo",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Pero en lo posible debo evitar encontrármelo",
+"type": &"dialogue"
+},
+"125": {
+"character": "Alessia",
+"character_replacements": Array[Dictionary]([]),
+"id": "125",
+"next_id": "126",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Tengo que estar atenta y esconderme si siento que está cerca",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Tengo que estar atenta y esconderme si siento que está cerca",
+"type": &"dialogue"
+},
+"126": {
+"character": "Alessia",
+"character_replacements": Array[Dictionary]([]),
+"id": "126",
+"next_id": "127",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "De lo contrario tendré que escapar de él, ya sea por las buenas",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "De lo contrario tendré que escapar de él, ya sea por las buenas",
+"type": &"dialogue"
+},
+"127": {
+"character": "Alessia",
+"character_replacements": Array[Dictionary]([]),
+"id": "127",
+"next_id": "128",
+"notes": "",
+"tags": PackedStringArray(),
 "text": "…O por las malas",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "…O por las malas",
 "type": &"dialogue"
 },
-"125": {
-"id": "125",
+"128": {
+"id": "128",
 "mutation": {
 "expression": Array[Dictionary]([{
 "function": "screen_end",
@@ -356,11 +368,11 @@ Kiran <3",
 }]),
 "is_blocking": true
 },
-"next_id": "126",
+"next_id": "129",
 "type": &"mutation"
 },
-"126": {
-"id": "126",
+"129": {
+"id": "129",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
@@ -931,7 +943,7 @@ Kiran <3",
 "id": "62",
 "next_conditional_id": "73",
 "next_id": "63",
-"next_id_after": "76",
+"next_id_after": "77",
 "type": &"condition"
 },
 "63": {
@@ -965,7 +977,7 @@ Kiran <3",
 "character_replacements": Array[Dictionary]([]),
 "id": "65",
 "next_id": "66",
-"next_id_after": "76",
+"next_id_after": "77",
 "notes": "",
 "parent_id": "62",
 "responses": PackedStringArray("65", "72"),
@@ -1070,7 +1082,7 @@ Kiran <3",
 "character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
 "id": "71",
-"next_id": "76",
+"next_id": "77",
 "notes": "",
 "parent_id": "65",
 "tags": PackedStringArray(),
@@ -1083,8 +1095,8 @@ Kiran <3",
 "character": "",
 "character_replacements": Array[Dictionary]([]),
 "id": "72",
-"next_id": "76",
-"next_id_after": "76",
+"next_id": "77",
+"next_id_after": "77",
 "notes": "",
 "parent_id": "62",
 "tags": PackedStringArray(),
@@ -1095,9 +1107,9 @@ Kiran <3",
 },
 "73": {
 "id": "73",
-"next_conditional_id": "76",
+"next_conditional_id": "77",
 "next_id": "74",
-"next_id_after": "76",
+"next_id_after": "77",
 "type": &"condition"
 },
 "74": {
@@ -1128,14 +1140,27 @@ Kiran <3",
 "type": &"mutation"
 },
 "76": {
+"character": "Alessia",
+"character_replacements": Array[Dictionary]([]),
 "id": "76",
+"next_id": "77",
+"notes": "",
+"parent_id": "73",
+"tags": PackedStringArray(),
+"text": "\"2401\"...Ese es mi cumpleaños",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "\"2401\"...Ese es mi cumpleaños",
+"type": &"dialogue"
+},
+"77": {
+"id": "77",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
 },
-"78": {
-"id": "78",
-"next_id": "80",
+"79": {
+"id": "79",
+"next_id": "81",
 "text": "metalBox",
 "type": &"title"
 },
@@ -1162,7 +1187,7 @@ Kiran <3",
 "parent_id": "6",
 "type": &"mutation"
 },
-"80": {
+"81": {
 "condition": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -1175,27 +1200,27 @@ Kiran <3",
 "value": "key"
 }])
 },
-"id": "80",
-"next_conditional_id": "90",
-"next_id": "81",
-"next_id_after": "93",
+"id": "81",
+"next_conditional_id": "93",
+"next_id": "82",
+"next_id_after": "96",
 "type": &"condition"
 },
-"81": {
+"82": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "81",
-"next_id": "82",
+"id": "82",
+"next_id": "83",
 "notes": "",
-"parent_id": "80",
+"parent_id": "81",
 "tags": PackedStringArray(),
 "text": "Tiene un candado numérico",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Tiene un candado numérico",
 "type": &"dialogue"
 },
-"82": {
-"id": "82",
+"83": {
+"id": "83",
 "mutation": {
 "expression": Array[Dictionary]([{
 "function": "open_keypad",
@@ -1204,11 +1229,11 @@ Kiran <3",
 }]),
 "is_blocking": true
 },
-"next_id": "84",
-"parent_id": "80",
+"next_id": "85",
+"parent_id": "81",
 "type": &"mutation"
 },
-"84": {
+"85": {
 "condition": {
 "expression": Array[Dictionary]([{
 "type": &"group",
@@ -1226,25 +1251,12 @@ Kiran <3",
 "type": "colon"
 }])
 },
-"id": "84",
-"next_conditional_id": "88",
-"next_id": "85",
-"next_id_after": "93",
-"parent_id": "80",
-"type": &"condition"
-},
-"85": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
 "id": "85",
+"next_conditional_id": "89",
 "next_id": "86",
-"notes": "",
-"parent_id": "84",
-"tags": PackedStringArray(),
-"text": "Dentro de la caja había una llave",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Dentro de la caja había una llave",
-"type": &"dialogue"
+"next_id_after": "96",
+"parent_id": "81",
+"type": &"condition"
 },
 "86": {
 "character": "",
@@ -1252,15 +1264,28 @@ Kiran <3",
 "id": "86",
 "next_id": "87",
 "notes": "",
-"parent_id": "84",
+"parent_id": "85",
+"tags": PackedStringArray(),
+"text": "Dentro de la caja había una llave",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Dentro de la caja había una llave",
+"type": &"dialogue"
+},
+"87": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "87",
+"next_id": "88",
+"notes": "",
+"parent_id": "85",
 "tags": PackedStringArray(),
 "text": "Obtuviste una llave",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Obtuviste una llave",
 "type": &"dialogue"
 },
-"87": {
-"id": "87",
+"88": {
+"id": "88",
 "mutation": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -1274,30 +1299,17 @@ Kiran <3",
 }]),
 "is_blocking": true
 },
-"next_id": "93",
-"parent_id": "84",
+"next_id": "96",
+"parent_id": "85",
 "type": &"mutation"
 },
-"88": {
-"id": "88",
-"next_conditional_id": "93",
-"next_id": "89",
-"next_id_after": "93",
-"parent_id": "80",
-"type": &"condition"
-},
 "89": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
 "id": "89",
-"next_id": "93",
-"notes": "",
-"parent_id": "88",
-"tags": PackedStringArray(),
-"text": "Esa no era la clave",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Esa no era la clave",
-"type": &"dialogue"
+"next_conditional_id": "96",
+"next_id": "90",
+"next_id_after": "96",
+"parent_id": "81",
+"type": &"condition"
 },
 "9": {
 "id": "9",
@@ -1317,60 +1329,96 @@ Kiran <3",
 "type": &"mutation"
 },
 "90": {
-"id": "90",
-"next_conditional_id": "93",
-"next_id": "91",
-"next_id_after": "93",
-"type": &"condition"
-},
-"91": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "91",
-"next_id": "93",
+"id": "90",
+"next_id": "91",
 "notes": "",
-"parent_id": "90",
+"parent_id": "89",
+"tags": PackedStringArray(),
+"text": "Esa no era la clave",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Esa no era la clave",
+"type": &"dialogue"
+},
+"91": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "curtain_status"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "string",
+"value": "open"
+}, {
+"type": "colon"
+}])
+},
+"id": "91",
+"next_conditional_id": "96",
+"next_id": "92",
+"next_id_after": "96",
+"parent_id": "89",
+"type": &"condition"
+},
+"92": {
+"character": "Alessia",
+"character_replacements": Array[Dictionary]([]),
+"id": "92",
+"next_id": "96",
+"notes": "",
+"parent_id": "91",
+"tags": PackedStringArray(),
+"text": "Creo haber visto algo en ese mural",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Creo haber visto algo en ese mural",
+"type": &"dialogue"
+},
+"93": {
+"id": "93",
+"next_conditional_id": "96",
+"next_id": "94",
+"next_id_after": "96",
+"type": &"condition"
+},
+"94": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "94",
+"next_id": "96",
+"notes": "",
+"parent_id": "93",
 "tags": PackedStringArray(),
 "text": "Me pregunto para que sera esta llave",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Me pregunto para que sera esta llave",
 "type": &"dialogue"
 },
-"93": {
-"id": "93",
+"96": {
+"id": "96",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
 },
-"95": {
-"id": "95",
-"next_id": "96",
+"98": {
+"id": "98",
+"next_id": "99",
 "text": "box",
 "type": &"title"
 },
-"96": {
+"99": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "96",
-"next_id": "97",
+"id": "99",
+"next_id": "100",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "La caja contiene libros, en su mayoría de misterio",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "La caja contiene libros, en su mayoría de misterio",
 "type": &"dialogue"
-},
-"97": {
-"id": "97",
-"is_snippet": false,
-"next_id": "end",
-"type": &"goto"
-},
-"99": {
-"id": "99",
-"next_id": "100",
-"text": "demo",
-"type": &"title"
 }
 }
 raw_text = "~ table
@@ -1448,6 +1496,7 @@ if curtain_status==\"default\":
 else:
 	Tras una inspección más cercana, notas unos números tenuemente grabados en el mural
 	do show_mural()
+	Alessia: \"2401\"...Ese es mi cumpleaños
 => END
 
 ~ metalBox
@@ -1462,6 +1511,8 @@ if door_status != \"key\"
 		set door_status = \"key\"
 	else:
 		Esa no era la clave
+		if curtain_status==\"open\":
+			Alessia: Creo haber visto algo en ese mural
 else: 
 	Me pregunto para que sera esta llave
 	

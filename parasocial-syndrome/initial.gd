@@ -20,6 +20,7 @@ var key = preload("res://keypad.tscn")
 
 signal cutscene_finished
 signal mural_shown
+signal show_hint
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	initial.get_node("curtain/Sprite2D").visible=false
@@ -34,7 +35,7 @@ func _ready() -> void:
 	Status.keypad.connect(_on_keypad)
 	Status.curtain_big.connect(_on_curtain_open)
 	Status.mural.connect(_on_show_mural)
-	tutorial.text="Muévete con WASD hacia la mesa"
+	tutorial.text="Muévete con las teclas de dirección hacia la mesa"
 
 func _process(delta):
 	if estado==1 and Input.is_action_just_pressed("Interact"):
@@ -92,7 +93,7 @@ func _on_curtain_open():
 	initial.get_node("curtain/Sprite2D").visible=true
 	var sprite = $TextureRect
 	sprite.visible=true
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.5).timeout
 	sprite.visible=false
 	mural_shown.emit()
 
@@ -105,6 +106,7 @@ func _on_show_mural():
 	await wait_for_escape()
 	sprite.visible=false
 	label.visible=false
+	show_hint.emit()
 
 func wait_for_escape():
 	while true:

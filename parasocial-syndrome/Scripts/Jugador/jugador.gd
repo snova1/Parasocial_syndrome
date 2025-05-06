@@ -53,6 +53,7 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("Interact"):
 		state="still"
+		direction = Vector2.ZERO
 		var actionables=finder_interaccion.get_overlapping_areas()
 		if actionables.size()>0:
 			actionables.sort_custom(func(a, b): return global_position.distance_to(a.global_position) < global_position.distance_to(b.global_position))

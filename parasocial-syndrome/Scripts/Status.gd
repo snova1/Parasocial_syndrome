@@ -30,6 +30,13 @@ func end_demo():
 	demo_end.emit()
 
 func screen_end():
+	table_status="atada"
+	chair_status=["hidden", "default"]
+	bookcase_status="default"
+	door_status="default"
+	curtain_status="default"
+	password="1234"
+	metalbox_status="default"
 	end_screen.emit()
 
 func open_curtain():
@@ -39,7 +46,10 @@ func open_curtain():
 		await initial_scene.mural_shown
 
 func show_mural():
+	var initial_scene = get_tree().current_scene
 	mural.emit()
+	if initial_scene.has_signal("show_hint"):
+		await initial_scene.show_hint
 
 func open_keypad():
 	keypad.emit()

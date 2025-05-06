@@ -58,7 +58,7 @@ func _on_button_0_pressed() -> void:
 
 
 func _on_button_pressed() -> void:
-	if (len(label.text) == 4):		
+	if (len(label.text) == 4) or (len(label.text) == 0):		
 		if label.text == password:
 			Status.metalbox_status = "correct"
 		label.text = ""

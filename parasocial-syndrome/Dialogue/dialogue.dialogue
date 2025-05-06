@@ -73,6 +73,7 @@ if curtain_status=="default":
 else:
 	Tras una inspección más cercana, notas unos números tenuemente grabados en el mural
 	do show_mural()
+	Alessia: "2401"...Ese es mi cumpleaños
 => END
 
 ~ metalBox
@@ -87,6 +88,8 @@ if door_status != "key"
 		set door_status = "key"
 	else:
 		Esa no era la clave
+		if curtain_status=="open":
+			Alessia: Creo haber visto algo en ese mural
 else: 
 	Me pregunto para que sera esta llave
 	
