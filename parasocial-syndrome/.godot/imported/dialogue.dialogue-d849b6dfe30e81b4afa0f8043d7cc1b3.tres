@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_yjh5h"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_kweks"]
 
 [resource]
-script = ExtResource("1_yjh5h")
+script = ExtResource("1_kweks")
 using_states = PackedStringArray()
 titles = {
 "bookcase": "38",
@@ -14,7 +14,7 @@ titles = {
 "demo": "103",
 "door": "22",
 "lamp": "49",
-"metalBox": "81",
+"metalBox": "80",
 "table": "2"
 }
 character_names = PackedStringArray("Alessia")
@@ -943,7 +943,7 @@ Kiran <3",
 "id": "62",
 "next_conditional_id": "73",
 "next_id": "63",
-"next_id_after": "77",
+"next_id_after": "76",
 "type": &"condition"
 },
 "63": {
@@ -977,7 +977,7 @@ Kiran <3",
 "character_replacements": Array[Dictionary]([]),
 "id": "65",
 "next_id": "66",
-"next_id_after": "77",
+"next_id_after": "76",
 "notes": "",
 "parent_id": "62",
 "responses": PackedStringArray("65", "72"),
@@ -1082,7 +1082,7 @@ Kiran <3",
 "character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
 "id": "71",
-"next_id": "77",
+"next_id": "76",
 "notes": "",
 "parent_id": "65",
 "tags": PackedStringArray(),
@@ -1095,8 +1095,8 @@ Kiran <3",
 "character": "",
 "character_replacements": Array[Dictionary]([]),
 "id": "72",
-"next_id": "77",
-"next_id_after": "77",
+"next_id": "76",
+"next_id_after": "76",
 "notes": "",
 "parent_id": "62",
 "tags": PackedStringArray(),
@@ -1107,9 +1107,9 @@ Kiran <3",
 },
 "73": {
 "id": "73",
-"next_conditional_id": "77",
+"next_conditional_id": "76",
 "next_id": "74",
-"next_id_after": "77",
+"next_id_after": "76",
 "type": &"condition"
 },
 "74": {
@@ -1140,27 +1140,14 @@ Kiran <3",
 "type": &"mutation"
 },
 "76": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
 "id": "76",
-"next_id": "77",
-"notes": "",
-"parent_id": "73",
-"tags": PackedStringArray(),
-"text": "\"2401\"...Ese es mi cumpleaños",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "\"2401\"...Ese es mi cumpleaños",
-"type": &"dialogue"
-},
-"77": {
-"id": "77",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
 },
-"79": {
-"id": "79",
-"next_id": "81",
+"78": {
+"id": "78",
+"next_id": "80",
 "text": "metalBox",
 "type": &"title"
 },
@@ -1187,7 +1174,7 @@ Kiran <3",
 "parent_id": "6",
 "type": &"mutation"
 },
-"81": {
+"80": {
 "condition": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -1200,11 +1187,24 @@ Kiran <3",
 "value": "key"
 }])
 },
-"id": "81",
+"id": "80",
 "next_conditional_id": "93",
-"next_id": "82",
+"next_id": "81",
 "next_id_after": "96",
 "type": &"condition"
+},
+"81": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "81",
+"next_id": "82",
+"notes": "",
+"parent_id": "80",
+"tags": PackedStringArray(),
+"text": "La tapa de la caja tiene una marca azul, una marca rosa, un dibujo de un libro y un dibujo de un lapiz",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "La tapa de la caja tiene una marca azul, una marca rosa, un dibujo de un libro y un dibujo de un lapiz",
+"type": &"dialogue"
 },
 "82": {
 "character": "",
@@ -1212,11 +1212,11 @@ Kiran <3",
 "id": "82",
 "next_id": "83",
 "notes": "",
-"parent_id": "81",
+"parent_id": "80",
 "tags": PackedStringArray(),
-"text": "Tiene un candado numérico",
+"text": "También tiene un candado numérico",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "Tiene un candado numérico",
+"translation_key": "También tiene un candado numérico",
 "type": &"dialogue"
 },
 "83": {
@@ -1230,7 +1230,7 @@ Kiran <3",
 "is_blocking": true
 },
 "next_id": "85",
-"parent_id": "81",
+"parent_id": "80",
 "type": &"mutation"
 },
 "85": {
@@ -1255,7 +1255,7 @@ Kiran <3",
 "next_conditional_id": "89",
 "next_id": "86",
 "next_id_after": "96",
-"parent_id": "81",
+"parent_id": "80",
 "type": &"condition"
 },
 "86": {
@@ -1308,7 +1308,7 @@ Kiran <3",
 "next_conditional_id": "96",
 "next_id": "90",
 "next_id_after": "96",
-"parent_id": "81",
+"parent_id": "80",
 "type": &"condition"
 },
 "9": {
@@ -1496,13 +1496,13 @@ if curtain_status==\"default\":
 else:
 	Tras una inspección más cercana, notas unos números tenuemente grabados en el mural
 	do show_mural()
-	Alessia: \"2401\"...Ese es mi cumpleaños
 => END
 
 ~ metalBox
 
 if door_status != \"key\"
-	Tiene un candado numérico
+	La tapa de la caja tiene una marca azul, una marca rosa, un dibujo de un libro y un dibujo de un lapiz
+	También tiene un candado numérico
 	do open_keypad()
 
 	if (metalbox_status == \"correct\"):
