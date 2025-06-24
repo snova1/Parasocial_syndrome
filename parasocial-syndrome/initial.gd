@@ -11,7 +11,7 @@ extends Node2D
 var estado = 0  # 0 = Movimiento, 1 = Interacción
 
 const Balloon = preload("res://Dialogue/balloon.tscn")
-var resource = load("res://Dialogue/dialogue.dialogue")
+var resource = load("res://Dialogue/cutscenes.dialogue")
 
 @onready var interactuables: Node = $interactuables
 @onready var keypad: Control = $Node2D/keypad
@@ -82,7 +82,7 @@ func _on_demo_end():
 	await get_tree().create_timer(1.0).timeout
 	var balloon: Node= Balloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
-	await balloon.start(resource,"demo")
+	await balloon.start(resource,"out_of_basement")
 
 func _on_end_screen():
 	await get_tree().create_timer(1.0).timeout

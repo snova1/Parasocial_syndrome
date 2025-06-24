@@ -1,4 +1,6 @@
+res://Dialogue/balloon.tscn
 res://initial.tscn
+res://initial.gd
 res://menu.tscn
 res://menu_opciones.tscn
 res://controles.tscn
