@@ -1,6 +1,5 @@
-res://Dialogue/balloon.tscn
+res://jugador.tscn
 res://initial.tscn
+res://hallway.tscn
+res://Scripts/Jugador/jugador.gd
 res://initial.gd
-res://menu.tscn
-res://menu_opciones.tscn
-res://controles.tscn

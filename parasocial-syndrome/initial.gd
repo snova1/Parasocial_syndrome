@@ -35,7 +35,7 @@ func _ready() -> void:
 	Status.keypad.connect(_on_keypad)
 	Status.curtain_big.connect(_on_curtain_open)
 	Status.mural.connect(_on_show_mural)
-	tutorial.text="Muévete con las teclas de dirección hacia la mesa"
+	tutorial.text="Muévete con las flechas direccionales hacia la mesa"
 
 func _process(delta):
 	if estado==1 and Input.is_action_just_pressed("Interact"):

@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_kweks"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_1kdtj"]
 
 [resource]
-script = ExtResource("1_kweks")
+script = ExtResource("1_1kdtj")
 using_states = PackedStringArray()
 titles = {
 "bookcase": "38",
@@ -1384,7 +1384,7 @@ Kiran <3",
 "type": &"condition"
 },
 "94": {
-"character": "",
+"character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
 "id": "94",
 "next_id": "96",
@@ -1514,7 +1514,7 @@ if door_status != \"key\"
 		if curtain_status==\"open\":
 			Alessia: Creo haber visto algo en ese mural
 else: 
-	Me pregunto para que sera esta llave
+	Alessia: Me pregunto para que sera esta llave
 	
 => END
 
