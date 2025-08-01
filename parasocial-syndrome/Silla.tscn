@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b0xdt04etugj" path="res://Assets/chair.png" id="1_emxov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aa6ku"]
-size = Vector2(39, 48)
+size = Vector2(36, 44)
 
 [node name="Silla" type="RigidBody2D"]
 collision_layer = 3
@@ -14,9 +14,9 @@ lock_rotation = true
 script = ExtResource("1_3hkdr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_emxov")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -1)
+position = Vector2(0.5, -1.5)
+scale = Vector2(0.75, 0.75)
 shape = SubResource("RectangleShape2D_aa6ku")

@@ -1,4 +1,6 @@
-class_name Jugador extends CharacterBody2D
+extends CharacterBody2D
+
+class_name Jugador
 
 var is_tied = true # Comienza atada
 @onready var tied: Sprite2D = $Tied
@@ -13,8 +15,8 @@ var state: String="still"
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-func set_estado_atada(atada: bool):
-	is_tied=atada
+func set_estado_atada():
+	is_tied=Status.player_tied
 	tied.visible = is_tied
 	normal.visible = !is_tied
 	if is_tied:
@@ -24,8 +26,13 @@ func set_estado_atada(atada: bool):
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_estado_atada(is_tied)
+	set_estado_atada()
+	NavegacionManager.on_trigger_player_spawn.connect(_on_spawn)
 
+func _on_spawn(position: Vector2, direction: String):
+	global_position=position
+	animation_player.play("caminar_"+direction)
+	animation_player.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_1kdtj"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_11flx"]
 
 [resource]
-script = ExtResource("1_1kdtj")
+script = ExtResource("1_11flx")
 using_states = PackedStringArray()
 titles = {
 "bookcase": "38",
@@ -11,7 +11,6 @@ titles = {
 "chair": "53",
 "cloth": "34",
 "curtain": "62",
-"demo": "103",
 "door": "22",
 "lamp": "49",
 "metalBox": "80",
@@ -45,96 +44,6 @@ lines = {
 "next_id": "end",
 "type": &"goto"
 },
-"102": {
-"id": "102",
-"next_id": "103",
-"text": "demo",
-"type": &"title"
-},
-"103": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "103",
-"next_id": "104",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Ugh…finalmente fuera de ese maldito sótano",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Ugh…finalmente fuera de ese maldito sótano",
-"type": &"dialogue"
-},
-"104": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "104",
-"next_id": "105",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "*suspiro* Parece que ese loco me llevó a su casa",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "*suspiro* Parece que ese loco me llevó a su casa",
-"type": &"dialogue"
-},
-"105": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "105",
-"next_id": "106",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Bueno, igualmente debe haber una forma de escapar",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Bueno, igualmente debe haber una forma de escapar",
-"type": &"dialogue"
-},
-"106": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "106",
-"next_id": "107",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "O por lo menos de contactar a la policía e informar mi secuestro",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "O por lo menos de contactar a la policía e informar mi secuestro",
-"type": &"dialogue"
-},
-"107": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "107",
-"next_id": "108",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "*swish*",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "*swish*",
-"type": &"dialogue"
-},
-"108": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "108",
-"next_id": "109",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Eh?",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Eh?",
-"type": &"dialogue"
-},
-"109": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "109",
-"next_id": "110",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Una nota? No había visto eso cuando salí",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Una nota? No había visto eso cuando salí",
-"type": &"dialogue"
-},
 "11": {
 "character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
@@ -146,118 +55,6 @@ lines = {
 "text": "Ahora a encontrar la forma de salir de este sótano",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Ahora a encontrar la forma de salir de este sótano",
-"type": &"dialogue"
-},
-"110": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "110",
-"next_id": "111",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "\"Querida Alessia,",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "\"Querida Alessia,",
-"type": &"dialogue"
-},
-"111": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "111",
-"next_id": "112",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Si estás leyendo esto, significa que has sido tan brillante como siempre, y has encontrado una forma de salir del sótano.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Si estás leyendo esto, significa que has sido tan brillante como siempre, y has encontrado una forma de salir del sótano.",
-"type": &"dialogue"
-},
-"112": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "112",
-"next_id": "113",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "¡No me sorprende en absoluto! Aunque probablemente es porque olvidé la copia de la llave ahí abajo, o algo por el estilo.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "¡No me sorprende en absoluto! Aunque probablemente es porque olvidé la copia de la llave ahí abajo, o algo por el estilo.",
-"type": &"dialogue"
-},
-"113": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "113",
-"next_id": "114",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Sé que todo esto debe parecerte un poco raro, pero créeme, solo quiero que estemos juntos.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Sé que todo esto debe parecerte un poco raro, pero créeme, solo quiero que estemos juntos.",
-"type": &"dialogue"
-},
-"114": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "114",
-"next_id": "115",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Me has inspirado tanto en mis momentos de oscuridad… y sé que con el tiempo, tú también verás lo bonito que podemos ser juntos.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Me has inspirado tanto en mis momentos de oscuridad… y sé que con el tiempo, tú también verás lo bonito que podemos ser juntos.",
-"type": &"dialogue"
-},
-"115": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "115",
-"next_id": "116",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Así que por favor, querida, vuelve al sótano.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Así que por favor, querida, vuelve al sótano.",
-"type": &"dialogue"
-},
-"116": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "116",
-"next_id": "117",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Si decides explorar más de lo que deberías, podríamos terminar en una situación que ninguno de los dos desea.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Si decides explorar más de lo que deberías, podríamos terminar en una situación que ninguno de los dos desea.",
-"type": &"dialogue"
-},
-"117": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "117",
-"next_id": "118",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "No quiero tener que tomar medidas drásticas, te lo prometo.",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "No quiero tener que tomar medidas drásticas, te lo prometo.",
-"type": &"dialogue"
-},
-"118": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "118",
-"next_id": "121",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Con amor,
-Tu más grande admirador,
-Kiran <3",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Con amor,
-Tu más grande admirador,
-Kiran <3",
 "type": &"dialogue"
 },
 "12": {
@@ -273,109 +70,6 @@ Kiran <3",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "No",
 "type": &"response"
-},
-"121": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "121",
-"next_id": "122",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "P.D: Hazlo por nosotros. Y por tu admirador. No me hagas hacer algo que no quiero hacer… te lo pido por favor.\"",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "P.D: Hazlo por nosotros. Y por tu admirador. No me hagas hacer algo que no quiero hacer… te lo pido por favor.\"",
-"type": &"dialogue"
-},
-"122": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "122",
-"next_id": "123",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "…",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "…",
-"type": &"dialogue"
-},
-"123": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "123",
-"next_id": "124",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Si ese psicópata piensa que eso me va a detener está más que equivocado",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Si ese psicópata piensa que eso me va a detener está más que equivocado",
-"type": &"dialogue"
-},
-"124": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "124",
-"next_id": "125",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Pero en lo posible debo evitar encontrármelo",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Pero en lo posible debo evitar encontrármelo",
-"type": &"dialogue"
-},
-"125": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "125",
-"next_id": "126",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "Tengo que estar atenta y esconderme si siento que está cerca",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Tengo que estar atenta y esconderme si siento que está cerca",
-"type": &"dialogue"
-},
-"126": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "126",
-"next_id": "127",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "De lo contrario tendré que escapar de él, ya sea por las buenas",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "De lo contrario tendré que escapar de él, ya sea por las buenas",
-"type": &"dialogue"
-},
-"127": {
-"character": "Alessia",
-"character_replacements": Array[Dictionary]([]),
-"id": "127",
-"next_id": "128",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "…O por las malas",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "…O por las malas",
-"type": &"dialogue"
-},
-"128": {
-"id": "128",
-"mutation": {
-"expression": Array[Dictionary]([{
-"function": "screen_end",
-"type": &"function",
-"value": Array[Array]([])
-}]),
-"is_blocking": true
-},
-"next_id": "129",
-"type": &"mutation"
-},
-"129": {
-"id": "129",
-"is_snippet": false,
-"next_id": "end",
-"type": &"goto"
 },
 "13": {
 "character": "Alessia",
@@ -568,7 +262,7 @@ Kiran <3",
 "id": "29",
 "mutation": {
 "expression": Array[Dictionary]([{
-"function": "end_demo",
+"function": "free_basement",
 "type": &"function",
 "value": Array[Array]([])
 }]),
@@ -1317,10 +1011,7 @@ Kiran <3",
 "expression": Array[Dictionary]([{
 "function": "release_player",
 "type": &"function",
-"value": Array[Array]([Array[Dictionary]([{
-"type": "variable",
-"value": "false"
-}])])
+"value": Array[Array]([])
 }]),
 "is_blocking": true
 },
@@ -1429,7 +1120,7 @@ if table_status==\"atada\":
 	- Si
 		set table_status=\"libre\"
 		set chair_status[0]=\"visible\"
-		do release_player(false)
+		do release_player()
 		Alessia: Por fin libre
 		Alessia: Ahora a encontrar la forma de salir de este sótano
 	- No
@@ -1449,7 +1140,7 @@ else:
 	Está cerrada
 	Quieres intentar usar la llave?
 	- Si
-		do end_demo()
+		do free_basement()
 
 => END
 
@@ -1521,35 +1212,5 @@ else:
 ~ box
 La caja contiene libros, en su mayoría de misterio
 => END
-
-~ demo
-Alessia: Ugh…finalmente fuera de ese maldito sótano
-Alessia: *suspiro* Parece que ese loco me llevó a su casa
-Alessia: Bueno, igualmente debe haber una forma de escapar
-Alessia: O por lo menos de contactar a la policía e informar mi secuestro
-*swish*
-Alessia: Eh? 
-Alessia: Una nota? No había visto eso cuando salí
-\"Querida Alessia,
-Si estás leyendo esto, significa que has sido tan brillante como siempre, y has encontrado una forma de salir del sótano.
-¡No me sorprende en absoluto! Aunque probablemente es porque olvidé la copia de la llave ahí abajo, o algo por el estilo.
-Sé que todo esto debe parecerte un poco raro, pero créeme, solo quiero que estemos juntos.
-Me has inspirado tanto en mis momentos de oscuridad… y sé que con el tiempo, tú también verás lo bonito que podemos ser juntos.
-Así que por favor, querida, vuelve al sótano.
-Si decides explorar más de lo que deberías, podríamos terminar en una situación que ninguno de los dos desea.
-No quiero tener que tomar medidas drásticas, te lo prometo.
-Con amor,
-	Tu más grande admirador,
-	Kiran <3
-P.D\\: Hazlo por nosotros. Y por tu admirador. No me hagas hacer algo que no quiero hacer… te lo pido por favor.\"
-Alessia: …
-Alessia: Si ese psicópata piensa que eso me va a detener está más que equivocado
-Alessia: Pero en lo posible debo evitar encontrármelo
-Alessia: Tengo que estar atenta y esconderme si siento que está cerca
-Alessia: De lo contrario tendré que escapar de él, ya sea por las buenas
-Alessia: …O por las malas
-do screen_end()
-=> END
-
 "
 metadata/dialogue_manager_version = "2.45.0"

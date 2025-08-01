@@ -6,7 +6,7 @@ if table_status=="atada":
 	- Si
 		set table_status="libre"
 		set chair_status[0]="visible"
-		do release_player(false)
+		do release_player()
 		Alessia: Por fin libre
 		Alessia: Ahora a encontrar la forma de salir de este sótano
 	- No
@@ -26,7 +26,7 @@ else:
 	Está cerrada
 	Quieres intentar usar la llave?
 	- Si
-		do end_demo()
+		do free_basement()
 
 => END
 
@@ -98,33 +98,3 @@ else:
 ~ box
 La caja contiene libros, en su mayoría de misterio
 => END
-
-~ demo
-Alessia: Ugh…finalmente fuera de ese maldito sótano
-Alessia: *suspiro* Parece que ese loco me llevó a su casa
-Alessia: Bueno, igualmente debe haber una forma de escapar
-Alessia: O por lo menos de contactar a la policía e informar mi secuestro
-*swish*
-Alessia: Eh? 
-Alessia: Una nota? No había visto eso cuando salí
-"Querida Alessia,
-Si estás leyendo esto, significa que has sido tan brillante como siempre, y has encontrado una forma de salir del sótano.
-¡No me sorprende en absoluto! Aunque probablemente es porque olvidé la copia de la llave ahí abajo, o algo por el estilo.
-Sé que todo esto debe parecerte un poco raro, pero créeme, solo quiero que estemos juntos.
-Me has inspirado tanto en mis momentos de oscuridad… y sé que con el tiempo, tú también verás lo bonito que podemos ser juntos.
-Así que por favor, querida, vuelve al sótano.
-Si decides explorar más de lo que deberías, podríamos terminar en una situación que ninguno de los dos desea.
-No quiero tener que tomar medidas drásticas, te lo prometo.
-Con amor,
-	Tu más grande admirador,
-	Kiran <3
-P.D\: Hazlo por nosotros. Y por tu admirador. No me hagas hacer algo que no quiero hacer… te lo pido por favor."
-Alessia: …
-Alessia: Si ese psicópata piensa que eso me va a detener está más que equivocado
-Alessia: Pero en lo posible debo evitar encontrármelo
-Alessia: Tengo que estar atenta y esconderme si siento que está cerca
-Alessia: De lo contrario tendré que escapar de él, ya sea por las buenas
-Alessia: …O por las malas
-do screen_end()
-=> END
-

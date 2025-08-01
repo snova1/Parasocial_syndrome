@@ -1,5 +1,9 @@
-res://jugador.tscn
 res://initial.tscn
-res://hallway.tscn
-res://Scripts/Jugador/jugador.gd
+res://Scripts/BaseNivel.gd
+res://hallway.gd
 res://initial.gd
+res://jugador.tscn
+res://hallway.tscn
+res://puerta.tscn
+res://Silla.tscn
+res://Scripts/Status.gd

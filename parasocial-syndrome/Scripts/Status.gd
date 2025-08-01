@@ -1,5 +1,7 @@
 extends Node
 
+var player_tied: bool= true
+var cannot_leave_basement: bool=true
 var table_status: String="atada"
 var chair_status: Array=["hidden", "default"]
 var bookcase_status: String="default"
@@ -16,15 +18,20 @@ signal keypad
 signal ok_pressed
 signal demo_end
 signal end_screen
+signal enable_navigation
 
 
-func release_player(atada: bool):
+func release_player():
+	player_tied= false
 	var initial_scene = get_tree().current_scene
-	player_free.emit(atada)
+	player_free.emit()
 	if initial_scene.has_signal("cutscene_finished"):
 		await initial_scene.cutscene_finished
 		
 
+func free_basement():
+	cannot_leave_basement=false
+	enable_navigation.emit()
 
 func end_demo():
 	demo_end.emit()
@@ -48,8 +55,6 @@ func open_curtain():
 func show_mural():
 	var initial_scene = get_tree().current_scene
 	mural.emit()
-	if initial_scene.has_signal("show_hint"):
-		await initial_scene.show_hint
 
 func open_keypad():
 	keypad.emit()

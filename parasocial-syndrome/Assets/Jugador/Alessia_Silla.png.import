@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b280gqgchlhs2"
-path="res://.godot/imported/Alessia_spritesV1.png-807b192c7f85d1d1ccdbd8ed519553c9.ctex"
+uid="uid://c6h6noktc1ngg"
+path="res://.godot/imported/Alessia_Silla.png-0b78a667c60e7e48430291bb29e644e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Jugador/Alessia_spritesV1.png"
-dest_files=["res://.godot/imported/Alessia_spritesV1.png-807b192c7f85d1d1ccdbd8ed519553c9.ctex"]
+source_file="res://Assets/Jugador/Alessia_Silla.png"
+dest_files=["res://.godot/imported/Alessia_Silla.png-0b78a667c60e7e48430291bb29e644e9.ctex"]
 
 [params]
 

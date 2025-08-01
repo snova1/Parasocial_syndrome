@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Scripts/Jugador/jugador.gd" id="1_splfa"]
 [ext_resource type="Texture2D" uid="uid://dmpt8q83iwuel" path="res://Assets/Jugador/Alessia_spritesV2.png" id="2_gil5f"]
-[ext_resource type="Texture2D" uid="uid://bh0d37qvoq7dl" path="res://Assets/Jugador/alessia_kinda_seated.png" id="3_em7vu"]
+[ext_resource type="Texture2D" uid="uid://c6h6noktc1ngg" path="res://Assets/Jugador/Alessia_Silla.png" id="3_yirwj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1lprt"]
-radius = 16.0
+radius = 15.0
 
 [sub_resource type="Animation" id="Animation_rswjx"]
 length = 0.001
@@ -100,18 +100,16 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dplq"]
-size = Vector2(53, 55)
+size = Vector2(40, 64)
 
 [node name="Jugador" type="CharacterBody2D"]
-collision_layer = 2
 script = ExtResource("1_splfa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_1lprt")
 
 [node name="Normal" type="Sprite2D" parent="."]
-position = Vector2(-9.53674e-07, -28)
+position = Vector2(-1, -28)
 scale = Vector2(1.46875, 1.4375)
 texture = ExtResource("2_gil5f")
 hframes = 4
@@ -124,9 +122,9 @@ libraries = {
 
 [node name="Tied" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-4.76837e-07, -28)
-scale = Vector2(1.5, 1.4375)
-texture = ExtResource("3_em7vu")
+position = Vector2(-1.5, -30.5)
+scale = Vector2(1.54167, 1.51163)
+texture = ExtResource("3_yirwj")
 
 [node name="Int_area" type="Marker2D" parent="."]
 position = Vector2(0, -29)
@@ -136,5 +134,5 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Int_area/Finder_interaccion"]
-position = Vector2(-0.5, 17.5)
+position = Vector2(-1, 14)
 shape = SubResource("RectangleShape2D_3dplq")

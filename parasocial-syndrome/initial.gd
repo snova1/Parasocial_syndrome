@@ -1,6 +1,6 @@
-extends Node2D
+extends "res://Scripts/BaseNivel.gd"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
+@onready var puerta_o: puerta = $Puertas/Puerta_O
 @onready var initial: Node2D = $"."
 @onready var silla: RigidBody2D = $Silla
 @onready var curtain: Area2D = $curtain
@@ -20,11 +20,12 @@ var key = preload("res://keypad.tscn")
 
 signal cutscene_finished
 signal mural_shown
-signal show_hint
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	initial.get_node("curtain/Sprite2D").visible=false
 	initial.get_node("TextureRect").visible=false
+	puerta_o.get_node("CollisionShape2D").disabled =Status.cannot_leave_basement
 	silla.visible=false
 	silla.get_node("CollisionShape2D").disabled = true
 	initial.get_node("colisiones/CollisionShape2D3").disabled=true
@@ -35,19 +36,21 @@ func _ready() -> void:
 	Status.keypad.connect(_on_keypad)
 	Status.curtain_big.connect(_on_curtain_open)
 	Status.mural.connect(_on_show_mural)
+	Status.enable_navigation.connect(_on_enable_navigation)
 	tutorial.text="Muévete con las flechas direccionales hacia la mesa"
+	super()
 
 func _process(delta):
 	if estado==1 and Input.is_action_just_pressed("Interact"):
 		tutorial.visible=false
 
-func _on_player_free(atada: bool):
+func _on_player_free():
 	fader.visible=true
 	animation_player.play("fade_to_black")
 	await animation_player.animation_finished
 	cutting_free.play()
 	await cutting_free.finished
-	jugador.set_estado_atada(atada)
+	jugador.set_estado_atada()
 	silla.visible=true
 	silla.get_node("CollisionShape2D").disabled = false
 	jugador.set_global_position(jugador.get_global_position()-Vector2(-20,30))
@@ -74,6 +77,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		animation_player.play("fade_to_normal")	
 		await animation_player.animation_finished
 		fader.visible=false
+
+func _on_enable_navigation():
+	puerta_o.get_node("CollisionShape2D").disabled = Status.cannot_leave_basement
 
 func _on_demo_end():
 	fader.visible=true
@@ -106,7 +112,6 @@ func _on_show_mural():
 	await wait_for_escape()
 	sprite.visible=false
 	label.visible=false
-	show_hint.emit()
 
 func wait_for_escape():
 	while true:

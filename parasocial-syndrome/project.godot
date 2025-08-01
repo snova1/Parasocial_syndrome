@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Status="*res://Scripts/Status.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+NavegacionManager="*res://Scripts/Navegacion_manager.gd"
 
 [dialogue_manager]
 
