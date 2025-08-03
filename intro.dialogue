@@ -1,0 +1,58 @@
+~ intro
+Alessia: Ngh...
+Alessia: Pero, ¿qué?
+Alessia: ¿Dónde... estoy?
+Alessia: ¿¡Qué rayos?! ¿¡Por qué estoy atada?! ¿¡Qué demonios es este sitio?!
+Alessia: ...Dios, vale, necesito calmarme un poco.
+Alessia: ¿Qué estaba haciendo antes de esto?
+Alessia: Cierto, salí de una firma de libros por mi más reciente obra en una librería de la ciudad.
+Alessia: Y cuando doblé una esquina, alguien me cubrió la boca y... perdí el conocimiento...
+Alessia: ...
+Alessia: ¿Entonces, fui secuestrada?... Supongo que sí, pero...
+Alessia: ¿Quién o quiénes lo hicieron?
+
+do go_kieran()
+[wait = 2]
+Kiran: Ah, Alessia, finalmente estás despierta~
+Kiran: ¿Cómo estás? ¿Despertaste bien? ¿Te sientes cómoda?
+
+Alessia: Tú... ¿Fuiste tú quien me secuestró?
+Alessia: ¿¡QUÉ QUIERES DE MÍ?! ¡DÉJAME IR, DESQUICIADO!
+
+Kiran: Vaya, pero qué temperamento... Aunque supongo que es normal.
+Kiran: Sé que no lo preguntaste, pero me presento.
+Kiran: Me llamo Kiran, ¡y soy tu mayor admirador!
+
+Alessia: ...¿A-admirador?
+
+Kiran: Sip, he leído cada una de tus obras. Y me fascinan, así como la historia que es tu vida personal.
+
+Alessia: ¿Q-qué? ¿De qué hablas?
+
+Kiran: Ah, con cada entrevista que dabas, cada post de tus hobbies y otras cosas a las que te dedicabas...
+Kiran: Sentía que cada pequeño detalle nos hacía aún más cercanos, incluso si tú no lo sabías.
+
+Alessia: ...
+
+Kiran: Y aunque te sentía tan cercana, siempre pensaba que era una pena no poder tenerte a mi lado.
+Kiran: ¡Por lo menos hasta hoy! Fue difícil averiguar dónde ibas a estar, pero lo mejor se hace esperar.
+
+Alessia: ...Aún sigues sin responderme… ¿Qué rayos piensas hacer conmigo?
+
+Kiran: Oh wow, supongo que tuvimos una mala primera impresión a pesar de mi presentación, jeje.
+Kiran: Tranquila, no pienso hacerte daño si eso es lo que estás pensando.
+Kiran: Solo quiero que estés aquí, cerca de mí... por el resto de nuestras vidas.
+
+Alessia: ...Así que me vas a dejar encerrada aquí de por vida.
+
+Kiran: Suena muy agresivo cuando lo dices así... pero sí, supongo que eso haré.
+Kiran: Pero me aseguraré de alimentarte con lo que más te guste.
+Kiran: Oh, y si algo no te gusta del lugar, solo dímelo~
+
+Kiran: Bueno, voy a ir a prepararte tu almuerzo, querida~
+do go_kieran()
+[wait = 2]
+
+Alessia: ...Este tipo está completamente desquiciado.
+Alessia: Tengo que encontrar la forma de salir de aquí.
+=> END
