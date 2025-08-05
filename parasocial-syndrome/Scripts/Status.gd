@@ -19,7 +19,11 @@ signal ok_pressed
 signal demo_end
 signal end_screen
 signal enable_navigation
+signal kieran_go
+signal kieran_stop
 
+func go_kieran():
+	kieran_go.emit()
 
 func release_player():
 	player_tied= false

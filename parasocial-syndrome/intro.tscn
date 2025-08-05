@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://da716ckji1a52"]
 
-[ext_resource type="Script" path="res://scenes/intro cutscene/intro.gd" id="1_nufoq"]
-[ext_resource type="Resource" uid="uid://5u8y2s6bv1yx" path="res://Dialogue/intro.dialogue" id="2_74ilp"]
-[ext_resource type="Texture2D" uid="uid://bwe01osmole0s" path="res://Assets/sótano2.png" id="4_1fgfp"]
-[ext_resource type="Texture2D" uid="uid://bh0d37qvoq7dl" path="res://Assets/Jugador/alessia_kinda_seated.png" id="4_wtwmq"]
+[ext_resource type="Script" path="res://intro.gd" id="1_nufoq"]
+[ext_resource type="Resource" uid="uid://cdbvxemdn3jgg" path="res://Dialogue/intro.dialogue" id="2_74ilp"]
+[ext_resource type="Texture2D" uid="uid://bd6y3haaclpqd" path="res://Assets/sótano.png" id="3_ii5uw"]
+[ext_resource type="Texture2D" uid="uid://c6h6noktc1ngg" path="res://Assets/Jugador/Alessia_Silla.png" id="4_wtwmq"]
 [ext_resource type="Texture2D" uid="uid://62y61l0xv50s" path="res://Assets/menu_image.png" id="5_5bcnx"]
-[ext_resource type="Script" path="res://scenes/intro cutscene/cutscene_kieran.gd" id="6_442g5"]
+[ext_resource type="Script" path="res://cutscene_kieran.gd" id="6_442g5"]
 
 [node name="intro" type="Node2D"]
 script = ExtResource("1_nufoq")
@@ -25,7 +25,7 @@ unique_name_in_owner = true
 position_smoothing_speed = 0.001
 
 [node name="bg" type="Sprite2D" parent="."]
-texture = ExtResource("4_1fgfp")
+texture = ExtResource("3_ii5uw")
 
 [node name="chair" type="Sprite2D" parent="."]
 position = Vector2(0, 174)

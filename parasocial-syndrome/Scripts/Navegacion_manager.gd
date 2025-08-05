@@ -2,6 +2,9 @@ extends Node
 
 const scene_initial=preload("res://initial.tscn")
 const scene_hallway=preload("res://hallway.tscn")
+const scene_vestibulo=preload("res://vestibulo.tscn")
+const scene_sala_estar=preload("res://sala_estar.tscn")
+const scene_sala_arte=preload("res://sala_arte.tscn")
 
 signal on_trigger_player_spawn
 
@@ -15,6 +18,12 @@ func go_to_room(habitacion_tag, destino_tag):
 			scene_to_load =scene_initial
 		"hallway":
 			scene_to_load=scene_hallway
+		"vestibulo":
+			scene_to_load=scene_vestibulo
+		"sala_estar":
+			scene_to_load=scene_sala_estar
+		"sala_arte":
+			scene_to_load=scene_sala_arte
 		
 	if scene_to_load!=null:
 		tag_puerta_spawn=destino_tag

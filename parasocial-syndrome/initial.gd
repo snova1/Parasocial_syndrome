@@ -37,12 +37,42 @@ func _ready() -> void:
 	Status.curtain_big.connect(_on_curtain_open)
 	Status.mural.connect(_on_show_mural)
 	Status.enable_navigation.connect(_on_enable_navigation)
-	tutorial.text="Muévete con las flechas direccionales hacia la mesa"
+	if(Status.cannot_leave_basement):
+		tutorial.text="Muévete con las flechas direccionales hacia la mesa"
+	else:
+		estado=1
 	super()
+	restaurar_estado_sotano()
 
 func _process(delta):
 	if estado==1 and Input.is_action_just_pressed("Interact"):
 		tutorial.visible=false
+
+func restaurar_estado_sotano():
+	# Silla liberada
+	if !Status.player_tied:
+		silla.visible = true 
+		silla.get_node("CollisionShape2D").disabled = false
+		# Posición final si la tienes guardada, opcional
+		# silla.global_position = Status.silla_pos
+
+	# Cortina abierta
+	if Status.curtain_status == "open":
+		$curtain/Sprite2D.visible = true
+
+	# Caja metálica desbloqueada
+	if Status.bookcase_status == "":
+		initial.get_node("colisiones/CollisionShape2D3").disabled = false
+		initial.get_node("colisiones/box_down").visible = true
+		initial.get_node("interactuables/metalbox/CollisionShape2D").disabled = false
+
+	# Puerta desbloqueada
+	puerta_o.get_node("CollisionShape2D").disabled = Status.cannot_leave_basement == true
+
+	# Interacción con mesa ya hecha
+	if !Status.cannot_leave_basement:
+		tutorial.visible = false
+		estado = 1
 
 func _on_player_free():
 	fader.visible=true
@@ -128,6 +158,6 @@ func _on_keypad():
 
 
 func _on_table_body_entered(body: Node2D) -> void:
-	if body.name=="Jugador":
+	if body.name=="Jugador" and estado==0:
 		estado=1
 		tutorial.text = "Interactúa con la mesa con Z"

@@ -58,9 +58,18 @@ position = Vector2(105, 281)
 position = Vector2(954, 157)
 tag_habitacion_destino = "initial"
 tag_puerta_destino = "O"
-direccion_spwan = "izquierda"
+direccion_spawn = "izquierda"
 
 [node name="Spawn" parent="Puertas/Puerta_E" index="1"]
 position = Vector2(-42, 0)
 
+[node name="Puerta_S" parent="Puertas" instance=ExtResource("3_ac0cw")]
+position = Vector2(97, 532)
+tag_habitacion_destino = "vestibulo"
+tag_puerta_destino = "NO"
+
+[node name="Spawn" parent="Puertas/Puerta_S" index="1"]
+position = Vector2(0, -43)
+
 [editable path="Puertas/Puerta_E"]
+[editable path="Puertas/Puerta_S"]

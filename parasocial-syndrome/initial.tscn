@@ -197,7 +197,7 @@ scale = Vector2(0.541667, 0.666667)
 texture = ExtResource("9_co7yk")
 
 [node name="Silla" parent="." instance=ExtResource("6_tobga")]
-position = Vector2(574, 406)
+position = Vector2(690, 504)
 
 [node name="Interactuable" parent="Silla" instance=ExtResource("2_vf0yb")]
 dialogue_resource = ExtResource("3_atjn4")
@@ -356,7 +356,7 @@ horizontal_alignment = 1
 position = Vector2(389, 151)
 tag_habitacion_destino = "hallway"
 tag_puerta_destino = "E"
-direccion_spwan = "derecha"
+direccion_spawn = "derecha"
 
 [node name="Spawn" parent="Puertas/Puerta_O" index="1"]
 position = Vector2(38, 0)
