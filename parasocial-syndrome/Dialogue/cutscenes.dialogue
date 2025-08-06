@@ -55,6 +55,7 @@ Alessia: O por lo menos de contactar a la policía e informar mi secuestro
 *swish*
 Alessia: Eh? 
 Alessia: Una nota? No había visto eso cuando salí
+do show_letter()
 "Querida Alessia,
 Si estás leyendo esto, significa que has sido tan brillante como siempre, y has encontrado una forma de salir del sótano.
 ¡No me sorprende en absoluto! Aunque probablemente es porque olvidé la copia de la llave ahí abajo, o algo por el estilo.
@@ -67,6 +68,7 @@ Con amor,
 	Tu más grande admirador,
 	Kiran <3
 P.D\: Hazlo por nosotros. Y por tu admirador. No me hagas hacer algo que no quiero hacer… te lo pido por favor."
+do hide_letter()
 Alessia: ...
 Alessia: Si ese psicópata piensa que eso me va a detener está más que equivocado
 Alessia: Pero en lo posible debo evitar encontrármelo
@@ -74,4 +76,15 @@ Alessia: Tengo que estar atenta y esconderme si siento que está cerca
 Alessia: De lo contrario tendré que escapar de él, ya sea por las buenas
 Alessia: …O por las malas
 do screen_end()
+=> END
+
+~ end_demo
+Gracias por jugar la demo de Parasocial Syndrome!
+Tenemos unas cuantas más habitaciones de la casa de Kiran que puedes explorar
+Estas no representan la totalidad ni la calidad del juego final
+Deseas seguir explorando?
+- Si
+	do resume_gameplay()
+- No
+	do end_demo()
 => END

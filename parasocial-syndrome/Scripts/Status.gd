@@ -2,6 +2,7 @@ extends Node
 
 var player_tied: bool= true
 var cannot_leave_basement: bool=true
+var cutscene_played: bool=false
 var table_status: String="atada"
 var chair_status: Array=["hidden", "default"]
 var bookcase_status: String="default"
@@ -21,6 +22,9 @@ signal end_screen
 signal enable_navigation
 signal kieran_go
 signal kieran_stop
+signal letter
+signal finish_letter
+signal resume
 
 func go_kieran():
 	kieran_go.emit()
@@ -38,9 +42,6 @@ func free_basement():
 	enable_navigation.emit()
 
 func end_demo():
-	demo_end.emit()
-
-func screen_end():
 	table_status="atada"
 	chair_status=["hidden", "default"]
 	bookcase_status="default"
@@ -48,6 +49,10 @@ func screen_end():
 	curtain_status="default"
 	password="1234"
 	metalbox_status="default"
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file("res://end.tscn")
+
+func screen_end():
 	end_screen.emit()
 
 func open_curtain():
@@ -60,7 +65,22 @@ func show_mural():
 	var initial_scene = get_tree().current_scene
 	mural.emit()
 
+func show_letter():
+	var initial_scene = get_tree().current_scene
+	letter.emit()
+	if initial_scene.has_signal("letter_read"):
+		await initial_scene.letter_read
+
+func hide_letter():
+	var initial_scene = get_tree().current_scene
+	finish_letter.emit()
+	if initial_scene.has_signal("letter_read"):
+		await initial_scene.letter_read
+
 func open_keypad():
 	keypad.emit()
 	await  ok_pressed
 	keypad.emit()
+
+func resume_gameplay():
+	resume.emit()
