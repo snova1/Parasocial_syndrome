@@ -1,11 +1,10 @@
 ~ inicio
-Pantalla oscura*
 Alessia: Ngh...
-*El sótano empieza a verse, pero borroso*
+do initial_cutscene("fade_blur")
 Alessia: Pero, qué?
-*El sótano se ve claramente ahora con Alessia en una silla*
+do initial_cutscene("fade_normal")
 Alessia: Donde...estoy?
-* Alessia intenta moverse, pero no lo logra (el Sprite del personaje se sacude ligeramente) *
+do initial_cutscene("shaking_alessia")
 Alessia: Qué rayos?! Por qué estoy atada?! Qué demonios es este sitio?!
 Alessia: ...Dios, vale, necesito calmarme un poco.
 Alessia: Qué estaba haciendo antes de esto?
@@ -14,14 +13,14 @@ Alessia: Y cuando doblé una esquina, alguien me cubrió la boca y...Perdí el c
 Alessia: ...
 Alessia: Entonces, fui secuestrada?...Supongo que si pero
 Alessia: Quien o quienes lo hicieron?
-*Kiran entra al sótano*
-Kiran: Ah mi querida Alessia! Finalmente estás despierta~
-*Kiran camina hasta quedar frente a Alessia*
-Kiran: Cómo estás? Despertaste bien? Te sientes cómoda?
+do initial_cutscene("kiran_appears")
+???: Ah mi querida Alessia! Finalmente estás despierta~
+do initial_cutscene("walk_alessia")
+???: Cómo estás? Despertaste bien? Te sientes cómoda?
 Alessia: Tu...Fuiste tu quien me secuestró? 
 Alessia: QUÉ QUIERES DE MI?! DEJAME IR DESQUICIADO!
-Kiran: Vaya pero que temperamento... Aunque supongo que es normal, creo
-Kiran: Se que no lo preguntaste pero me presento
+???: Vaya pero que temperamento... Aunque supongo que es normal, creo
+???: Se que no lo preguntaste pero me presento
 Kiran: Me llamo Kiran, y soy tu mayor admirador!
 Alessia: …A-Admirador?
 Kiran: Sip, he leído cada una de tus obras. Cada una de ellas. Supongo que es por eso que siento esta conexión a ti
@@ -31,20 +30,20 @@ Kiran: No sé cómo explicarlo, pero… era como verte de verdad. Como si estuvi
 Alessia: ...
 Kiran: Aunque tú no supieras que yo existía. Yo sentía esa conexión a ti, sentía que era tu amigo, o, quizás algo más...
 Kiran: A veces pensaba que sería bonito poder estar a tu lado de verdad. Pero bueno…
-Kiran: Hoy por fin se dio. Me costó un poco averiguar dónde ibas a estar, pero… valió la pena. ¿No crees?
+Kiran: Hoy por fin se dio! Me costó un poco averiguar dónde ibas a estar, pero… valió la pena. ¿No crees?
 Alessia: ...Aún sigues sin responderme...Que rayos piensas hacer conmigo?
-Kiran: Oh wow, supongo que aún tuvimos una mala primera impresión a pesar de mi presentación, jeje
+Kiran: Oh wow, supongo que aún tuvimos una mala primera impresión a pesar de mi presentación, jejeje
 Kiran: Tranquila, no pienso hacerte daño si eso es lo que estás pensando
 Kiran: Solo quiero que estés aquí cerca de mi por el resto de nuestras vidas
 Alessia: ...Así que me vas a dejar encerrada aquí de por vida
-Kiran: Suena muy agresivo cuando lo dices así...pero si supongo que eso haré
+Kiran: Suena un poco agresivo cuando lo dices así...pero si supongo que eso haré
 Kiran: Pero me aseguraré de cuidarte bien. Te alimentaré lo que te gusta e intentaré cumplir todos tus caprichos
 Kiran: Oh, y si algo no te gusta del lugar solo dímelo~
 Kiran: Bueno, voy a ir a prepararte tu almuerzo querida~
-*Kiran sale del sótano*
+do initial_cutscene("walk_back")
 Alessia: ...Este tipo está completamente desquiciado
 Alessia: Tengo que encontrar la forma de salir de aquí
-
+do start_gameplay()
 => END
 
 ~ out_of_basement

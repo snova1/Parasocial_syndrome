@@ -17,10 +17,19 @@ func _ready() -> void:
 
 func _on_cutscene_trigger_body_entered(body: Node2D) -> void:
 	if (body is Jugador) and (!Status.cutscene_played):
-		Status.cutscene_played=true
+		Status.cutscene_played = true
+		body.control_enabled = false  
+		body.direction = Vector2.ZERO
+		body.state = "still"
+		body.velocity = Vector2.ZERO
+		Input.action_release("arriba")
+		Input.action_release("abajo")
+		Input.action_release("izquierda")
+		Input.action_release("derecha")
 		var balloon: Node= Balloon.instantiate()
 		get_tree().current_scene.add_child(balloon)
 		await balloon.start(resource,"out_of_basement")
+		body.control_enabled = true
 
 func _on_show_letter():
 	animation_player.play("show_letter")

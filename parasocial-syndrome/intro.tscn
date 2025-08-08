@@ -1,21 +1,267 @@
-[gd_scene load_steps=7 format=3 uid="uid://da716ckji1a52"]
+[gd_scene load_steps=15 format=3 uid="uid://da716ckji1a52"]
 
 [ext_resource type="Script" path="res://intro.gd" id="1_nufoq"]
-[ext_resource type="Resource" uid="uid://cdbvxemdn3jgg" path="res://Dialogue/intro.dialogue" id="2_74ilp"]
+[ext_resource type="Resource" uid="uid://60gdr5tbedl2" path="res://Dialogue/cutscenes.dialogue" id="2_rpu04"]
 [ext_resource type="Texture2D" uid="uid://bd6y3haaclpqd" path="res://Assets/sótano.png" id="3_ii5uw"]
 [ext_resource type="Texture2D" uid="uid://c6h6noktc1ngg" path="res://Assets/Jugador/Alessia_Silla.png" id="4_wtwmq"]
-[ext_resource type="Texture2D" uid="uid://62y61l0xv50s" path="res://Assets/menu_image.png" id="5_5bcnx"]
-[ext_resource type="Script" path="res://cutscene_kieran.gd" id="6_442g5"]
+[ext_resource type="PackedScene" uid="uid://bur3ph5w7mtcm" path="res://antagonista.tscn" id="7_u48p1"]
+[ext_resource type="AudioStream" uid="uid://d3m2e2754dygw" path="res://Assets/Sonidos/door-opening-353874.mp3" id="8_hv5ck"]
+
+[sub_resource type="Animation" id="Animation_nc20w"]
+resource_name = "shaking_alessia"
+length = 0.6667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chair:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-7, 174), Vector2(-9, 174), Vector2(-7, 174), Vector2(-3, 174), Vector2(-7, 174)]
+}
+
+[sub_resource type="Animation" id="Animation_2tjjr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("chair:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, 174)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fader:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Antagonista:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Antagonista:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-65, -116)]
+}
+
+[sub_resource type="Animation" id="Animation_ja3cs"]
+resource_name = "fade_blur"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fader:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.74902)]
+}
+
+[sub_resource type="Animation" id="Animation_gbmng"]
+resource_name = "fade_normal"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fader:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.74902), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qxcjd"]
+resource_name = "kiran_appears"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Antagonista:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_arhtc"]
+resource_name = "walk_alessia"
+length = 2.66
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Antagonista:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7, 2.66),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-65, -116), Vector2(-4, -116), Vector2(-4, 116)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Antagonista")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.7, 2.63333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_walk_right"
+}, {
+"args": [],
+"method": &"_walk_down"
+}, {
+"args": [],
+"method": &"_stop"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_tugug"]
+resource_name = "walk_back"
+length = 2.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Antagonista:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 2.66667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-4, 116), Vector2(-4, -116), Vector2(-65, -116)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Antagonista:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.66667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Antagonista")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 2.63333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_walk_up"
+}, {
+"args": [],
+"method": &"_walk_left"
+}, {
+"args": [],
+"method": &"_stop"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6vdq2"]
+_data = {
+"RESET": SubResource("Animation_2tjjr"),
+"fade_blur": SubResource("Animation_ja3cs"),
+"fade_normal": SubResource("Animation_gbmng"),
+"kiran_appears": SubResource("Animation_qxcjd"),
+"shaking_alessia": SubResource("Animation_nc20w"),
+"walk_alessia": SubResource("Animation_arhtc"),
+"walk_back": SubResource("Animation_tugug")
+}
 
 [node name="intro" type="Node2D"]
 script = ExtResource("1_nufoq")
-dialogue_resource = ExtResource("2_74ilp")
-dialogue_start = "intro"
+dialogue_resource = ExtResource("2_rpu04")
+dialogue_start = "inicio"
 
 [node name="Background" type="ColorRect" parent="."]
 offset_left = -2786.0
 offset_top = -4182.0
-offset_right = -786.0
+offset_right = -1826.0
 offset_bottom = -2782.0
 scale = Vector2(6.54404, 7.85471)
 color = Color(0, 0, 0, 1)
@@ -25,15 +271,32 @@ unique_name_in_owner = true
 position_smoothing_speed = 0.001
 
 [node name="bg" type="Sprite2D" parent="."]
+position = Vector2(-4, 0)
+scale = Vector2(0.81, 0.81)
 texture = ExtResource("3_ii5uw")
 
 [node name="chair" type="Sprite2D" parent="."]
-position = Vector2(0, 174)
+position = Vector2(-7, 174)
+scale = Vector2(1.6, 1.6)
 texture = ExtResource("4_wtwmq")
 
-[node name="cutsceneKieran" type="Sprite2D" parent="."]
+[node name="Antagonista" parent="." instance=ExtResource("7_u48p1")]
+position = Vector2(-65, -116)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6vdq2")
+}
+
+[node name="Fader" type="ColorRect" parent="."]
 visible = false
-position = Vector2(-80, -140)
-scale = Vector2(0.125, 0.132857)
-texture = ExtResource("5_5bcnx")
-script = ExtResource("6_442g5")
+offset_left = -2786.0
+offset_top = -4182.0
+offset_right = -1826.0
+offset_bottom = -2782.0
+scale = Vector2(6.54404, 7.85471)
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_hv5ck")
+volume_db = -12.0

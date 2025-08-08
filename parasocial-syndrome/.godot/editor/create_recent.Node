@@ -1,10 +1,11 @@
-AnimationPlayer
+AudioStreamPlayer
 AudioStreamPlayer2D
+ColorRect
+AnimationPlayer
 TextureRect
 CollisionShape2D
 Area2D
 Node
-ColorRect
 Sprite2D
 Marker2D
 Label
@@ -12,4 +13,3 @@ CanvasLayer
 MarginContainer
 Button
 HBoxContainer
-VBoxContainer

@@ -1,5 +1,12 @@
-res://vestibulo.gd
-res://vestibulo.tscn
-res://Scripts/Status.gd
+res://antagonista.tscn
 res://initial.tscn
+res://vestibulo.tscn
 res://menu.tscn
+res://intro.tscn
+res://Scripts/Status.gd
+res://intro.gd
+res://Scripts/antagonista.gd
+res://Dialogue/balloon.tscn
+res://Scripts/menu.gd
+res://Scripts/Jugador/jugador.gd
+res://vestibulo.gd

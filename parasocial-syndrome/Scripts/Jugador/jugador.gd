@@ -11,7 +11,7 @@ var cardinal_direction: Vector2=Vector2.DOWN
 var direction: Vector2=Vector2.ZERO
 var move_speed: float
 var state: String="still"
-
+var control_enabled := true
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -36,6 +36,11 @@ func _on_spawn(position: Vector2, direction: String):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if not control_enabled:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
 	velocity=direction*move_speed
 	for i in get_slide_collision_count():
 		var c := get_slide_collision(i)
@@ -58,13 +63,17 @@ func _physics_process(delta: float) -> void:
 		animation_player.stop()
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not control_enabled:
+		return
+	
 	if Input.is_action_just_pressed("Interact"):
 		state="still"
 		direction = Vector2.ZERO
 		var actionables=finder_interaccion.get_overlapping_areas()
 		if actionables.size()>0:
 			actionables.sort_custom(func(a, b): return global_position.distance_to(a.global_position) < global_position.distance_to(b.global_position))
-			actionables[0].action()
+			if actionables[0] is not puerta:
+				actionables[0].action()
 			return
 	
 	direction.x=Input.get_action_strength("derecha")-Input.get_action_strength("izquierda")

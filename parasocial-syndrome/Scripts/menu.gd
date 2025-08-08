@@ -48,7 +48,8 @@ func _on_iniciar_pressed() -> void:
 	animation_player.play("fade_to_black")
 	sonido_risas.play()
 	await animation_player.animation_finished
-	get_tree().change_scene_to_file("res://initial.tscn")
+	await get_tree().create_timer(2.0).timeout
+	get_tree().change_scene_to_file("res://intro.tscn")
 
 
 func _on_cargar_pressed() -> void:

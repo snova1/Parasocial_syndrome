@@ -55,4 +55,5 @@ do go_kieran()
 
 Alessia: ...Este tipo está completamente desquiciado.
 Alessia: Tengo que encontrar la forma de salir de aquí.
+do start_gameplay()
 => END
