@@ -1,6 +1,6 @@
 e22c9c70a03ae172662e56cbc433647f
-::res://::1754620957
-antagonista.tscn::PackedScene::3827019256029218620::1754621153::0::1::::<><>::res://Scripts/antagonista.gd<>uid://eux503gqp2i5::::res://Assets/Kiran-17.png
+::res://::1754707307
+antagonista.tscn::PackedScene::3827019256029218620::1754707598::0::1::::<><>::res://Scripts/antagonista.gd<>uid://eux503gqp2i5::::res://Assets/Kiran-17.png
 controles.tscn::PackedScene::2996407509100748339::1750795652::0::1::::<><>::res://Scripts/controles.gd
 end.tscn::PackedScene::7694677728039989618::1742504270::0::1::::<><>::uid://ck2qr3rqxetsj::::res://Assets/titulo2.png<>res://Scripts/end.gd
 export_presets.cfg::TextFile::-1::1746995226::0::1::::<><>::
@@ -8,25 +8,25 @@ hallway.gd::GDScript::-1::1754078104::0::1::::<>Node2D<>::
 hallway.tscn::PackedScene::5485544812950441294::1754428786::0::1::::<><>::res://hallway.gd<>uid://cp0wupiobthnt::::res://Assets/Pasillo.png<>uid://mxvq8r62c0re::::res://jugador.tscn<>uid://dtsxtle37rays::::res://puerta.tscn
 icon.svg::CompressedTexture2D::8032004134552388556::1733428314::1733428449::1::::<><>::
 initial.gd::GDScript::-1::1754421953::0::1::::<>Node2D<>::
-initial.tscn::PackedScene::8720572180870102233::1754621152::0::1::::<><>::res://initial.gd<>uid://mxvq8r62c0re::::res://jugador.tscn<>uid://bd6y3haaclpqd::::res://Assets/sótano.png<>uid://cgwthx1srigte::::res://interactuable.tscn<>uid://dgowpg570bn6l::::res://Dialogue/dialogue.dialogue<>uid://bwe01osmole0s::::res://Assets/sótano2.png<>uid://cg6je5w4y5vig::::res://Assets/Sonidos/cutting_free.wav<>uid://3w8u7nr6tcsg::::res://Silla.tscn<>uid://tlfaypx8w2k0::::res://Assets/mural.png<>uid://d0qh6dk3jleo4::::res://keypad.tscn<>uid://dtsxtle37rays::::res://puerta.tscn
+initial.tscn::PackedScene::8720572180870102233::1754707597::0::1::::<><>::res://initial.gd<>uid://mxvq8r62c0re::::res://jugador.tscn<>uid://bd6y3haaclpqd::::res://Assets/sótano.png<>uid://cgwthx1srigte::::res://interactuable.tscn<>uid://dgowpg570bn6l::::res://Dialogue/dialogue.dialogue<>uid://bwe01osmole0s::::res://Assets/sótano2.png<>uid://cg6je5w4y5vig::::res://Assets/Sonidos/cutting_free.wav<>uid://3w8u7nr6tcsg::::res://Silla.tscn<>uid://tlfaypx8w2k0::::res://Assets/mural.png<>uid://d0qh6dk3jleo4::::res://keypad.tscn<>uid://dtsxtle37rays::::res://puerta.tscn
 interactuable.tscn::PackedScene::5240558112266454066::1742850228::0::1::::<><>::res://Scripts/interactuable.gd
 intro.gd::GDScript::-1::1754609047::0::1::::<>Node2D<>::
-intro.tscn::PackedScene::7226956261547572743::1754621153::0::1::::<><>::res://intro.gd<>uid://60gdr5tbedl2::::res://Dialogue/cutscenes.dialogue<>uid://bd6y3haaclpqd::::res://Assets/sótano.png<>uid://c6h6noktc1ngg::::res://Assets/Jugador/Alessia_Silla.png<>uid://bur3ph5w7mtcm::::res://antagonista.tscn<>uid://d3m2e2754dygw::::res://Assets/Sonidos/door-opening-353874.mp3
+intro.tscn::PackedScene::7226956261547572743::1754707598::0::1::::<><>::res://intro.gd<>uid://60gdr5tbedl2::::res://Dialogue/cutscenes.dialogue<>uid://bd6y3haaclpqd::::res://Assets/sótano.png<>uid://c6h6noktc1ngg::::res://Assets/Jugador/Alessia_Silla.png<>uid://bur3ph5w7mtcm::::res://antagonista.tscn<>uid://d3m2e2754dygw::::res://Assets/Sonidos/door-opening-353874.mp3
 jugador.tscn::PackedScene::891052202527254666::1754428786::0::1::::<><>::res://Scripts/Jugador/jugador.gd<>uid://dmpt8q83iwuel::::res://Assets/Jugador/Alessia_spritesV2.png<>uid://c6h6noktc1ngg::::res://Assets/Jugador/Alessia_Silla.png
 keypad.gd::GDScript::-1::1743085514::0::1::::<>Control<>::
 keypad.tscn::PackedScene::8947493738958237169::1742592469::0::1::::<><>::res://keypad.gd
-menu.tscn::PackedScene::5492120156006866595::1754621153::0::1::::<><>::res://Scripts/menu.gd<>uid://ck2qr3rqxetsj::::res://Assets/titulo2.png<>uid://dcngmn7k7p2gl::::res://Assets/menu_image2.png<>uid://c14weascnxpsh::::res://Assets/Sonidos/risas.wav
+menu.tscn::PackedScene::5492120156006866595::1754707598::0::1::::<><>::res://Scripts/menu.gd<>uid://ck2qr3rqxetsj::::res://Assets/titulo2.png<>uid://dcngmn7k7p2gl::::res://Assets/menu_image2.png<>uid://c14weascnxpsh::::res://Assets/Sonidos/risas.wav
 menu_opciones.tscn::PackedScene::844300014404656835::1750795652::0::1::::<><>::res://Scripts/menu_opciones.gd
 puerta.gd::GDScript::-1::1754427907::0::1::::puerta<>Area2D<>::
 puerta.tscn::PackedScene::8531439885944509002::1754427906::0::1::::<><>::res://puerta.gd
 sala_arte.gd::GDScript::-1::1754427907::0::1::::<>Node2D<>::
-sala_arte.tscn::PackedScene::4913662400565246994::1754428787::0::1::::<><>::uid://byuqrqyhyemjo::::res://Assets/Sala 1 entrada luz.png<>res://sala_arte.gd<>uid://mxvq8r62c0re::::res://jugador.tscn<>uid://dtsxtle37rays::::res://puerta.tscn
+sala_arte.tscn::PackedScene::4913662400565246994::1754707599::0::1::::<><>::uid://byuqrqyhyemjo::::res://Assets/Sala 1 entrada luz.png<>res://sala_arte.gd<>uid://mxvq8r62c0re::::res://jugador.tscn<>uid://dtsxtle37rays::::res://puerta.tscn<>res://Scripts/interactuable.gd<>uid://dgowpg570bn6l::::res://Dialogue/dialogue.dialogue
 sala_estar.gd::GDScript::-1::1754426215::0::1::::<>Node2D<>::
-sala_estar.tscn::PackedScene::5210234350857473375::1754428786::0::1::::<><>::res://sala_estar.gd<>uid://cj65h3r3enqis::::res://Assets/Sala tv luz V1.png<>uid://mxvq8r62c0re::::res://jugador.tscn<>uid://dtsxtle37rays::::res://puerta.tscn
+sala_estar.tscn::PackedScene::5210234350857473375::1754707599::0::1::::<><>::res://sala_estar.gd<>uid://cj65h3r3enqis::::res://Assets/Sala tv luz V1.png<>uid://mxvq8r62c0re::::res://jugador.tscn<>uid://dtsxtle37rays::::res://puerta.tscn<>res://Scripts/interactuable.gd<>uid://dgowpg570bn6l::::res://Dialogue/dialogue.dialogue
 silla.gd::GDScript::-1::1742852497::0::1::::<>RigidBody2D<>::
 Silla.tscn::PackedScene::2012745010737853402::1754249294::0::1::::<><>::res://silla.gd<>uid://b0xdt04etugj::::res://Assets/chair.png
 vestibulo.gd::GDScript::-1::1754620826::0::1::::<>Node2D<>::
-vestibulo.tscn::PackedScene::4461491940823355626::1754621153::0::1::::<><>::res://vestibulo.gd<>uid://qy45k4eg0tk7::::res://Assets/Vestibulo_V2.png<>uid://dtsxtle37rays::::res://puerta.tscn<>uid://mxvq8r62c0re::::res://jugador.tscn<>uid://chdpqp1frk253::::res://Assets/alessia_letter.png<>uid://vqceorlg4m3p::::res://Assets/Sonidos/flip_page.wav
+vestibulo.tscn::PackedScene::4461491940823355626::1754707597::0::1::::<><>::res://vestibulo.gd<>uid://qy45k4eg0tk7::::res://Assets/Vestibulo_V2.png<>uid://dtsxtle37rays::::res://puerta.tscn<>uid://mxvq8r62c0re::::res://jugador.tscn<>uid://chdpqp1frk253::::res://Assets/alessia_letter.png<>uid://vqceorlg4m3p::::res://Assets/Sonidos/flip_page.wav
 ::res://addons/::1741973764
 ::res://addons/dialogue_manager/::1741973768
 constants.gd::GDScript::-1::1741973766::0::1::::<>Node<>::
@@ -120,11 +120,11 @@ cutting_free.wav::AudioStreamWAV::5258525346737871738::1741880671::1741880693::1
 door-opening-353874.mp3::AudioStreamMP3::9150970176939398890::1754603304::1754603305::1::::<><>::
 flip_page.wav::AudioStreamWAV::1507125099722328415::1754510614::1754510614::1::::<><>::
 risas.wav::AudioStreamWAV::6658961201774904047::1741711351::1741711409::1::::<><>::
-::res://Dialogue/::1754620958
+::res://Dialogue/::1754707308
 balloon.gd::GDScript::-1::1742848034::0::1::::<>CanvasLayer<>::
-balloon.tscn::PackedScene::4515282167502757951::1754621154::0::1::::<><>::res://Dialogue/balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>res://addons/dialogue_manager/dialogue_reponses_menu.gd
+balloon.tscn::PackedScene::4515282167502757951::1754707598::0::1::::<><>::res://Dialogue/balloon.gd<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>res://addons/dialogue_manager/dialogue_reponses_menu.gd
 cutscenes.dialogue::Resource::2227834196074667181::1754610103::1754621155::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
-dialogue.dialogue::Resource::7610659325185400693::1754083373::1754083469::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
+dialogue.dialogue::Resource::7610659325185400693::1754706838::1754707600::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
 intro.dialogue::Resource::4986788634948110726::1754607193::1754621155::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
 ::res://Scripts/::1754614826
 antagonista.gd::GDScript::-1::1754614826::0::1::::<>CharacterBody2D<>::
@@ -136,5 +136,5 @@ menu.gd::GDScript::-1::1754609394::0::1::::<>Control<>::
 menu_opciones.gd::GDScript::-1::1742590137::0::1::::<>Control<>::
 Navegacion_manager.gd::GDScript::-1::1754427907::0::1::::<>Node<>::
 Status.gd::GDScript::-1::1754610103::0::1::::<>Node<>::
-::res://Scripts/Jugador/::1754620826
+::res://Scripts/Jugador/::1754621152
 jugador.gd::GDScript::-1::1754621152::0::1::::Jugador<>CharacterBody2D<>::

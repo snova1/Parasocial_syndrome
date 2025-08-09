@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgh42fdtsm6jr"]
+[gd_scene load_steps=10 format=3 uid="uid://cgh42fdtsm6jr"]
 
 [ext_resource type="Script" path="res://sala_estar.gd" id="1_2nvu8"]
 [ext_resource type="Texture2D" uid="uid://cj65h3r3enqis" path="res://Assets/Sala tv luz V1.png" id="1_7cxfr"]
 [ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://jugador.tscn" id="2_gwrqj"]
 [ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://puerta.tscn" id="4_8gd4t"]
+[ext_resource type="Script" path="res://Scripts/interactuable.gd" id="5_nnbsw"]
+[ext_resource type="Resource" uid="uid://dgowpg570bn6l" path="res://Dialogue/dialogue.dialogue" id="6_3c0lx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16grl"]
+size = Vector2(175, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ij4lj"]
+size = Vector2(76, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tautl"]
+size = Vector2(91, 65)
 
 [node name="sala_estar" type="Node2D"]
 script = ExtResource("1_2nvu8")
@@ -19,7 +30,7 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_7cxfr")
 
 [node name="Jugador" parent="." instance=ExtResource("2_gwrqj")]
-position = Vector2(483, 327)
+position = Vector2(446, 269)
 
 [node name="Puertas" type="Node" parent="."]
 
@@ -39,6 +50,101 @@ direccion_spawn = "izquierda"
 
 [node name="Spawn" parent="Puertas/Puerta_E" index="1"]
 position = Vector2(-49, 0)
+
+[node name="interactuables" type="Node" parent="."]
+
+[node name="pintura" type="Area2D" parent="interactuables"]
+position = Vector2(414, 171)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_nnbsw")
+dialogue_resource = ExtResource("6_3c0lx")
+dialogue_start = "estar_pintura"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/pintura"]
+shape = SubResource("RectangleShape2D_16grl")
+
+[node name="lampara" type="Area2D" parent="interactuables"]
+position = Vector2(610, 493)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_nnbsw")
+dialogue_resource = ExtResource("6_3c0lx")
+dialogue_start = "estar_lampara"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="interactuables/lampara"]
+position = Vector2(24, 0)
+polygon = PackedVector2Array(-7, 17, -7, -21, 30, -21, 30, 17)
+
+[node name="tv" type="Area2D" parent="interactuables"]
+position = Vector2(351, 459)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_nnbsw")
+dialogue_resource = ExtResource("6_3c0lx")
+dialogue_start = "estar_tv"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="interactuables/tv"]
+polygon = PackedVector2Array(6, 55, 42, 26, 34, -36, -21, -65, -51, -48, -73, -9)
+
+[node name="silla" type="Area2D" parent="interactuables"]
+position = Vector2(363, 290)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_nnbsw")
+dialogue_resource = ExtResource("6_3c0lx")
+dialogue_start = "estar_silla"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/silla"]
+position = Vector2(-9, -12)
+shape = SubResource("RectangleShape2D_ij4lj")
+
+[node name="closet" type="Area2D" parent="interactuables"]
+position = Vector2(620, 191)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_nnbsw")
+dialogue_resource = ExtResource("6_3c0lx")
+dialogue_start = "art_Closet"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/closet"]
+position = Vector2(-0.5, 7.5)
+shape = SubResource("RectangleShape2D_tautl")
+
+[node name="sofa" type="Area2D" parent="interactuables"]
+position = Vector2(541, 381)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_nnbsw")
+dialogue_resource = ExtResource("6_3c0lx")
+dialogue_start = "estar_sofa"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="interactuables/sofa"]
+polygon = PackedVector2Array(-21, 30, 57, 9, 24, -66, -25, -110, -100, -71)
+
+[node name="colisiones" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisiones"]
+build_mode = 1
+polygon = PackedVector2Array(266, 172, 688, 171, 688, 276, 721, 277, 723, 345, 690, 345, 686, 523, 514, 522, 514, 553, 443, 554, 443, 521, 267, 521)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="colisiones"]
+polygon = PackedVector2Array(358, 507, 383, 485, 374, 426, 329, 402, 305, 413, 301, 438, 285, 452)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="colisiones"]
+polygon = PackedVector2Array(366, 380, 403, 354, 470, 424, 439, 452)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="colisiones"]
+polygon = PackedVector2Array(337, 319, 393, 307, 374, 250, 347, 230, 327, 241, 320, 266)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="colisiones"]
+polygon = PackedVector2Array(581, 219, 584, 171, 656, 173, 657, 222)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="colisiones"]
+polygon = PackedVector2Array(642, 478, 645, 429, 631, 425, 636, 396, 662, 397, 669, 423, 655, 428, 652, 480, 660, 481, 660, 507, 633, 505, 633, 479)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="colisiones"]
+polygon = PackedVector2Array(524, 397, 570, 384, 573, 360, 559, 325, 540, 301, 519, 285, 494, 290, 468, 301, 460, 319)
 
 [editable path="Puertas/Puerta_S"]
 [editable path="Puertas/Puerta_E"]

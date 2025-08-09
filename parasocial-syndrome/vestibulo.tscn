@@ -150,16 +150,16 @@ position = Vector2(489, 314)
 [node name="Puertas" type="Node" parent="."]
 
 [node name="Puerta_NO" parent="Puertas" instance=ExtResource("3_64k7u")]
-position = Vector2(309, 181)
+position = Vector2(309, 174)
 tag_habitacion_destino = "hallway"
 tag_puerta_destino = "S"
 direccion_spawn = "abajo"
 
 [node name="Spawn" parent="Puertas/Puerta_NO" index="1"]
-position = Vector2(0, 43)
+position = Vector2(0, 50)
 
 [node name="Puerta_N" parent="Puertas" instance=ExtResource("3_64k7u")]
-position = Vector2(486, 3)
+position = Vector2(489, -6)
 tag_habitacion_destino = "sala_estar"
 tag_puerta_destino = "S"
 direccion_spawn = "abajo"
@@ -194,6 +194,12 @@ modulate = Color(1, 1, 1, 0)
 offset_right = 960.0
 offset_bottom = 540.0
 color = Color(0.0110876, 0.0110876, 0.0110876, 1)
+
+[node name="colisiones" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisiones"]
+build_mode = 1
+polygon = PackedVector2Array(216, 182, 215, 540, 762, 539, 761, 182, 562, 183, 566, -4, 416, 0, 415, 181)
 
 [connection signal="body_entered" from="Cutscene_trigger" to="." method="_on_cutscene_trigger_body_entered"]
 
