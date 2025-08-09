@@ -1,0 +1,139 @@
+~ table
+if table_status=="atada":
+	Hay un vaso, y una vela sobre la mesa.
+	Alessia: Podría utilizar ese vaso para romper mis ataduras
+	Deseas romper el vaso?
+	- Si
+		set table_status="libre"
+		set chair_status[0]="visible"
+		do release_player()
+		Alessia: Por fin libre
+		Alessia: Ahora a encontrar la forma de salir de este sótano
+	- No
+		Alessia: El vidrio roto es peligroso
+		Alessia: Aunque no se que más podría usar para librarme de esta cuerda
+else:
+	Hay trozos de vidrio, junto a una vela sobre la mesa
+	Alessia: Por mucho que quisiera algo con lo que defenderme. Correr con un vidrio roto por la casa no me parece muy seguro
+
+=> END
+
+~ door
+if door_status=="default":
+	Está cerrada
+	Alessia: Quizás haya algo aquí abajo con lo que abrir la cerradura
+else:
+	Está cerrada
+	Quieres intentar usar la llave?
+	- Si
+		do free_basement()
+
+=> END
+
+~ cloth
+Hay cajas, y otros objetos bajo la tela. Pero nada que sea útil
+=> END
+
+~ bookcase
+if bookcase_status== "default":
+	Hay una caja metálica sobre la estantería
+	Alessia: Necesito algo con lo que subir
+else:
+	Está llena de libros, algunos de tu autoría
+	Alessia: Algunos de estos son mis inspiraciones
+	Alessia: Cómo averiguó mis libros favoritos?
+
+=> END
+
+~ lamp
+La tenue luz de la lámpara a penas ilumina el sótano
+=> END
+
+~ chair
+if chair_status[0]!="hidden":
+	if chair_status[1]=="default":
+		Quieres empujar la silla?
+		- Si
+			set chair_status[1]="push"
+		- No
+=> END
+
+~ curtain
+if curtain_status=="default":
+	Una enorme cortina roja
+	Quieres abrirla?
+	- Si
+		set curtain_status="open"
+		do open_curtain()
+		Alessia: P-PERO ¿QUÉ?
+		Alessia: ¿Esa...soy yo?
+		Alessia: Maldición, este tipo en serio está desquiciado si me ve de esta forma
+		Alessia: Tengo que salir de aquí cuanto antes
+	- No
+else:
+	Tras una inspección más cercana, notas unos números tenuemente grabados en el mural
+	do show_mural()
+=> END
+
+~ metalBox
+
+if door_status != "key"
+	La tapa de la caja tiene una marca azul, una marca rosa, un dibujo de un libro y un dibujo de un lapiz
+	También tiene un candado numérico
+	do open_keypad()
+
+	if (metalbox_status == "correct"):
+		Dentro de la caja había una llave
+		Obtuviste una llave
+		set door_status = "key"
+	else:
+		Esa no era la clave
+		if curtain_status=="open":
+			Alessia: Creo haber visto algo en ese mural
+else: 
+	Alessia: Me pregunto para que sera esta llave
+	
+=> END
+
+~ box
+La caja contiene libros, en su mayoría de misterio
+=> END
+
+## Salon de arte
+~ art_Pintura
+Puedes reconocer que el autor de esta pieza le dedico bastante tiempo
+Alessia: Este no es un personaje de mis libros, por lo menos tiene buen gusto
+=> END
+~ art_Planta
+A esta planta le hace falta más agua
+=> END
+~ art_Closet
+Es lo suficientemente grande para una persona
+(mecánica en proceso de desarrollo)
+=> END
+~ art_Mesa
+No es el escritorio mas desordenado que alguna vez hallas visto
+=> END
+~ art_Retrato
+Es sin duda uno de tus mejores retratos
+aun no esta terminado
+=> END
+
+## Sala de estar
+
+~ estar_pintura
+No sabes que se supone que sea
+=> END
+~ estar_sofa
+Es un sofa viejo y desgatado
+=> END
+~ estar_silla
+Es una silla vieja sin muchas muestras de uso
+=> END
+
+~ estar_tv
+No es el mejor momento para buscar el control remoto
+=> END
+~ estar_lampara
+No es mucho pero alumbra lo suficiente
+=> END
