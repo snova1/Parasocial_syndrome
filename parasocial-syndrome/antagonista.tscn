@@ -1,10 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://bur3ph5w7mtcm"]
+[gd_scene load_steps=13 format=3 uid="uid://bur3ph5w7mtcm"]
 
 [ext_resource type="Script" path="res://Scripts/antagonista.gd" id="1_y8bt1"]
 [ext_resource type="Texture2D" uid="uid://eux503gqp2i5" path="res://Assets/Kiran-17.png" id="2_rxylw"]
+[ext_resource type="Texture2D" uid="uid://dpdj83y7m7s7x" path="res://Assets/Temp/Vestibulo_V2.png" id="3_3tst7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2b6qv"]
 radius = 19.0263
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g5fa3"]
+diffuse_texture = ExtResource("2_rxylw")
+normal_texture = ExtResource("3_3tst7")
+texture_filter = 1
+texture_repeat = 1
 
 [sub_resource type="Animation" id="Animation_rswjx"]
 length = 0.001
@@ -98,6 +105,10 @@ _data = {
 "caminar_izquierda": SubResource("Animation_fe817")
 }
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l83sl"]
+closed = false
+polygon = PackedVector2Array(-15, 21, 13, 21)
+
 [node name="Antagonista" type="CharacterBody2D"]
 script = ExtResource("1_y8bt1")
 
@@ -106,8 +117,8 @@ shape = SubResource("CircleShape2D_2b6qv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-9.53674e-07, -43)
-scale = Vector2(1.46875, 1.4375)
-texture = ExtResource("2_rxylw")
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_g5fa3")
 hframes = 4
 vframes = 4
 frame = 12
@@ -118,3 +129,7 @@ libraries = {
 }
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_l83sl")
+sdf_collision = false

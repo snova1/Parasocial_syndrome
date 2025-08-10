@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://mxvq8r62c0re"]
+[gd_scene load_steps=13 format=3 uid="uid://mxvq8r62c0re"]
 
 [ext_resource type="Script" path="res://Scripts/Jugador/jugador.gd" id="1_splfa"]
 [ext_resource type="Texture2D" uid="uid://dmpt8q83iwuel" path="res://Assets/Jugador/Alessia_spritesV2.png" id="2_gil5f"]
@@ -102,6 +102,10 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3dplq"]
 size = Vector2(40, 64)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_omlg5"]
+closed = false
+polygon = PackedVector2Array(-8, 18, 8, 18)
+
 [node name="Jugador" type="CharacterBody2D"]
 script = ExtResource("1_splfa")
 
@@ -110,7 +114,7 @@ shape = SubResource("CircleShape2D_1lprt")
 
 [node name="Normal" type="Sprite2D" parent="."]
 position = Vector2(-1, -28)
-scale = Vector2(1.46875, 1.4375)
+scale = Vector2(2, 2)
 texture = ExtResource("2_gil5f")
 hframes = 4
 vframes = 4
@@ -123,7 +127,7 @@ libraries = {
 [node name="Tied" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-1.5, -30.5)
-scale = Vector2(1.54167, 1.51163)
+scale = Vector2(2, 2)
 texture = ExtResource("3_yirwj")
 
 [node name="Int_area" type="Marker2D" parent="."]
@@ -136,3 +140,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Int_area/Finder_interaccion"]
 position = Vector2(-1, 14)
 shape = SubResource("RectangleShape2D_3dplq")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_omlg5")
+sdf_collision = false

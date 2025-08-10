@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckfieeug0jbm1"]
+[gd_scene load_steps=18 format=3 uid="uid://ckfieeug0jbm1"]
 
 [ext_resource type="Script" path="res://hallway.gd" id="1_uxwbk"]
 [ext_resource type="Texture2D" uid="uid://cp0wupiobthnt" path="res://Assets/Pasillo.png" id="2_roici"]
@@ -22,6 +22,41 @@ b = Vector2(1, 540)
 a = Vector2(192, 539)
 b = Vector2(2, 541)
 
+[sub_resource type="Gradient" id="Gradient_y5unn"]
+offsets = PackedFloat32Array(0.034965, 0.251748, 0.692308)
+colors = PackedColorArray(1, 0.763167, 0.51, 1, 0.58, 0.351093, 0.2088, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vkv0h"]
+gradient = SubResource("Gradient_y5unn")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r7djs"]
+closed = false
+polygon = PackedVector2Array(650, 137, 650, 91, 730, 91, 730, 139)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ddmys"]
+closed = false
+polygon = PackedVector2Array(216, 133, 216, 18, 299, 18, 299, 134)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ybhse"]
+closed = false
+polygon = PackedVector2Array(63, 0, 1, 255)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_eto5v"]
+closed = false
+polygon = PackedVector2Array(192, 257, 132, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ypk5c"]
+closed = false
+polygon = PackedVector2Array(534, 0, 406, 182)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_glxgp"]
+closed = false
+polygon = PackedVector2Array(625, 0, 753, 182)
+
 [node name="Hallway" type="Node2D"]
 script = ExtResource("1_uxwbk")
 
@@ -33,20 +68,25 @@ scale = Vector2(2.4, 2.25)
 texture = ExtResource("2_roici")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(480.5, 65.5)
 shape = SubResource("RectangleShape2D_2thxv")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(575, 360.5)
 shape = SubResource("RectangleShape2D_2o84q")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 shape = SubResource("SegmentShape2D_kfxlh")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 shape = SubResource("SegmentShape2D_sl4a6")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 shape = SubResource("SegmentShape2D_2pj26")
 
 [node name="Jugador" parent="." instance=ExtResource("2_rsc3v")]
@@ -70,6 +110,51 @@ tag_puerta_destino = "NO"
 
 [node name="Spawn" parent="Puertas/Puerta_S" index="1"]
 position = Vector2(0, -43)
+
+[node name="Light" type="Node" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Light"]
+color = Color(0.308448, 0.253044, 0.491177, 1)
+
+[node name="Sources" type="Node" parent="Light"]
+
+[node name="PointLight2D3" type="PointLight2D" parent="Light/Sources"]
+position = Vector2(96, 1)
+scale = Vector2(3.95722, 3.82805)
+energy = 1.3
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_vkv0h")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Light/Sources"]
+position = Vector2(579, 1)
+scale = Vector2(1.7469, 1.71816)
+energy = 1.3
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_vkv0h")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Light/Sources"]
+color = Color(0.981236, 0.845844, 0.784458, 1)
+energy = 0.95
+
+[node name="Ocludders" type="Node" parent="Light"]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Light/Ocludders"]
+occluder = SubResource("OccluderPolygon2D_r7djs")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Light/Ocludders"]
+occluder = SubResource("OccluderPolygon2D_ddmys")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Light/Ocludders"]
+occluder = SubResource("OccluderPolygon2D_ybhse")
+
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Light/Ocludders"]
+occluder = SubResource("OccluderPolygon2D_eto5v")
+
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Light/Ocludders"]
+occluder = SubResource("OccluderPolygon2D_ypk5c")
+
+[node name="LightOccluder2D6" type="LightOccluder2D" parent="Light/Ocludders"]
+occluder = SubResource("OccluderPolygon2D_glxgp")
 
 [editable path="Puertas/Puerta_E"]
 [editable path="Puertas/Puerta_S"]

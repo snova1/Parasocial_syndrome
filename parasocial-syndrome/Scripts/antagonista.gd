@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var light_occluder_2d = $LightOccluder2D
 @onready var nav_agent = $NavigationAgent2D
 @onready var jugador = get_tree().get_root().get_node("Hallway/Jugador")
 @onready var animacion = $AnimationPlayer
@@ -31,8 +32,19 @@ func _update_animation(direction: Vector2):
 		else:
 			animacion.play("caminar_arriba")
 
+func _quit_shadow():
+	light_occluder_2d.hide()
+
+func _enable_shadow():
+	light_occluder_2d.show()
+
 func _stop():
 	animacion.stop()
+
+func _see_up():
+	animacion.play("caminar_arriba")
+	animacion.stop()
+	animacion.seek(0, true) # Va al tiempo 0 de la animación
 
 func _walk_right():
 	animacion.play("caminar_derecha")
