@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var light_occluder_2d = $LightOccluder2D
 @onready var nav_agent = $NavigationAgent2D
-@onready var jugador = get_tree().get_root().get_node("Hallway/Jugador")
+#@onready var jugador = get_tree().get_root().get_node("Hallway/Jugador")
 @onready var animacion = $AnimationPlayer
 var move_speed: float = 200.0
 

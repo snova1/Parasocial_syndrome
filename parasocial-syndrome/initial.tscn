@@ -25,7 +25,7 @@ size = Vector2(34.5, 16)
 size = Vector2(156, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnqk4"]
-size = Vector2(47, 55)
+size = Vector2(32, 37)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tumgp"]
 size = Vector2(74.8515, 58.25)
@@ -242,11 +242,11 @@ dialogue_resource = ExtResource("3_atjn4")
 dialogue_start = "chair"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Silla/Interactuable"]
-position = Vector2(0.5, -0.5)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_pnqk4")
 
 [node name="Jugador" parent="." instance=ExtResource("1_qhaxb")]
-position = Vector2(474, 475)
+position = Vector2(474, 466)
 
 [node name="interactuables" type="Node" parent="."]
 
@@ -297,7 +297,6 @@ dialogue_resource = ExtResource("3_atjn4")
 dialogue_start = "metalBox"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/metalbox"]
-visible = false
 position = Vector2(3, 19.125)
 shape = SubResource("RectangleShape2D_moopr")
 
@@ -307,7 +306,6 @@ dialogue_resource = ExtResource("3_atjn4")
 dialogue_start = "door"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/Puerta"]
-visible = false
 position = Vector2(4.5, -9)
 shape = SubResource("RectangleShape2D_wa5n0")
 
@@ -415,6 +413,7 @@ color = Color(0.308448, 0.253044, 0.491177, 1)
 [node name="Sources" type="Node" parent="Light"]
 
 [node name="PointLight2D" type="PointLight2D" parent="Light/Sources"]
+visible = false
 position = Vector2(484, 48)
 scale = Vector2(4.06424, 3.63851)
 energy = 1.5
@@ -422,6 +421,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_suknl")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Light/Sources"]
+visible = false
 position = Vector2(690.266, 279.492)
 scale = Vector2(2.0802, 1.91022)
 energy = 1.5

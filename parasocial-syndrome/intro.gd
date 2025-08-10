@@ -4,7 +4,6 @@ const Balloon = preload("res://Dialogue/balloon.tscn")
 
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String="start"
-@onready var cutscene_kieran: Sprite2D = $cutsceneKieran
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var antagonista: CharacterBody2D = $Antagonista
 @onready var fader: ColorRect = $Fader
@@ -19,18 +18,10 @@ func _ready() -> void:
 	Status.cutscene.connect(_on_cutscene)
 	do_start_diag()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-
-	
-
 func do_start_diag():
 	var balloon: Node = Balloon.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(dialogue_resource,dialogue_start)
-	
-func intro_go_kieran():	
-	cutscene_kieran.start_or_retreat()
 
 func _on_cutscene(name: String):
 	animation_player.play(name)

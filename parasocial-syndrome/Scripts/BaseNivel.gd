@@ -6,5 +6,6 @@ func _ready() -> void:
 
 func _on_level_spwan(tag_destino: String):
 	var path_puerta= "Puertas/Puerta_"+tag_destino
-	var door= get_node(path_puerta) as puerta
-	NavegacionManager.trigger_player_spawn(door.spawn.global_position, door.direccion_spawn)
+	if has_node(path_puerta):
+		var door= get_node(path_puerta) as puerta
+		NavegacionManager.trigger_player_spawn(door.spawn.global_position, door.direccion_spawn)

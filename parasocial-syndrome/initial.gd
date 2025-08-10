@@ -42,7 +42,8 @@ func _ready() -> void:
 	else:
 		estado=1
 	super()
-	restaurar_estado_sotano()
+	if (!Status.cannot_leave_basement):
+		restaurar_estado_sotano()
 
 func _process(delta):
 	if estado==1 and Input.is_action_just_pressed("Interact"):

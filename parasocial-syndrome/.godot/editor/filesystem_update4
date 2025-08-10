@@ -6,3 +6,10 @@ res://intro.tscn
 res://Dialogue/balloon.tscn
 res://sala_estar.tscn
 res://sala_arte.tscn
+res://Scripts/antagonista.gd
+res://intro.gd
+res://jugador.tscn
+res://Scripts/BaseNivel.gd
+res://Scripts/Status.gd
+res://Silla.tscn
+res://initial.gd

@@ -51,6 +51,9 @@ func free_basement():
 	enable_navigation.emit()
 
 func end_demo():
+	player_tied= true
+	cannot_leave_basement=true
+	cutscene_played=false
 	table_status="atada"
 	chair_status=["hidden", "default"]
 	bookcase_status="default"
@@ -58,7 +61,8 @@ func end_demo():
 	curtain_status="default"
 	password="1234"
 	metalbox_status="default"
-	await get_tree().create_timer(2.0).timeout
+	NavegacionManager.tag_puerta_spawn = null
+	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://end.tscn")
 
 func screen_end():

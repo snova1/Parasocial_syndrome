@@ -91,7 +91,7 @@ if door_status != "key"
 		if curtain_status=="open":
 			Alessia: Creo haber visto algo en ese mural
 else: 
-	Alessia: Me pregunto para que sera esta llave
+	Alessia: "2401"...Ese es mi cumpleaños
 	
 => END
 
