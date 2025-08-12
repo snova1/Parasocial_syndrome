@@ -49,6 +49,7 @@ func _on_iniciar_pressed() -> void:
 	sonido_risas.play()
 	await animation_player.animation_finished
 	await get_tree().create_timer(2.0).timeout
+	await get_tree().process_frame
 	get_tree().change_scene_to_file("res://intro.tscn")
 
 

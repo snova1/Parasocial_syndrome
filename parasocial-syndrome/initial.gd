@@ -10,9 +10,6 @@ extends "res://Scripts/BaseNivel.gd"
 @onready var tutorial: Label = $Tutorial
 var estado = 0  # 0 = Movimiento, 1 = Interacción
 
-const Balloon = preload("res://Dialogue/balloon.tscn")
-var resource = load("res://Dialogue/cutscenes.dialogue")
-
 @onready var interactuables: Node = $interactuables
 @onready var keypad: Control = $Node2D/keypad
 

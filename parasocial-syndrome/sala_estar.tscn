@@ -40,7 +40,7 @@ tag_habitacion_destino = "vestibulo"
 tag_puerta_destino = "N"
 
 [node name="Spawn" parent="Puertas/Puerta_S" index="1"]
-position = Vector2(0, -46)
+position = Vector2(0, -57)
 
 [node name="Puerta_E" parent="Puertas" instance=ExtResource("4_8gd4t")]
 position = Vector2(732, 310)
@@ -49,7 +49,7 @@ tag_puerta_destino = "O"
 direccion_spawn = "izquierda"
 
 [node name="Spawn" parent="Puertas/Puerta_E" index="1"]
-position = Vector2(-49, 0)
+position = Vector2(-52, 0)
 
 [node name="interactuables" type="Node" parent="."]
 
@@ -125,6 +125,7 @@ polygon = PackedVector2Array(-21, 30, 57, 9, 24, -66, -25, -110, -100, -71)
 [node name="colisiones" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisiones"]
+visible = false
 build_mode = 1
 polygon = PackedVector2Array(266, 172, 688, 171, 688, 276, 721, 277, 723, 345, 690, 345, 686, 523, 514, 522, 514, 553, 443, 554, 443, 521, 267, 521)
 

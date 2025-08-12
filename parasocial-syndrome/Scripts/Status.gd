@@ -27,8 +27,6 @@ signal kieran_stop
 signal letter
 signal finish_letter
 signal resume
-signal initial_fade
-signal all_fade
 signal cutscene
 
 func go_kieran():
@@ -36,6 +34,7 @@ func go_kieran():
 
 func start_gameplay():
 	await get_tree().create_timer(1.0).timeout
+	await get_tree().process_frame
 	get_tree().change_scene_to_packed(scene_initial)
 
 func release_player():
@@ -53,7 +52,9 @@ func free_basement():
 func end_demo():
 	player_tied= true
 	cannot_leave_basement=true
-	cutscene_played=false
+	if cutscene_played:
+		cutscene_played=false
+		Fader.fade_in()
 	table_status="atada"
 	chair_status=["hidden", "default"]
 	bookcase_status="default"
@@ -62,7 +63,8 @@ func end_demo():
 	password="1234"
 	metalbox_status="default"
 	NavegacionManager.tag_puerta_spawn = null
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(2.0).timeout
+	await get_tree().process_frame
 	get_tree().change_scene_to_file("res://end.tscn")
 
 func screen_end():

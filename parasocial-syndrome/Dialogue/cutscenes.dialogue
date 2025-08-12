@@ -83,7 +83,15 @@ Tenemos unas cuantas más habitaciones de la casa de Kiran que puedes explorar
 Estas no representan la totalidad ni la calidad del juego final
 Deseas seguir explorando?
 - Si
+	En cualquier momento puedes presionar Escape si deseas terminar de explorar
 	do resume_gameplay()
 - No
 	do end_demo()
+=> END
+
+~ stop_exploring
+Deseas terminar de explorar?
+- Si
+	do end_demo()
+- No
 => END

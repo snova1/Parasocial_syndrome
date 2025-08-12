@@ -47,11 +47,12 @@ tag_puerta_destino = "E"
 direccion_spawn = "derecha"
 
 [node name="Spawn" parent="Puertas/Puerta_O" index="1"]
-position = Vector2(43, 0)
+position = Vector2(47, 0)
 
 [node name="colisiones" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisiones"]
+visible = false
 build_mode = 1
 polygon = PackedVector2Array(222, 270, 257, 271, 258, 165, 677, 164, 680, 515, 259, 517, 259, 344, 222, 341)
 

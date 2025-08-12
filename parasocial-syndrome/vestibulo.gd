@@ -1,7 +1,5 @@
 extends "res://Scripts/BaseNivel.gd"
 
-const Balloon = preload("res://Dialogue/balloon.tscn")
-var resource = load("res://Dialogue/cutscenes.dialogue")
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 signal letter_read

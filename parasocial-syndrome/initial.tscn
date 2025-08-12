@@ -403,7 +403,7 @@ tag_puerta_destino = "E"
 direccion_spawn = "derecha"
 
 [node name="Spawn" parent="Puertas/Puerta_O" index="1"]
-position = Vector2(38, 0)
+position = Vector2(43, 0)
 
 [node name="Light" type="Node" parent="."]
 
@@ -413,7 +413,6 @@ color = Color(0.308448, 0.253044, 0.491177, 1)
 [node name="Sources" type="Node" parent="Light"]
 
 [node name="PointLight2D" type="PointLight2D" parent="Light/Sources"]
-visible = false
 position = Vector2(484, 48)
 scale = Vector2(4.06424, 3.63851)
 energy = 1.5
@@ -421,7 +420,6 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_suknl")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Light/Sources"]
-visible = false
 position = Vector2(690.266, 279.492)
 scale = Vector2(2.0802, 1.91022)
 energy = 1.5

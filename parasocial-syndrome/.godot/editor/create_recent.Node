@@ -1,14 +1,14 @@
+AnimationPlayer
+ColorRect
+CanvasLayer
 CollisionShape2D
 AudioStreamPlayer
 AudioStreamPlayer2D
-ColorRect
-AnimationPlayer
 TextureRect
 Area2D
 Node
 Sprite2D
 Marker2D
 Label
-CanvasLayer
 MarginContainer
 Button

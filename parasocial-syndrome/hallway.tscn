@@ -109,7 +109,7 @@ tag_habitacion_destino = "vestibulo"
 tag_puerta_destino = "NO"
 
 [node name="Spawn" parent="Puertas/Puerta_S" index="1"]
-position = Vector2(0, -43)
+position = Vector2(0, -54)
 
 [node name="Light" type="Node" parent="."]
 
