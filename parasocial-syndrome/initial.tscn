@@ -190,7 +190,6 @@ scale = Vector2(0.81, 0.81)
 texture = ExtResource("3_xdd32")
 
 [node name="table" type="CollisionPolygon2D" parent="colisiones"]
-visible = false
 light_mask = 2
 polygon = PackedVector2Array(283, 378, 361, 378, 374, 457, 370, 506, 368, 477, 277, 480, 276, 505, 274, 458)
 
