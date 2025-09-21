@@ -1,4 +1,4 @@
-extends "res://Scripts/BaseNivel.gd"
+extends "res://Scripts/Rooms/BaseNivel.gd"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var puerta_o: puerta = $Puertas/Puerta_O
 @onready var initial: Node2D = $"."
@@ -13,7 +13,7 @@ var estado = 0  # 0 = Movimiento, 1 = Interacción
 @onready var interactuables: Node = $interactuables
 @onready var keypad: Control = $Node2D/keypad
 
-var key = preload("res://keypad.tscn")
+var key = preload("res://Scenes/keypad.tscn")
 
 signal cutscene_finished
 signal mural_shown

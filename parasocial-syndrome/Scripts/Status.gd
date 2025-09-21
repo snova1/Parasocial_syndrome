@@ -1,6 +1,6 @@
 extends Node
 
-const scene_initial=preload("res://initial.tscn")
+const scene_initial=preload("res://Scenes/Rooms/initial.tscn")
 
 var player_tied: bool= true
 var cannot_leave_basement: bool=true
@@ -65,7 +65,7 @@ func end_demo():
 	NavegacionManager.tag_puerta_spawn = null
 	await get_tree().create_timer(2.0).timeout
 	await get_tree().process_frame
-	get_tree().change_scene_to_file("res://end.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/end.tscn")
 
 func screen_end():
 	end_screen.emit()

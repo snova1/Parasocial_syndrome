@@ -1,6 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0qh6dk3jleo4"]
 
-[ext_resource type="Script" path="res://keypad.gd" id="1_c5yef"]
+[ext_resource type="Script" path="res://Scripts/keypad.gd" id="1_c5yef"]
+
 
 [sub_resource type="LabelSettings" id="LabelSettings_tio1u"]
 font_size = 180

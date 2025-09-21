@@ -1,16 +1,16 @@
 [gd_scene load_steps=34 format=3 uid="uid://dwiksxqqrbg2t"]
 
-[ext_resource type="Script" path="res://initial.gd" id="1_dsbi2"]
-[ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://jugador.tscn" id="1_qhaxb"]
+[ext_resource type="Script" path="res://Scripts/Rooms/initial.gd" id="1_dsbi2"]
+[ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://Scenes/jugador.tscn" id="1_qhaxb"]
 [ext_resource type="Texture2D" uid="uid://bd6y3haaclpqd" path="res://Assets/sótano.png" id="1_we8tt"]
-[ext_resource type="PackedScene" uid="uid://cgwthx1srigte" path="res://interactuable.tscn" id="2_vf0yb"]
+[ext_resource type="PackedScene" uid="uid://cgwthx1srigte" path="res://Scenes/interactuable.tscn" id="2_vf0yb"]
 [ext_resource type="Resource" uid="uid://dgowpg570bn6l" path="res://Dialogue/dialogue.dialogue" id="3_atjn4"]
 [ext_resource type="Texture2D" uid="uid://bwe01osmole0s" path="res://Assets/sótano2.png" id="3_xdd32"]
 [ext_resource type="AudioStream" uid="uid://cg6je5w4y5vig" path="res://Assets/Sonidos/cutting_free.wav" id="4_0d3pj"]
-[ext_resource type="PackedScene" uid="uid://3w8u7nr6tcsg" path="res://Silla.tscn" id="6_tobga"]
+[ext_resource type="PackedScene" uid="uid://3w8u7nr6tcsg" path="res://Scenes/Silla.tscn" id="6_tobga"]
 [ext_resource type="Texture2D" uid="uid://tlfaypx8w2k0" path="res://Assets/mural.png" id="9_co7yk"]
-[ext_resource type="PackedScene" uid="uid://d0qh6dk3jleo4" path="res://keypad.tscn" id="10_p8yxc"]
-[ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://puerta.tscn" id="11_2wa05"]
+[ext_resource type="PackedScene" uid="uid://d0qh6dk3jleo4" path="res://Scenes/keypad.tscn" id="10_p8yxc"]
+[ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://Scenes/puerta.tscn" id="11_2wa05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u2cir"]
 size = Vector2(68.25, 176)

@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtsxtle37rays"]
 
-[ext_resource type="Script" path="res://puerta.gd" id="1_j1fa2"]
+[ext_resource type="Script" path="res://Scripts/puerta.gd" id="1_j1fa2"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5tsx3"]
 

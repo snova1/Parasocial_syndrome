@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://cgh42fdtsm6jr"]
 
-[ext_resource type="Script" path="res://sala_estar.gd" id="1_2nvu8"]
+[ext_resource type="Script" path="res://Scripts/Rooms/sala_estar.gd" id="1_2nvu8"]
 [ext_resource type="Texture2D" uid="uid://cj65h3r3enqis" path="res://Assets/Sala tv luz V1.png" id="1_7cxfr"]
-[ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://jugador.tscn" id="2_gwrqj"]
-[ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://puerta.tscn" id="4_8gd4t"]
+[ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://Scenes/jugador.tscn" id="2_gwrqj"]
+[ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://Scenes/puerta.tscn" id="4_8gd4t"]
 [ext_resource type="Script" path="res://Scripts/interactuable.gd" id="5_nnbsw"]
 [ext_resource type="Resource" uid="uid://dgowpg570bn6l" path="res://Dialogue/dialogue.dialogue" id="6_3c0lx"]
 

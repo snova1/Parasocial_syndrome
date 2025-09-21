@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://b4tgedhri5g5g"]
 
-[ext_resource type="Script" path="res://vestibulo.gd" id="1_emafw"]
+[ext_resource type="Script" path="res://Scripts/Rooms/vestibulo.gd" id="1_emafw"]
 [ext_resource type="Texture2D" uid="uid://qy45k4eg0tk7" path="res://Assets/Vestibulo_V2.png" id="2_lpofb"]
-[ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://puerta.tscn" id="3_64k7u"]
-[ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://jugador.tscn" id="3_uxc82"]
+[ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://Scenes/puerta.tscn" id="3_64k7u"]
+[ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://Scenes/jugador.tscn" id="3_uxc82"]
 [ext_resource type="Texture2D" uid="uid://chdpqp1frk253" path="res://Assets/alessia_letter.png" id="5_4j2vj"]
 [ext_resource type="AudioStream" uid="uid://vqceorlg4m3p" path="res://Assets/Sonidos/flip_page.wav" id="6_ngy1k"]
 

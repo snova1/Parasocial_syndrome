@@ -50,7 +50,7 @@ func _on_iniciar_pressed() -> void:
 	await animation_player.animation_finished
 	await get_tree().create_timer(2.0).timeout
 	await get_tree().process_frame
-	get_tree().change_scene_to_file("res://intro.tscn")
+	get_tree().change_scene_to_file("res://Scenes/intro.tscn")
 
 
 func _on_cargar_pressed() -> void:
@@ -58,7 +58,7 @@ func _on_cargar_pressed() -> void:
 
 
 func _on_opciones_pressed() -> void:
-	get_tree().change_scene_to_file("res://menu_opciones.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/menu_opciones.tscn")
 
 
 func _on_salir_pressed() -> void:

@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://ccahki6uwsk3c"]
 
 [ext_resource type="Texture2D" uid="uid://byuqrqyhyemjo" path="res://Assets/Sala 1 entrada luz.png" id="1_npwqt"]
-[ext_resource type="Script" path="res://sala_arte.gd" id="1_sv6kp"]
-[ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://jugador.tscn" id="2_evk74"]
-[ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://puerta.tscn" id="4_6qafq"]
+[ext_resource type="Script" path="res://Scripts/Rooms/sala_estar.gd" id="1_sv6kp"]
+[ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://Scenes/jugador.tscn" id="2_evk74"]
+[ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://Scenes/puerta.tscn" id="4_6qafq"]
 [ext_resource type="Script" path="res://Scripts/interactuable.gd" id="5_ab288"]
 [ext_resource type="Resource" uid="uid://dgowpg570bn6l" path="res://Dialogue/dialogue.dialogue" id="6_7gm6k"]
 

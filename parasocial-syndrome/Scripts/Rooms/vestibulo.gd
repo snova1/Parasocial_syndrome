@@ -1,4 +1,4 @@
-extends "res://Scripts/BaseNivel.gd"
+extends "res://Scripts/Rooms/BaseNivel.gd"
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=24 format=3 uid="uid://da716ckji1a52"]
 
-[ext_resource type="Script" path="res://intro.gd" id="1_nufoq"]
+[ext_resource type="Script" path="res://Scripts/intro.gd" id="1_nufoq"]
 [ext_resource type="Resource" uid="uid://60gdr5tbedl2" path="res://Dialogue/cutscenes.dialogue" id="2_rpu04"]
 [ext_resource type="Texture2D" uid="uid://bd6y3haaclpqd" path="res://Assets/sótano.png" id="3_ii5uw"]
 [ext_resource type="Texture2D" uid="uid://c6h6noktc1ngg" path="res://Assets/Jugador/Alessia_Silla.png" id="4_wtwmq"]
-[ext_resource type="PackedScene" uid="uid://bur3ph5w7mtcm" path="res://antagonista.tscn" id="7_u48p1"]
+[ext_resource type="PackedScene" uid="uid://bur3ph5w7mtcm" path="res://Scenes/antagonista.tscn" id="7_u48p1"]
 [ext_resource type="AudioStream" uid="uid://d3m2e2754dygw" path="res://Assets/Sonidos/door-opening-353874.mp3" id="8_hv5ck"]
 
 [sub_resource type="Animation" id="Animation_2tjjr"]

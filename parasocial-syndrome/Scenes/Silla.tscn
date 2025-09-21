@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://3w8u7nr6tcsg"]
 
-[ext_resource type="Script" path="res://silla.gd" id="1_3hkdr"]
+[ext_resource type="Script" path="res://Scripts/silla.gd" id="1_3hkdr"]
 [ext_resource type="Texture2D" uid="uid://b0xdt04etugj" path="res://Assets/chair.png" id="1_emxov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aa6ku"]

@@ -1,10 +1,10 @@
 extends Node
 
-const scene_initial=preload("res://initial.tscn")
-const scene_hallway=preload("res://hallway.tscn")
-const scene_vestibulo=preload("res://vestibulo.tscn")
-const scene_sala_estar=preload("res://sala_estar.tscn")
-const scene_sala_arte=preload("res://sala_arte.tscn")
+const scene_initial=preload("res://Scenes/Rooms/initial.tscn")
+const scene_hallway=preload("res://Scenes/Rooms/hallway.tscn")
+const scene_vestibulo=preload("res://Scenes/Rooms/vestibulo.tscn")
+const scene_sala_estar=preload("res://Scenes/Rooms/sala_estar.tscn")
+const scene_sala_arte=preload("res://Scenes/Rooms/sala_arte.tscn")
 
 signal on_trigger_player_spawn
 

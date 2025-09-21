@@ -1,9 +1,9 @@
 [gd_scene load_steps=18 format=3 uid="uid://ckfieeug0jbm1"]
 
-[ext_resource type="Script" path="res://hallway.gd" id="1_uxwbk"]
+[ext_resource type="Script" path="res://Scripts/Rooms/hallway.gd" id="1_uxwbk"]
 [ext_resource type="Texture2D" uid="uid://cp0wupiobthnt" path="res://Assets/Pasillo.png" id="2_roici"]
-[ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://jugador.tscn" id="2_rsc3v"]
-[ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://puerta.tscn" id="3_ac0cw"]
+[ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://Scenes/jugador.tscn" id="2_rsc3v"]
+[ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://Scenes/puerta.tscn" id="3_ac0cw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2thxv"]
 size = Vector2(962, 137.5)
