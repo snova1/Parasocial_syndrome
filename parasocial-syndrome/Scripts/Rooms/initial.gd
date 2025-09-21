@@ -151,6 +151,7 @@ func wait_for_escape():
 func _on_keypad():
 	if !(keypad.visible):
 		keypad.visible = true
+		keypad.button_focus()
 	else:
 		keypad.visible = false
 

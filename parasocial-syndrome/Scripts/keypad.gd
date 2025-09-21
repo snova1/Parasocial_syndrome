@@ -1,5 +1,6 @@
 extends Control
 @onready var label: Label = $VBoxContainer/MarginContainer/Label
+@onready var button_1: Button = $VBoxContainer/GridContainer/Button1
 
 const password = "2401"
 # Called when the node enters the scene tree for the first time.
@@ -7,6 +8,8 @@ const password = "2401"
 signal ok_pressed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func button_focus():
+	button_1.grab_focus()
 
 func key_press(digit):
 	if len(label.text) < 4:
