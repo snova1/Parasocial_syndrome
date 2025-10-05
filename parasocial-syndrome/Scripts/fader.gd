@@ -4,14 +4,22 @@ extends CanvasLayer
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var canvas: CanvasLayer = $"."
 
+func hidecanvas() ->void:
+	canvas.visible=false
+
 func fade_in() -> void:
 	canvas.visible=true
 	anim.play("fade_in")
 	await anim.animation_finished
-	canvas.visible=false
 
 func fade_out() -> void:
-	canvas.visible=false
+	canvas.visible=true
 	anim.play("fade_out")
+	await anim.animation_finished
+	canvas.visible=false
+
+func flashback() ->void:
+	canvas.visible=true
+	anim.play("flashback")
 	await anim.animation_finished
 	canvas.visible=false

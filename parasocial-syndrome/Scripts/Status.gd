@@ -19,11 +19,9 @@ signal curtain_big
 signal mural
 signal keypad
 signal ok_pressed
-signal demo_end
 signal end_screen
 signal enable_navigation
 signal kieran_go
-signal kieran_stop
 signal letter
 signal finish_letter
 signal resume
@@ -31,6 +29,9 @@ signal cutscene
 
 func go_kieran():
 	kieran_go.emit()
+
+func flashback():
+	await Fader.flashback()
 
 func start_gameplay():
 	await get_tree().create_timer(1.0).timeout
@@ -66,6 +67,7 @@ func end_demo():
 	await get_tree().create_timer(2.0).timeout
 	await get_tree().process_frame
 	get_tree().change_scene_to_file("res://Scenes/Menus/end.tscn")
+	Fader.hidecanvas()
 
 func screen_end():
 	end_screen.emit()
@@ -77,7 +79,6 @@ func open_curtain():
 		await initial_scene.mural_shown
 
 func show_mural():
-	var initial_scene = get_tree().current_scene
 	mural.emit()
 
 func show_letter():

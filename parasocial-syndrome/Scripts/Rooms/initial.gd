@@ -28,7 +28,6 @@ func _ready() -> void:
 	initial.get_node("colisiones/CollisionShape2D3").disabled=true
 	initial.get_node("interactuables/metalbox/CollisionShape2D").disabled=true
 	Status.player_free.connect(_on_player_free)
-	Status.demo_end.connect(_on_demo_end)
 	Status.end_screen.connect(_on_end_screen)
 	Status.keypad.connect(_on_keypad)
 	Status.curtain_big.connect(_on_curtain_open)
@@ -108,15 +107,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_enable_navigation():
 	puerta_o.get_node("CollisionShape2D").disabled = Status.cannot_leave_basement
-
-func _on_demo_end():
-	fader.visible=true
-	animation_player.play("fade_to_black")
-	await animation_player.animation_finished
-	await get_tree().create_timer(1.0).timeout
-	var balloon: Node= Balloon.instantiate()
-	get_tree().current_scene.add_child(balloon)
-	await balloon.start(resource,"out_of_basement")
 
 func _on_end_screen():
 	await get_tree().create_timer(1.0).timeout

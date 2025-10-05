@@ -286,7 +286,6 @@ dialogue_resource = ExtResource("3_atjn4")
 dialogue_start = "cloth"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="interactuables/cloth"]
-visible = false
 position = Vector2(-14, -12)
 scale = Vector2(1.34633, 1.49456)
 polygon = PackedVector2Array(-23.7683, -1.33818, 10, 24, 51, 24, 70, 7, 46.7939, -78.2839, 16.3407, -78.953)
