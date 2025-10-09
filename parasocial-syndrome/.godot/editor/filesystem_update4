@@ -1,13 +1,4 @@
 res://Scenes/Rooms/initial.tscn
-res://Scenes/Menus/menu.tscn
-res://Scenes/Menus/menu_opciones.tscn
-res://Scenes/Menus/controles.tscn
-res://Scenes/Menus/end.tscn
 res://Scenes/jugador.tscn
 res://Scenes/intro.tscn
-res://Scenes/Rooms/vestibulo.tscn
-res://Scenes/antagonista.tscn
-res://Scripts/Status.gd
 res://Scenes/Fader.tscn
-res://Scripts/fader.gd
-res://Scripts/Rooms/initial.gd

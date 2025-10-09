@@ -78,8 +78,7 @@ else:
 ~ metalBox
 
 if door_status != "key"
-	La tapa de la caja tiene una marca azul, una marca rosa, un dibujo de un libro y un dibujo de un lapiz
-	También tiene un candado numérico
+	La caja tiene un candado numérico
 	do open_keypad()
 
 	if (metalbox_status == "correct"):
