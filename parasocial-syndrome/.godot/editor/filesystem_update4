@@ -1,4 +1,4 @@
-res://Scenes/Rooms/initial.tscn
-res://Scenes/jugador.tscn
-res://Scenes/intro.tscn
-res://Scenes/Fader.tscn
+res://Scenes/Menus/controles.tscn
+res://Scripts/Status.gd
+res://Scenes/Menus/menu.tscn
+res://Scenes/Menus/menu_opciones.tscn

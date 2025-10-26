@@ -20,6 +20,7 @@ func fade_out() -> void:
 
 func flashback() ->void:
 	canvas.visible=true
+	print(canvas.visible)
 	anim.play("flashback")
 	await anim.animation_finished
 	canvas.visible=false

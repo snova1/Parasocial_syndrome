@@ -27,6 +27,9 @@ signal finish_letter
 signal resume
 signal cutscene
 
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
 func go_kieran():
 	kieran_go.emit()
 

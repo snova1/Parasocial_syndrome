@@ -1,27 +1,27 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_bs7fa"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_a3v8q"]
 
 [resource]
-script = ExtResource("1_bs7fa")
+script = ExtResource("1_a3v8q")
 using_states = PackedStringArray()
 titles = {
-"art_Closet": "111",
-"art_Mesa": "115",
-"art_Pintura": "104",
-"art_Planta": "108",
-"art_Retrato": "118",
+"art_Closet": "110",
+"art_Mesa": "114",
+"art_Pintura": "103",
+"art_Planta": "107",
+"art_Retrato": "117",
 "bookcase": "38",
-"box": "99",
+"box": "98",
 "chair": "53",
 "cloth": "34",
 "curtain": "62",
 "door": "22",
-"estar_lampara": "140",
-"estar_pintura": "125",
-"estar_silla": "132",
-"estar_sofa": "129",
-"estar_tv": "136",
+"estar_lampara": "139",
+"estar_pintura": "124",
+"estar_silla": "131",
+"estar_sofa": "128",
+"estar_tv": "135",
 "lamp": "49",
 "metalBox": "80",
 "table": "2"
@@ -48,23 +48,17 @@ lines = {
 "translation_key": "Por fin libre",
 "type": &"dialogue"
 },
-"100": {
-"id": "100",
-"is_snippet": false,
-"next_id": "end",
-"type": &"goto"
-},
-"103": {
-"id": "103",
-"next_id": "104",
+"102": {
+"id": "102",
+"next_id": "103",
 "text": "art_Pintura",
 "type": &"title"
 },
-"104": {
+"103": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "104",
-"next_id": "105",
+"id": "103",
+"next_id": "104",
 "notes": "Salon de arte",
 "tags": PackedStringArray(),
 "text": "Puedes reconocer que el autor de esta pieza le dedico bastante tiempo",
@@ -72,11 +66,11 @@ lines = {
 "translation_key": "Puedes reconocer que el autor de esta pieza le dedico bastante tiempo",
 "type": &"dialogue"
 },
-"105": {
+"104": {
 "character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
-"id": "105",
-"next_id": "106",
+"id": "104",
+"next_id": "105",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Este no es un personaje de mis libros, por lo menos tiene buen gusto",
@@ -84,23 +78,23 @@ lines = {
 "translation_key": "Este no es un personaje de mis libros, por lo menos tiene buen gusto",
 "type": &"dialogue"
 },
-"106": {
-"id": "106",
+"105": {
+"id": "105",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
 },
-"107": {
-"id": "107",
-"next_id": "108",
+"106": {
+"id": "106",
+"next_id": "107",
 "text": "art_Planta",
 "type": &"title"
 },
-"108": {
+"107": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "108",
-"next_id": "109",
+"id": "107",
+"next_id": "108",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "A esta planta le hace falta más agua",
@@ -108,11 +102,17 @@ lines = {
 "translation_key": "A esta planta le hace falta más agua",
 "type": &"dialogue"
 },
-"109": {
-"id": "109",
+"108": {
+"id": "108",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
+},
+"109": {
+"id": "109",
+"next_id": "110",
+"text": "art_Closet",
+"type": &"title"
 },
 "11": {
 "character": "Alessia",
@@ -128,16 +128,10 @@ lines = {
 "type": &"dialogue"
 },
 "110": {
-"id": "110",
-"next_id": "111",
-"text": "art_Closet",
-"type": &"title"
-},
-"111": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "111",
-"next_id": "112",
+"id": "110",
+"next_id": "111",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Es lo suficientemente grande para una persona",
@@ -145,11 +139,11 @@ lines = {
 "translation_key": "Es lo suficientemente grande para una persona",
 "type": &"dialogue"
 },
-"112": {
+"111": {
 "character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
-"id": "112",
-"next_id": "113",
+"id": "111",
+"next_id": "112",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Podria esconderme aquí si ese chico me persigue",
@@ -157,23 +151,23 @@ lines = {
 "translation_key": "Podria esconderme aquí si ese chico me persigue",
 "type": &"dialogue"
 },
-"113": {
-"id": "113",
+"112": {
+"id": "112",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
 },
-"114": {
-"id": "114",
-"next_id": "115",
+"113": {
+"id": "113",
+"next_id": "114",
 "text": "art_Mesa",
 "type": &"title"
 },
-"115": {
+"114": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "115",
-"next_id": "116",
+"id": "114",
+"next_id": "115",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "No es el escritorio mas desordenado que alguna vez hallas visto",
@@ -181,17 +175,29 @@ lines = {
 "translation_key": "No es el escritorio mas desordenado que alguna vez hallas visto",
 "type": &"dialogue"
 },
-"116": {
-"id": "116",
+"115": {
+"id": "115",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
 },
-"117": {
-"id": "117",
-"next_id": "118",
+"116": {
+"id": "116",
+"next_id": "117",
 "text": "art_Retrato",
 "type": &"title"
+},
+"117": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "117",
+"next_id": "118",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Es sin duda uno de tus mejores retratos",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Es sin duda uno de tus mejores retratos",
+"type": &"dialogue"
 },
 "118": {
 "character": "",
@@ -200,22 +206,16 @@ lines = {
 "next_id": "119",
 "notes": "",
 "tags": PackedStringArray(),
-"text": "Es sin duda uno de tus mejores retratos",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Es sin duda uno de tus mejores retratos",
-"type": &"dialogue"
-},
-"119": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "119",
-"next_id": "120",
-"notes": "",
-"tags": PackedStringArray(),
 "text": "Pero aun no esta terminado",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Pero aun no esta terminado",
 "type": &"dialogue"
+},
+"119": {
+"id": "119",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
 },
 "12": {
 "character": "",
@@ -231,23 +231,17 @@ lines = {
 "translation_key": "No",
 "type": &"response"
 },
-"120": {
-"id": "120",
-"is_snippet": false,
-"next_id": "end",
-"type": &"goto"
-},
-"124": {
-"id": "124",
-"next_id": "125",
+"123": {
+"id": "123",
+"next_id": "124",
 "text": "estar_pintura",
 "type": &"title"
 },
-"125": {
+"124": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "125",
-"next_id": "126",
+"id": "124",
+"next_id": "125",
 "notes": "Sala de estar",
 "tags": PackedStringArray(),
 "text": "Una pintura abstracta",
@@ -255,11 +249,11 @@ lines = {
 "translation_key": "Una pintura abstracta",
 "type": &"dialogue"
 },
-"126": {
+"125": {
 "character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
-"id": "126",
-"next_id": "127",
+"id": "125",
+"next_id": "126",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "No estoy segura que se supone que sea",
@@ -267,29 +261,35 @@ lines = {
 "translation_key": "No estoy segura que se supone que sea",
 "type": &"dialogue"
 },
-"127": {
-"id": "127",
+"126": {
+"id": "126",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
 },
-"128": {
-"id": "128",
-"next_id": "129",
+"127": {
+"id": "127",
+"next_id": "128",
 "text": "estar_sofa",
 "type": &"title"
 },
-"129": {
+"128": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "129",
-"next_id": "130",
+"id": "128",
+"next_id": "129",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Es un sofa viejo y desgatado",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Es un sofa viejo y desgatado",
 "type": &"dialogue"
+},
+"129": {
+"id": "129",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
 },
 "13": {
 "character": "Alessia",
@@ -306,21 +306,15 @@ lines = {
 },
 "130": {
 "id": "130",
-"is_snippet": false,
-"next_id": "end",
-"type": &"goto"
-},
-"131": {
-"id": "131",
-"next_id": "132",
+"next_id": "131",
 "text": "estar_silla",
 "type": &"title"
 },
-"132": {
+"131": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "132",
-"next_id": "133",
+"id": "131",
+"next_id": "132",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Es una silla vieja sin muchas muestras de uso",
@@ -328,23 +322,23 @@ lines = {
 "translation_key": "Es una silla vieja sin muchas muestras de uso",
 "type": &"dialogue"
 },
-"133": {
-"id": "133",
+"132": {
+"id": "132",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
 },
-"135": {
-"id": "135",
-"next_id": "136",
+"134": {
+"id": "134",
+"next_id": "135",
 "text": "estar_tv",
 "type": &"title"
 },
-"136": {
+"135": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "136",
-"next_id": "137",
+"id": "135",
+"next_id": "136",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "El televisor no parece estar funcionando",
@@ -352,11 +346,11 @@ lines = {
 "translation_key": "El televisor no parece estar funcionando",
 "type": &"dialogue"
 },
-"137": {
+"136": {
 "character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
-"id": "137",
-"next_id": "138",
+"id": "136",
+"next_id": "137",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "De todas formas no me apatece ver la tele en esta situación",
@@ -364,17 +358,29 @@ lines = {
 "translation_key": "De todas formas no me apatece ver la tele en esta situación",
 "type": &"dialogue"
 },
-"138": {
-"id": "138",
+"137": {
+"id": "137",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
 },
-"139": {
-"id": "139",
-"next_id": "140",
+"138": {
+"id": "138",
+"next_id": "139",
 "text": "estar_lampara",
 "type": &"title"
+},
+"139": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "139",
+"next_id": "140",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "No es mucho pero alumbra lo suficiente",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "No es mucho pero alumbra lo suficiente",
+"type": &"dialogue"
 },
 "14": {
 "character": "Alessia",
@@ -390,19 +396,7 @@ lines = {
 "type": &"dialogue"
 },
 "140": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
 "id": "140",
-"next_id": "141",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "No es mucho pero alumbra lo suficiente",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "No es mucho pero alumbra lo suficiente",
-"type": &"dialogue"
-},
-"141": {
-"id": "141",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
@@ -1192,9 +1186,9 @@ lines = {
 }])
 },
 "id": "80",
-"next_conditional_id": "93",
+"next_conditional_id": "92",
 "next_id": "81",
-"next_id_after": "96",
+"next_id_after": "95",
 "type": &"condition"
 },
 "81": {
@@ -1205,26 +1199,13 @@ lines = {
 "notes": "",
 "parent_id": "80",
 "tags": PackedStringArray(),
-"text": "La tapa de la caja tiene una marca azul, una marca rosa, un dibujo de un libro y un dibujo de un lapiz",
+"text": "La caja tiene un candado numérico",
 "text_replacements": Array[Dictionary]([]),
-"translation_key": "La tapa de la caja tiene una marca azul, una marca rosa, un dibujo de un libro y un dibujo de un lapiz",
+"translation_key": "La caja tiene un candado numérico",
 "type": &"dialogue"
 },
 "82": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
 "id": "82",
-"next_id": "83",
-"notes": "",
-"parent_id": "80",
-"tags": PackedStringArray(),
-"text": "También tiene un candado numérico",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "También tiene un candado numérico",
-"type": &"dialogue"
-},
-"83": {
-"id": "83",
 "mutation": {
 "expression": Array[Dictionary]([{
 "function": "open_keypad",
@@ -1233,11 +1214,11 @@ lines = {
 }]),
 "is_blocking": true
 },
-"next_id": "85",
+"next_id": "84",
 "parent_id": "80",
 "type": &"mutation"
 },
-"85": {
+"84": {
 "condition": {
 "expression": Array[Dictionary]([{
 "type": &"group",
@@ -1255,12 +1236,25 @@ lines = {
 "type": "colon"
 }])
 },
-"id": "85",
-"next_conditional_id": "89",
-"next_id": "86",
-"next_id_after": "96",
+"id": "84",
+"next_conditional_id": "88",
+"next_id": "85",
+"next_id_after": "95",
 "parent_id": "80",
 "type": &"condition"
+},
+"85": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "85",
+"next_id": "86",
+"notes": "",
+"parent_id": "84",
+"tags": PackedStringArray(),
+"text": "Dentro de la caja había una llave",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Dentro de la caja había una llave",
+"type": &"dialogue"
 },
 "86": {
 "character": "",
@@ -1268,28 +1262,15 @@ lines = {
 "id": "86",
 "next_id": "87",
 "notes": "",
-"parent_id": "85",
-"tags": PackedStringArray(),
-"text": "Dentro de la caja había una llave",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Dentro de la caja había una llave",
-"type": &"dialogue"
-},
-"87": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "87",
-"next_id": "88",
-"notes": "",
-"parent_id": "85",
+"parent_id": "84",
 "tags": PackedStringArray(),
 "text": "Obtuviste una llave",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Obtuviste una llave",
 "type": &"dialogue"
 },
-"88": {
-"id": "88",
+"87": {
+"id": "87",
 "mutation": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -1303,17 +1284,30 @@ lines = {
 }]),
 "is_blocking": true
 },
-"next_id": "96",
-"parent_id": "85",
+"next_id": "95",
+"parent_id": "84",
 "type": &"mutation"
 },
-"89": {
-"id": "89",
-"next_conditional_id": "96",
-"next_id": "90",
-"next_id_after": "96",
+"88": {
+"id": "88",
+"next_conditional_id": "95",
+"next_id": "89",
+"next_id_after": "95",
 "parent_id": "80",
 "type": &"condition"
+},
+"89": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "89",
+"next_id": "90",
+"notes": "",
+"parent_id": "88",
+"tags": PackedStringArray(),
+"text": "Esa no era la clave",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Esa no era la clave",
+"type": &"dialogue"
 },
 "9": {
 "id": "9",
@@ -1330,19 +1324,6 @@ lines = {
 "type": &"mutation"
 },
 "90": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "90",
-"next_id": "91",
-"notes": "",
-"parent_id": "89",
-"tags": PackedStringArray(),
-"text": "Esa no era la clave",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "Esa no era la clave",
-"type": &"dialogue"
-},
-"91": {
 "condition": {
 "expression": Array[Dictionary]([{
 "type": "variable",
@@ -1357,69 +1338,75 @@ lines = {
 "type": "colon"
 }])
 },
-"id": "91",
-"next_conditional_id": "96",
-"next_id": "92",
-"next_id_after": "96",
-"parent_id": "89",
+"id": "90",
+"next_conditional_id": "95",
+"next_id": "91",
+"next_id_after": "95",
+"parent_id": "88",
 "type": &"condition"
 },
-"92": {
+"91": {
 "character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
-"id": "92",
-"next_id": "96",
+"id": "91",
+"next_id": "95",
 "notes": "",
-"parent_id": "91",
+"parent_id": "90",
 "tags": PackedStringArray(),
 "text": "Creo haber visto algo en ese mural",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Creo haber visto algo en ese mural",
 "type": &"dialogue"
 },
-"93": {
-"id": "93",
-"next_conditional_id": "96",
-"next_id": "94",
-"next_id_after": "96",
+"92": {
+"id": "92",
+"next_conditional_id": "95",
+"next_id": "93",
+"next_id_after": "95",
 "type": &"condition"
 },
-"94": {
+"93": {
 "character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
-"id": "94",
-"next_id": "96",
+"id": "93",
+"next_id": "95",
 "notes": "",
-"parent_id": "93",
+"parent_id": "92",
 "tags": PackedStringArray(),
 "text": "\"2401\"...Ese es mi cumpleaños",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "\"2401\"...Ese es mi cumpleaños",
 "type": &"dialogue"
 },
-"96": {
-"id": "96",
+"95": {
+"id": "95",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
 },
-"98": {
-"id": "98",
-"next_id": "99",
+"97": {
+"id": "97",
+"next_id": "98",
 "text": "box",
 "type": &"title"
 },
-"99": {
+"98": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "99",
-"next_id": "100",
+"id": "98",
+"next_id": "99",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "La caja contiene libros, en su mayoría de misterio",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "La caja contiene libros, en su mayoría de misterio",
 "type": &"dialogue"
+},
+"99": {
+"id": "99",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
 }
 }
 raw_text = "~ table
@@ -1502,8 +1489,7 @@ else:
 ~ metalBox
 
 if door_status != \"key\"
-	La tapa de la caja tiene una marca azul, una marca rosa, un dibujo de un libro y un dibujo de un lapiz
-	También tiene un candado numérico
+	La caja tiene un candado numérico
 	do open_keypad()
 
 	if (metalbox_status == \"correct\"):

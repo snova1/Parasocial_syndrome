@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bixqnnlvdlarj"]
+[gd_scene load_steps=5 format=3 uid="uid://bixqnnlvdlarj"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/controles.gd" id="1_sw4kb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u5so5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7cj0g"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_omxe5"]
 
@@ -83,6 +87,8 @@ horizontal_alignment = 1
 [node name="Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u5so5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7cj0g")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_omxe5")
 text = "Volver"
 

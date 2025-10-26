@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ma8q6s2urj1d"]
+[gd_scene load_steps=11 format=3 uid="uid://ma8q6s2urj1d"]
 
 [ext_resource type="Script" path="res://Scripts/Menus/menu_opciones.gd" id="1_ya4kp"]
 
@@ -7,6 +7,18 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6qgtc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uibov"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ees2c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_stqx8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tyuqs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rbtuc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5ca3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xq16"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -52,12 +64,18 @@ text = "Volumen"
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ees2c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_stqx8")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tyuqs")
 text = "Controles"
 
 [node name="Atras" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rbtuc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_g5ca3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4xq16")
 text = "Volver"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Controles" to="." method="_on_controles_pressed"]
