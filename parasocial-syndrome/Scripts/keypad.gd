@@ -59,11 +59,28 @@ func _on_button_del_pressed() -> void:
 func _on_button_0_pressed() -> void:
 	key_press(0)
 
+func _unhandled_input(event: InputEvent) -> void: # si presionas un numero aparecera en la contraseña, backspace funciona 
+	if event is InputEventKey and event.pressed:
+		var num := -1
+		
 
-func _on_button_pressed() -> void:
-	if (len(label.text) == 4) or (len(label.text) == 0):		
-		if label.text == password:
-			Status.metalbox_status = "correct"
-		label.text = ""
-		Status.ok_pressed.emit()
+		if event.keycode >= KEY_0 and event.keycode <= KEY_9:
+			num = event.keycode - KEY_0
+		
+		elif event.keycode >= KEY_KP_0 and event.keycode <= KEY_KP_9:
+			num = event.keycode - KEY_KP_0
+			
+		elif event.keycode == KEY_BACKSPACE:
+			if len(label.text) > 0:
+				label.text = label.text.substr(0,len(label.text) - 1) 
+		
+		if num != -1:
+			key_press(num)
+
+func _on_button_pressed() -> void:			
+	if label.text == password:
+		Status.metalbox_status = "correct"
+	label.text = ""
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Status.ok_pressed.emit()
 	pass
