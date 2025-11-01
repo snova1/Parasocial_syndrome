@@ -33,6 +33,7 @@ func _ready() -> void:
 	Status.curtain_big.connect(_on_curtain_open)
 	Status.mural.connect(_on_show_mural)
 	Status.enable_navigation.connect(_on_enable_navigation)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	if(Status.cannot_leave_basement):
 		tutorial.text="Muévete con las flechas direccionales hacia la mesa"
 	else:
@@ -141,6 +142,7 @@ func wait_for_escape():
 func _on_keypad():
 	if !(keypad.visible):
 		keypad.visible = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		keypad.button_focus()
 	else:
 		keypad.visible = false
