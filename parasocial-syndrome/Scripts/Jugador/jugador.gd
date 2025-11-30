@@ -12,6 +12,8 @@ var direction: Vector2=Vector2.ZERO
 var move_speed: float
 var state: String="still"
 var control_enabled := true
+var forced_direction: Vector2 = Vector2.ZERO 
+var is_dir_forced := false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -50,14 +52,15 @@ func _physics_process(delta: float) -> void:
 			c.get_collider().linear_velocity = 0.5*target_velocity
 	move_and_slide()
 	
+	var dir := forced_direction if is_dir_forced else cardinal_direction
 	if state == "moving":
-		if cardinal_direction.y > 0:
+		if dir.y > 0:
 			animation_player.play("caminar_abajo")
-		elif cardinal_direction.y < 0:
+		elif dir.y < 0:
 			animation_player.play("caminar_arriba")
-		elif cardinal_direction.x > 0:
+		elif dir.x > 0:
 			animation_player.play("caminar_derecha")
-		elif cardinal_direction.x < 0:
+		elif dir.x < 0:
 			animation_player.play("caminar_izquierda")
 	elif state == "still":
 		animation_player.stop()
