@@ -18,7 +18,7 @@ else:
 
 => END
 
-~ door
+~ basement_door
 if door_status=="default":
 	Está cerrada
 	Alessia: Quizás haya algo aquí abajo con lo que abrir la cerradura
@@ -124,9 +124,11 @@ Pero aun no esta terminado
 Una pintura abstracta
 Alessia: No estoy segura que se supone que sea
 => END
+
 ~ estar_sofa
 Es un sofa viejo y desgatado
 => END
+
 ~ estar_silla
 Es una silla vieja sin muchas muestras de uso
 => END
@@ -135,6 +137,11 @@ Es una silla vieja sin muchas muestras de uso
 El televisor no parece estar funcionando
 Alessia: De todas formas no me apatece ver la tele en esta situación
 => END
+
 ~ estar_lampara
 No es mucho pero alumbra lo suficiente
+=> END
+
+~ estar_puerta
+Está cerrada
 => END

@@ -302,7 +302,7 @@ shape = SubResource("RectangleShape2D_moopr")
 [node name="Puerta" parent="interactuables" instance=ExtResource("2_vf0yb")]
 position = Vector2(389, 96)
 dialogue_resource = ExtResource("3_atjn4")
-dialogue_start = "door"
+dialogue_start = "basement_door"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/Puerta"]
 position = Vector2(4.5, -9)

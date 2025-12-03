@@ -1,7 +1,7 @@
 extends "res://Scripts/Rooms/BaseNivel.gd"
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var puerta_o: puerta = $Puertas/Puerta_O
-@onready var initial: Node2D = $"."
+@onready var initial: Node2D = self
 @onready var silla: RigidBody2D = $Silla
 @onready var curtain: Area2D = $curtain
 @onready var jugador: Jugador = $Jugador

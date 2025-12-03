@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_a3v8q"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_8gy7g"]
 
 [resource]
-script = ExtResource("1_a3v8q")
+script = ExtResource("1_8gy7g")
 using_states = PackedStringArray()
 titles = {
 "art_Closet": "110",
@@ -11,17 +11,18 @@ titles = {
 "art_Pintura": "103",
 "art_Planta": "107",
 "art_Retrato": "117",
+"basement_door": "22",
 "bookcase": "38",
 "box": "98",
 "chair": "53",
 "cloth": "34",
 "curtain": "62",
-"door": "22",
-"estar_lampara": "139",
+"estar_lampara": "142",
 "estar_pintura": "124",
-"estar_silla": "131",
-"estar_sofa": "128",
-"estar_tv": "135",
+"estar_puerta": "146",
+"estar_silla": "133",
+"estar_sofa": "129",
+"estar_tv": "137",
 "lamp": "49",
 "metalBox": "80",
 "table": "2"
@@ -267,29 +268,23 @@ lines = {
 "next_id": "end",
 "type": &"goto"
 },
-"127": {
-"id": "127",
-"next_id": "128",
+"128": {
+"id": "128",
+"next_id": "129",
 "text": "estar_sofa",
 "type": &"title"
 },
-"128": {
+"129": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "128",
-"next_id": "129",
+"id": "129",
+"next_id": "130",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Es un sofa viejo y desgatado",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Es un sofa viejo y desgatado",
 "type": &"dialogue"
-},
-"129": {
-"id": "129",
-"is_snippet": false,
-"next_id": "end",
-"type": &"goto"
 },
 "13": {
 "character": "Alessia",
@@ -306,15 +301,21 @@ lines = {
 },
 "130": {
 "id": "130",
-"next_id": "131",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"132": {
+"id": "132",
+"next_id": "133",
 "text": "estar_silla",
 "type": &"title"
 },
-"131": {
+"133": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "131",
-"next_id": "132",
+"id": "133",
+"next_id": "134",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "Es una silla vieja sin muchas muestras de uso",
@@ -322,23 +323,23 @@ lines = {
 "translation_key": "Es una silla vieja sin muchas muestras de uso",
 "type": &"dialogue"
 },
-"132": {
-"id": "132",
+"134": {
+"id": "134",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
 },
-"134": {
-"id": "134",
-"next_id": "135",
+"136": {
+"id": "136",
+"next_id": "137",
 "text": "estar_tv",
 "type": &"title"
 },
-"135": {
+"137": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "135",
-"next_id": "136",
+"id": "137",
+"next_id": "138",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "El televisor no parece estar funcionando",
@@ -346,11 +347,11 @@ lines = {
 "translation_key": "El televisor no parece estar funcionando",
 "type": &"dialogue"
 },
-"136": {
+"138": {
 "character": "Alessia",
 "character_replacements": Array[Dictionary]([]),
-"id": "136",
-"next_id": "137",
+"id": "138",
+"next_id": "139",
 "notes": "",
 "tags": PackedStringArray(),
 "text": "De todas formas no me apatece ver la tele en esta situación",
@@ -358,29 +359,11 @@ lines = {
 "translation_key": "De todas formas no me apatece ver la tele en esta situación",
 "type": &"dialogue"
 },
-"137": {
-"id": "137",
+"139": {
+"id": "139",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
-},
-"138": {
-"id": "138",
-"next_id": "139",
-"text": "estar_lampara",
-"type": &"title"
-},
-"139": {
-"character": "",
-"character_replacements": Array[Dictionary]([]),
-"id": "139",
-"next_id": "140",
-"notes": "",
-"tags": PackedStringArray(),
-"text": "No es mucho pero alumbra lo suficiente",
-"text_replacements": Array[Dictionary]([]),
-"translation_key": "No es mucho pero alumbra lo suficiente",
-"type": &"dialogue"
 },
 "14": {
 "character": "Alessia",
@@ -395,8 +378,50 @@ lines = {
 "translation_key": "Aunque no se que más podría usar para librarme de esta cuerda",
 "type": &"dialogue"
 },
-"140": {
-"id": "140",
+"141": {
+"id": "141",
+"next_id": "142",
+"text": "estar_lampara",
+"type": &"title"
+},
+"142": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "142",
+"next_id": "143",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "No es mucho pero alumbra lo suficiente",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "No es mucho pero alumbra lo suficiente",
+"type": &"dialogue"
+},
+"143": {
+"id": "143",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
+},
+"145": {
+"id": "145",
+"next_id": "146",
+"text": "estar_puerta",
+"type": &"title"
+},
+"146": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "146",
+"next_id": "147",
+"notes": "",
+"tags": PackedStringArray(),
+"text": "Está cerrada",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Está cerrada",
+"type": &"dialogue"
+},
+"147": {
+"id": "147",
 "is_snippet": false,
 "next_id": "end",
 "type": &"goto"
@@ -464,7 +489,7 @@ lines = {
 "21": {
 "id": "21",
 "next_id": "22",
-"text": "door",
+"text": "basement_door",
 "type": &"title"
 },
 "22": {
@@ -1429,7 +1454,7 @@ else:
 
 => END
 
-~ door
+~ basement_door
 if door_status==\"default\":
 	Está cerrada
 	Alessia: Quizás haya algo aquí abajo con lo que abrir la cerradura
@@ -1535,9 +1560,11 @@ Pero aun no esta terminado
 Una pintura abstracta
 Alessia: No estoy segura que se supone que sea
 => END
+
 ~ estar_sofa
 Es un sofa viejo y desgatado
 => END
+
 ~ estar_silla
 Es una silla vieja sin muchas muestras de uso
 => END
@@ -1546,7 +1573,12 @@ Es una silla vieja sin muchas muestras de uso
 El televisor no parece estar funcionando
 Alessia: De todas formas no me apatece ver la tele en esta situación
 => END
+
 ~ estar_lampara
 No es mucho pero alumbra lo suficiente
+=> END
+
+~ estar_puerta
+Está cerrada
 => END"
 metadata/dialogue_manager_version = "2.45.0"

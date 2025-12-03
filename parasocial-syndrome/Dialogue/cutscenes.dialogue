@@ -65,7 +65,7 @@ Alessia: Pero en lo posible debo evitar encontrármelo
 Alessia: Tengo que estar atenta y esconderme si siento que está cerca
 Alessia: De lo contrario tendré que escapar de él, ya sea por las buenas
 Alessia: …O por las malas
-do screen_end()
+#do screen_end()
 => END
 
 ~ end_demo
