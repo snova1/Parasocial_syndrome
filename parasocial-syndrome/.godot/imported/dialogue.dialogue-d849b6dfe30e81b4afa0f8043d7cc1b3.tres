@@ -409,22 +409,80 @@ lines = {
 "type": &"title"
 },
 "146": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "Puzzle"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "door_garden"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "string",
+"value": "closed"
+}, {
+"type": "colon"
+}])
+},
+"id": "146",
+"next_conditional_id": "153",
+"next_id": "147",
+"next_id_after": "153",
+"type": &"condition"
+},
+"147": {
 "character": "",
 "character_replacements": Array[Dictionary]([]),
-"id": "146",
-"next_id": "147",
+"id": "147",
+"next_id": "148",
 "notes": "",
+"parent_id": "146",
 "tags": PackedStringArray(),
 "text": "Está cerrada",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Está cerrada",
 "type": &"dialogue"
 },
-"147": {
-"id": "147",
-"is_snippet": false,
-"next_id": "end",
-"type": &"goto"
+"148": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": &"group",
+"value": Array[Dictionary]([{
+"type": "variable",
+"value": "Puzzle"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "key_got"
+}])
+}, {
+"type": "colon"
+}])
+},
+"id": "148",
+"next_conditional_id": "153",
+"next_id": "149",
+"next_id_after": "153",
+"parent_id": "146",
+"type": &"condition"
+},
+"149": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "149",
+"next_id": "150",
+"notes": "",
+"parent_id": "148",
+"tags": PackedStringArray(),
+"text": "Deseas usar la llave?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Deseas usar la llave?",
+"type": &"dialogue"
 },
 "15": {
 "id": "15",
@@ -432,6 +490,75 @@ lines = {
 "next_id": "16",
 "next_id_after": "19",
 "type": &"condition"
+},
+"150": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "150",
+"next_id": "151",
+"next_id_after": "153",
+"notes": "",
+"parent_id": "148",
+"responses": PackedStringArray("150"),
+"tags": PackedStringArray(),
+"text": "Si",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Si",
+"type": &"response"
+},
+"151": {
+"id": "151",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "Puzzle"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "door_garden"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "string",
+"value": "open"
+}]),
+"is_blocking": true
+},
+"next_id": "152",
+"parent_id": "150",
+"type": &"mutation"
+},
+"152": {
+"id": "152",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "Puzzle"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "open_door"
+}, {
+"type": "dot"
+}, {
+"function": "emit",
+"type": &"function",
+"value": Array[Array]([])
+}]),
+"is_blocking": true
+},
+"next_id": "153",
+"parent_id": "150",
+"type": &"mutation"
+},
+"153": {
+"id": "153",
+"is_snippet": false,
+"next_id": "end",
+"type": &"goto"
 },
 "16": {
 "character": "",
@@ -1579,6 +1706,12 @@ No es mucho pero alumbra lo suficiente
 => END
 
 ~ estar_puerta
-Está cerrada
+if Puzzle.door_garden==\"closed\":
+	Está cerrada
+	if (Puzzle.key_got):
+		Deseas usar la llave?
+		- Si
+			set Puzzle.door_garden=\"open\"
+			do Puzzle.open_door.emit()
 => END"
 metadata/dialogue_manager_version = "2.45.0"

@@ -143,5 +143,11 @@ No es mucho pero alumbra lo suficiente
 => END
 
 ~ estar_puerta
-Está cerrada
+if Puzzle.door_garden=="closed":
+	Está cerrada
+	if (Puzzle.key_got):
+		Deseas usar la llave?
+		- Si
+			set Puzzle.door_garden="open"
+			do Puzzle.open_door.emit()
 => END

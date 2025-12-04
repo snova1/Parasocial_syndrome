@@ -256,7 +256,6 @@ dialogue_resource = ExtResource("3_atjn4")
 dialogue_start = "box"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/box"]
-visible = false
 position = Vector2(-2, -4)
 shape = SubResource("RectangleShape2D_tumgp")
 
@@ -266,7 +265,6 @@ dialogue_resource = ExtResource("3_atjn4")
 dialogue_start = "lamp"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/lamp"]
-visible = false
 position = Vector2(0, -11.5)
 shape = SubResource("RectangleShape2D_78jb1")
 
@@ -314,7 +312,6 @@ dialogue_resource = ExtResource("3_atjn4")
 dialogue_start = "bookcase"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/Estanteria"]
-visible = false
 position = Vector2(-2, 31)
 shape = SubResource("RectangleShape2D_3k7j6")
 

@@ -12,3 +12,6 @@ res://Scripts/Rooms/initial.gd
 res://Scenes/Rooms/jardin.tscn
 res://Scripts/Rooms/jardin.gd
 res://Scripts/Rooms/sala_estar.gd
+res://Scenes/Silla.tscn
+res://Scenes/interactuable.tscn
+res://Scripts/Puzzle.gd
