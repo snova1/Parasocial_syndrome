@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://y5gs667luavn"]
+
+[ext_resource type="Texture2D" uid="uid://ckp5qqas6n78s" path="res://Assets Editor Godot/Flecha.png" id="1_kd0mr"]
+[ext_resource type="Script" path="res://Greenhouse/linear_scene_changer.gd" id="1_pj0ht"]
+
+[node name="Linear Scene Changer" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_pj0ht")
+habitacion_destino = null
+zona_destino = null
+
+[node name="Direction Out" type="Sprite2D" parent="."]
+process_mode = 3
+scale = Vector2(10, 10)
+texture = ExtResource("1_kd0mr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
