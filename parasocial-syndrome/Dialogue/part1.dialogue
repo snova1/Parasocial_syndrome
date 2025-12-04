@@ -58,7 +58,7 @@ elif (in_hiding and not Puzzle.cutscene_trigger):
 	set in_hiding = false
 
 if (in_hiding and Puzzle.cutscene_trigger): 
-	[wait = 2]
+
 	do initial_cutscene("appear")
 	Kieran: Pense que habia escuchado algo viniendo de la cocina
 	Kieran: Seguro fue el viento
