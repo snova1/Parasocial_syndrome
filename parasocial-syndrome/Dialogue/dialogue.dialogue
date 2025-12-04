@@ -18,7 +18,7 @@ else:
 
 => END
 
-~ door
+~ basement_door
 if door_status=="default":
 	Está cerrada
 	Alessia: Quizás haya algo aquí abajo con lo que abrir la cerradura
@@ -78,8 +78,7 @@ else:
 ~ metalBox
 
 if door_status != "key"
-	La tapa de la caja tiene una marca azul, una marca rosa, un dibujo de un libro y un dibujo de un lapiz
-	También tiene un candado numérico
+	La caja tiene un candado numérico
 	do open_keypad()
 
 	if (metalbox_status == "correct"):
@@ -125,9 +124,11 @@ Pero aun no esta terminado
 Una pintura abstracta
 Alessia: No estoy segura que se supone que sea
 => END
+
 ~ estar_sofa
 Es un sofa viejo y desgatado
 => END
+
 ~ estar_silla
 Es una silla vieja sin muchas muestras de uso
 => END
@@ -136,6 +137,17 @@ Es una silla vieja sin muchas muestras de uso
 El televisor no parece estar funcionando
 Alessia: De todas formas no me apatece ver la tele en esta situación
 => END
+
 ~ estar_lampara
 No es mucho pero alumbra lo suficiente
+=> END
+
+~ estar_puerta
+if Puzzle.door_garden=="closed":
+	Está cerrada
+	if (Puzzle.key_got):
+		Deseas usar la llave?
+		- Si
+			set Puzzle.door_garden="open"
+			do Puzzle.open_door.emit()
 => END

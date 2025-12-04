@@ -1,0 +1,103 @@
+[gd_scene load_steps=10 format=3 uid="uid://cextbrl66vs0"]
+
+[ext_resource type="Script" path="res://Scripts/Rooms/comedor.gd" id="1_xg0rp"]
+[ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://Scenes/jugador.tscn" id="2_j2b4v"]
+[ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://Scenes/puerta.tscn" id="3_s6myq"]
+[ext_resource type="PackedScene" uid="uid://3w8u7nr6tcsg" path="res://Scenes/Silla.tscn" id="4_kjd4e"]
+[ext_resource type="PackedScene" uid="uid://cgwthx1srigte" path="res://Scenes/interactuable.tscn" id="5_83h06"]
+[ext_resource type="Resource" uid="uid://6gvrlk6s0qgv" path="res://Dialogue/part1.dialogue" id="6_8vg4e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o08hr"]
+size = Vector2(47, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2av6s"]
+size = Vector2(20, 52.4508)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2ld4"]
+size = Vector2(58, 128)
+
+[node name="Comedor" type="Node2D"]
+script = ExtResource("1_xg0rp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 414.0
+offset_top = 21.0
+offset_right = 454.0
+offset_bottom = 61.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 913.0
+offset_top = 241.0
+offset_right = 953.0
+offset_bottom = 281.0
+color = Color(0, 0, 0, 1)
+
+[node name="Silla" parent="." instance=ExtResource("4_kjd4e")]
+position = Vector2(438, 382)
+
+[node name="Interactuable" parent="Silla" instance=ExtResource("5_83h06")]
+dialogue_resource = ExtResource("6_8vg4e")
+dialogue_start = "chair"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Silla/Interactuable"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_o08hr")
+
+[node name="Jugador" parent="." instance=ExtResource("2_j2b4v")]
+position = Vector2(431, 248)
+
+[node name="Puertas" type="Node" parent="."]
+
+[node name="Puerta_N" parent="Puertas" instance=ExtResource("3_s6myq")]
+position = Vector2(432, 43)
+tag_habitacion_destino = "cocina"
+tag_puerta_destino = "S"
+direccion_spawn = "abajo"
+
+[node name="Spawn" parent="Puertas/Puerta_N" index="1"]
+position = Vector2(0, 49)
+
+[node name="Puerta_E" parent="Puertas" instance=ExtResource("3_s6myq")]
+position = Vector2(932, 259)
+tag_habitacion_destino = "sala_estar"
+tag_puerta_destino = "O"
+direccion_spawn = "izquierda"
+
+[node name="Spawn" parent="Puertas/Puerta_E" index="1"]
+position = Vector2(-55, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 203.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 40
+text = "COMEDOR"
+
+[node name="Interactuables" type="Node" parent="."]
+
+[node name="Estantería" parent="Interactuables" instance=ExtResource("5_83h06")]
+position = Vector2(62, 416)
+dialogue_resource = ExtResource("6_8vg4e")
+dialogue_start = "estanteria"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactuables/Estantería"]
+scale = Vector2(2.285, 2.285)
+shape = SubResource("RectangleShape2D_2av6s")
+
+[node name="ColorRect" type="ColorRect" parent="Interactuables/Estantería"]
+offset_left = -20.0
+offset_top = -55.0
+offset_right = 19.0
+offset_bottom = 57.0
+color = Color(0.372584, 0.258806, 0.130528, 1)
+
+[node name="Area2D" type="Area2D" parent="Interactuables/Estantería"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactuables/Estantería/Area2D"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_h2ld4")
+
+[connection signal="body_entered" from="Interactuables/Estantería/Area2D" to="." method="_on_area_2d_body_entered"]
+
+[editable path="Puertas/Puerta_N"]
+[editable path="Puertas/Puerta_E"]

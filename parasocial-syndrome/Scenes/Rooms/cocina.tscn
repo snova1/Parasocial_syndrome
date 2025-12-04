@@ -1,0 +1,120 @@
+[gd_scene load_steps=11 format=3 uid="uid://cx18kghh27wud"]
+
+[ext_resource type="Script" path="res://Scripts/Rooms/cocina.gd" id="1_h4v1c"]
+[ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://Scenes/jugador.tscn" id="2_jbmfv"]
+[ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://Scenes/puerta.tscn" id="3_jdixl"]
+[ext_resource type="PackedScene" uid="uid://cgwthx1srigte" path="res://Scenes/interactuable.tscn" id="4_glgp5"]
+[ext_resource type="Resource" uid="uid://6gvrlk6s0qgv" path="res://Dialogue/part1.dialogue" id="5_xe34d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxy8w"]
+size = Vector2(107, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56epk"]
+size = Vector2(31, 109)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1cx5"]
+size = Vector2(42, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un4y6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2r5v"]
+size = Vector2(128, 108)
+
+[node name="Cocina" type="Node2D"]
+script = ExtResource("1_h4v1c")
+
+[node name="Puertas" type="Node" parent="."]
+
+[node name="Puerta_S" parent="Puertas" instance=ExtResource("3_jdixl")]
+position = Vector2(454, 461)
+tag_habitacion_destino = "comedor"
+tag_puerta_destino = "N"
+
+[node name="Spawn" parent="Puertas/Puerta_S" index="1"]
+position = Vector2(0, -64)
+
+[node name="Interactuables" type="Node" parent="."]
+
+[node name="Refrigerador_side" parent="Interactuables" instance=ExtResource("4_glgp5")]
+position = Vector2(885, 320)
+dialogue_resource = ExtResource("5_xe34d")
+dialogue_start = "fridge_side"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactuables/Refrigerador_side"]
+position = Vector2(0, 10.5)
+shape = SubResource("RectangleShape2D_xxy8w")
+
+[node name="refrigerador_front" parent="Interactuables" instance=ExtResource("4_glgp5")]
+position = Vector2(802, 252)
+dialogue_resource = ExtResource("5_xe34d")
+dialogue_start = "fridge_front"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactuables/refrigerador_front"]
+position = Vector2(10.5, 15.5)
+shape = SubResource("RectangleShape2D_56epk")
+
+[node name="cajon" parent="Interactuables" instance=ExtResource("4_glgp5")]
+position = Vector2(116, 280)
+dialogue_resource = ExtResource("5_xe34d")
+dialogue_start = "cajon"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactuables/cajon"]
+scale = Vector2(1.425, 1.425)
+shape = SubResource("RectangleShape2D_r1cx5")
+
+[node name="ColorRect" type="ColorRect" parent="Interactuables/cajon"]
+offset_left = -21.0
+offset_top = -31.0
+offset_right = 23.0
+offset_bottom = 34.0
+color = Color(0.454049, 0.203661, 0.140902, 1)
+
+[node name="cabinete" parent="Interactuables" instance=ExtResource("4_glgp5")]
+position = Vector2(115, 379)
+dialogue_resource = ExtResource("5_xe34d")
+dialogue_start = "cabinete"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactuables/cabinete"]
+scale = Vector2(4.14, 4.14)
+shape = SubResource("RectangleShape2D_un4y6")
+
+[node name="ColorRect" type="ColorRect" parent="Interactuables/cabinete"]
+offset_left = -34.0
+offset_top = -31.0
+offset_right = 32.0
+offset_bottom = 29.0
+color = Color(0.275666, 0.181539, 0.108006, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 153.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 40
+text = "COCINA"
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 437.0
+offset_top = 442.0
+offset_right = 477.0
+offset_bottom = 482.0
+color = Color(0, 0, 0, 1)
+
+[node name="Placeholder fridge" type="StaticBody2D" parent="."]
+position = Vector2(880, 255)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Placeholder fridge"]
+position = Vector2(2, 12)
+shape = SubResource("RectangleShape2D_j2r5v")
+
+[node name="ColorRect" type="ColorRect" parent="Placeholder fridge"]
+offset_left = -62.0
+offset_top = -48.0
+offset_right = 65.0
+offset_bottom = 68.0
+
+[node name="Jugador" parent="." instance=ExtResource("2_jbmfv")]
+position = Vector2(458, 315)
+
+[editable path="Puertas/Puerta_S"]
