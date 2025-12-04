@@ -1,6 +1,6 @@
 extends Node
 
-const scene_initial=preload("res://initial.tscn")
+const scene_initial=preload("res://Scenes/Rooms/initial.tscn")
 
 var player_tied: bool= true
 var cannot_leave_basement: bool=true
@@ -19,18 +19,22 @@ signal curtain_big
 signal mural
 signal keypad
 signal ok_pressed
-signal demo_end
 signal end_screen
 signal enable_navigation
 signal kieran_go
-signal kieran_stop
 signal letter
 signal finish_letter
 signal resume
 signal cutscene
 
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+
 func go_kieran():
 	kieran_go.emit()
+
+func flashback():
+	await Fader.flashback()
 
 func start_gameplay():
 	await get_tree().create_timer(1.0).timeout
@@ -65,7 +69,8 @@ func end_demo():
 	NavegacionManager.tag_puerta_spawn = null
 	await get_tree().create_timer(2.0).timeout
 	await get_tree().process_frame
-	get_tree().change_scene_to_file("res://end.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/end.tscn")
+	Fader.hidecanvas()
 
 func screen_end():
 	end_screen.emit()
@@ -77,7 +82,6 @@ func open_curtain():
 		await initial_scene.mural_shown
 
 func show_mural():
-	var initial_scene = get_tree().current_scene
 	mural.emit()
 
 func show_letter():

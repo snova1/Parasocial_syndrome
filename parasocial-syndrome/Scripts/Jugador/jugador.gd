@@ -12,17 +12,20 @@ var direction: Vector2=Vector2.ZERO
 var move_speed: float
 var state: String="still"
 var control_enabled := true
+var testing =true
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func set_estado_atada():
-	is_tied=Status.player_tied
+	if testing:
+		is_tied = false
+	else:
+		is_tied = Status.player_tied
+
 	tied.visible = is_tied
 	normal.visible = !is_tied
-	if is_tied:
-		move_speed=50.0
-	else:
-		move_speed=200.0
+
+	move_speed = 50.0 if (is_tied and not testing) else 200.0
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

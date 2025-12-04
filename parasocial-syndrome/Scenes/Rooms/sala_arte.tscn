@@ -1,0 +1,144 @@
+[gd_scene load_steps=12 format=3 uid="uid://ccahki6uwsk3c"]
+
+[ext_resource type="Texture2D" uid="uid://byuqrqyhyemjo" path="res://Assets/Sala 1 entrada luz.png" id="1_npwqt"]
+[ext_resource type="Script" path="res://Scripts/Rooms/sala_estar.gd" id="1_sv6kp"]
+[ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://Scenes/jugador.tscn" id="2_evk74"]
+[ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://Scenes/puerta.tscn" id="4_6qafq"]
+[ext_resource type="Script" path="res://Scripts/interactuable.gd" id="5_ab288"]
+[ext_resource type="Resource" uid="uid://dgowpg570bn6l" path="res://Dialogue/dialogue.dialogue" id="6_7gm6k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qie3u"]
+size = Vector2(18.75, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jhdn"]
+size = Vector2(172, 106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b62em"]
+size = Vector2(54, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjfip"]
+size = Vector2(81, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngyrv"]
+size = Vector2(70, 20)
+
+[node name="sala_arte" type="Node2D"]
+script = ExtResource("1_sv6kp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(469, 270)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_npwqt")
+
+[node name="Jugador" parent="." instance=ExtResource("2_evk74")]
+position = Vector2(460, 314)
+
+[node name="Puertas" type="Node" parent="."]
+
+[node name="Puerta_O" parent="Puertas" instance=ExtResource("4_6qafq")]
+position = Vector2(217, 305)
+tag_habitacion_destino = "sala_estar"
+tag_puerta_destino = "E"
+direccion_spawn = "derecha"
+
+[node name="Spawn" parent="Puertas/Puerta_O" index="1"]
+position = Vector2(47, 0)
+
+[node name="colisiones" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisiones"]
+visible = false
+build_mode = 1
+polygon = PackedVector2Array(222, 270, 257, 271, 258, 165, 677, 164, 680, 515, 259, 517, 259, 344, 222, 341)
+
+[node name="closet" type="CollisionPolygon2D" parent="colisiones"]
+position = Vector2(0, 1144)
+polygon = PackedVector2Array(598, -839, 642, -794, 667, -795, 670, -939, 604, -944)
+
+[node name="retrato" type="CollisionPolygon2D" parent="colisiones"]
+position = Vector2(4, 572)
+polygon = PackedVector2Array(591, -72, 664, -63, 671, -164, 615, -167)
+
+[node name="mesa" type="CollisionPolygon2D" parent="colisiones"]
+position = Vector2(0, 287)
+polygon = PackedVector2Array(271, 220, 429, 219, 430, 127, 269, 126)
+
+[node name="planta" type="CollisionPolygon2D" parent="colisiones"]
+polygon = PackedVector2Array(271, 220, 291, 225, 308, 220, 312, 178, 289, 170, 266, 178)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colisiones"]
+position = Vector2(388.625, 331.5)
+shape = SubResource("RectangleShape2D_qie3u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="colisiones"]
+position = Vector2(514, 315)
+shape = SubResource("RectangleShape2D_qie3u")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="colisiones"]
+position = Vector2(647.75, 390)
+shape = SubResource("RectangleShape2D_qie3u")
+
+[node name="interactuables" type="Node" parent="."]
+
+[node name="retrato" type="Area2D" parent="interactuables"]
+position = Vector2(601, 493)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_ab288")
+dialogue_resource = ExtResource("6_7gm6k")
+dialogue_start = "art_Retrato"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="interactuables/retrato"]
+polygon = PackedVector2Array(-18, 13, 10, -95, 76, -91, 74, 16)
+
+[node name="mesa" type="Area2D" parent="interactuables"]
+position = Vector2(351, 459)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_ab288")
+dialogue_resource = ExtResource("6_7gm6k")
+dialogue_start = "art_Mesa"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/mesa"]
+shape = SubResource("RectangleShape2D_3jhdn")
+
+[node name="planta" type="Area2D" parent="interactuables"]
+position = Vector2(291, 200)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_ab288")
+dialogue_resource = ExtResource("6_7gm6k")
+dialogue_start = "art_Planta"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/planta"]
+shape = SubResource("RectangleShape2D_b62em")
+
+[node name="closet" type="Area2D" parent="interactuables"]
+position = Vector2(633, 292)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_ab288")
+dialogue_resource = ExtResource("6_7gm6k")
+dialogue_start = "art_Closet"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/closet"]
+position = Vector2(-0.5, -14)
+shape = SubResource("RectangleShape2D_tjfip")
+
+[node name="pintura" type="Area2D" parent="interactuables"]
+position = Vector2(388, 165)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("5_ab288")
+dialogue_resource = ExtResource("6_7gm6k")
+dialogue_start = "art_Pintura"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactuables/pintura"]
+shape = SubResource("RectangleShape2D_ngyrv")
+
+[editable path="Puertas/Puerta_O"]

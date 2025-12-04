@@ -7,9 +7,8 @@ Alessia: Donde...estoy?
 do initial_cutscene("shaking_alessia")
 Alessia: Qué rayos?! Por qué estoy atada?! Qué demonios es este sitio?!
 Alessia: ...Dios, vale, necesito calmarme un poco.
-Alessia: Qué estaba haciendo antes de esto?
-Alessia: Cierto, salí de una firma de libros por mi más reciente obra en una librería de la ciudad
-Alessia: Y cuando doblé una esquina, alguien me cubrió la boca y...Perdí el conocimiento...
+Alessia: Qué estaba haciendo antes de esto? Estaba en la firma de libros y...
+do flashback()
 Alessia: ...
 Alessia: Entonces, fui secuestrada?...Supongo que si pero
 Alessia: Quien o quienes lo hicieron?
@@ -23,23 +22,15 @@ Alessia: QUÉ QUIERES DE MI?! DEJAME IR DESQUICIADO!
 ???: Se que no lo preguntaste pero me presento
 Kiran: Me llamo Kiran, y soy tu mayor admirador!
 Alessia: …A-Admirador?
-Kiran: Sip, he leído cada una de tus obras. Cada una de ellas. Supongo que es por eso que siento esta conexión a ti
+Kiran: Sip, he leído cada una de tus obras. Muy buenas por cierto
+Kiran: No solo eso, he leido todo sobre ti, he visto cada entrevista, cada foto, cada detalle de tu vida personal...
 Alessia: Q-qué? De qué estás hablando?
-Kiran: Cada entrevista que dabas. Cada foto que subías. Cada vez que hablabas de tus hobbies, lo que te gusta, lo que te inspira
-Kiran: No sé cómo explicarlo, pero… era como verte de verdad. Como si estuvieras hablándome a mí.
-Alessia: ...
-Kiran: Aunque tú no supieras que yo existía. Yo sentía esa conexión a ti, sentía que era tu amigo, o, quizás algo más...
-Kiran: A veces pensaba que sería bonito poder estar a tu lado de verdad. Pero bueno…
-Kiran: Hoy por fin se dio! Me costó un poco averiguar dónde ibas a estar, pero… valió la pena. ¿No crees?
-Alessia: ...Aún sigues sin responderme...Que rayos piensas hacer conmigo?
-Kiran: Oh wow, supongo que aún tuvimos una mala primera impresión a pesar de mi presentación, jejeje
-Kiran: Tranquila, no pienso hacerte daño si eso es lo que estás pensando
-Kiran: Solo quiero que estés aquí cerca de mi por el resto de nuestras vidas
+Kiran: Puede que esto te parezca extraño. Pero a pesar de todo, quiero que estemos juntos
+Kiran: Me pareces alguien muy interesante, y quizás con el tiempo veas lo mismo de mi
 Alessia: ...Así que me vas a dejar encerrada aquí de por vida
 Kiran: Suena un poco agresivo cuando lo dices así...pero si supongo que eso haré
-Kiran: Pero me aseguraré de cuidarte bien. Te alimentaré lo que te gusta e intentaré cumplir todos tus caprichos
-Kiran: Oh, y si algo no te gusta del lugar solo dímelo~
-Kiran: Bueno, voy a ir a prepararte tu almuerzo querida~
+Kiran: Pero no te preocupes, me aseguraré de cuidarte lo mejor posible
+Kiran: Hablando de eso aún tengo que terminar tu almuerzo. Ya vuelvo querida~
 do initial_cutscene("walk_back")
 Alessia: ...Este tipo está completamente desquiciado
 Alessia: Tengo que encontrar la forma de salir de aquí
@@ -74,7 +65,7 @@ Alessia: Pero en lo posible debo evitar encontrármelo
 Alessia: Tengo que estar atenta y esconderme si siento que está cerca
 Alessia: De lo contrario tendré que escapar de él, ya sea por las buenas
 Alessia: …O por las malas
-do screen_end()
+#do screen_end()
 => END
 
 ~ end_demo
