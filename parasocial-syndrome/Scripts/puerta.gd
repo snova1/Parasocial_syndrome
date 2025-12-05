@@ -8,5 +8,5 @@ class_name puerta extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Jugador:
+	if body is Jugador and not Puzzle.cutscene_trigger:
 		NavegacionManager.go_to_room(tag_habitacion_destino, tag_puerta_destino)

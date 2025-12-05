@@ -39,6 +39,11 @@ func _on_spawn(position: Vector2, direction: String):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if Status.in_hiding:
+		visible = false
+	else: 
+		visible = true
+
 	if not control_enabled:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -78,6 +83,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			if actionables[0] is not puerta:
 				actionables[0].action()
 			return
+
+	if Status.in_hiding:
+		return
 	
 	direction.x=Input.get_action_strength("derecha")-Input.get_action_strength("izquierda")
 	direction.y=Input.get_action_strength("abajo")-Input.get_action_strength("arriba")

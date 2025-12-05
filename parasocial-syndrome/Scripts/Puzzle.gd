@@ -4,6 +4,7 @@ var note_seen=false
 var oil_got=false
 var cajon_atorado=true
 var key_got=false
+var cutscene_trigger = false
 
 signal open_door
 # Called when the node enters the scene tree for the first time.

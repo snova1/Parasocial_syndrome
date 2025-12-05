@@ -57,3 +57,9 @@ func _walk_down():
 
 func _walk_up():
 	animacion.play("caminar_arriba")
+
+func _disable_collision():
+	collision.disabled = true
+
+func _enable_collision():
+	collision.disabled = false
