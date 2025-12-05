@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cextbrl66vs0"]
+[gd_scene load_steps=12 format=3 uid="uid://cextbrl66vs0"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/comedor.gd" id="1_xg0rp"]
 [ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://Scenes/jugador.tscn" id="2_j2b4v"]
+[ext_resource type="Texture2D" uid="uid://cxq4ujiy0p3fc" path="res://Assets/Comedor.png" id="2_qt4lm"]
+[ext_resource type="Texture2D" uid="uid://dslayjfyjviv8" path="res://Assets/oil.png" id="3_o0e4m"]
 [ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://Scenes/puerta.tscn" id="3_s6myq"]
 [ext_resource type="PackedScene" uid="uid://3w8u7nr6tcsg" path="res://Scenes/Silla.tscn" id="4_kjd4e"]
 [ext_resource type="PackedScene" uid="uid://cgwthx1srigte" path="res://Scenes/interactuable.tscn" id="5_83h06"]
@@ -11,32 +13,34 @@
 size = Vector2(47, 55)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2av6s"]
-size = Vector2(20, 52.4508)
+size = Vector2(37.6368, 18.8184)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2ld4"]
-size = Vector2(58, 128)
+size = Vector2(91, 106)
 
 [node name="Comedor" type="Node2D"]
 script = ExtResource("1_xg0rp")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 414.0
-offset_top = 21.0
-offset_right = 454.0
-offset_bottom = 61.0
-color = Color(0, 0, 0, 1)
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+color = Color(0.00566115, 0.00566115, 0.00566115, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 913.0
-offset_top = 241.0
-offset_right = 953.0
-offset_bottom = 281.0
-color = Color(0, 0, 0, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(497, 270)
+scale = Vector2(0.685, 0.685)
+texture = ExtResource("2_qt4lm")
+
+[node name="Oil" type="Sprite2D" parent="."]
+position = Vector2(642, 55)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_o0e4m")
 
 [node name="Silla" parent="." instance=ExtResource("4_kjd4e")]
-position = Vector2(438, 382)
+position = Vector2(421, 441)
 
 [node name="Interactuable" parent="Silla" instance=ExtResource("5_83h06")]
+visible = false
 dialogue_resource = ExtResource("6_8vg4e")
 dialogue_start = "chair"
 
@@ -50,16 +54,16 @@ position = Vector2(431, 248)
 [node name="Puertas" type="Node" parent="."]
 
 [node name="Puerta_N" parent="Puertas" instance=ExtResource("3_s6myq")]
-position = Vector2(432, 43)
+position = Vector2(257, 269)
 tag_habitacion_destino = "cocina"
 tag_puerta_destino = "S"
-direccion_spawn = "abajo"
+direccion_spawn = "derecha"
 
 [node name="Spawn" parent="Puertas/Puerta_N" index="1"]
-position = Vector2(0, 49)
+position = Vector2(54, 0)
 
 [node name="Puerta_E" parent="Puertas" instance=ExtResource("3_s6myq")]
-position = Vector2(932, 259)
+position = Vector2(731, 266)
 tag_habitacion_destino = "sala_estar"
 tag_puerta_destino = "O"
 direccion_spawn = "izquierda"
@@ -67,34 +71,22 @@ direccion_spawn = "izquierda"
 [node name="Spawn" parent="Puertas/Puerta_E" index="1"]
 position = Vector2(-55, 0)
 
-[node name="Label" type="Label" parent="."]
-offset_right = 203.0
-offset_bottom = 55.0
-theme_override_font_sizes/font_size = 40
-text = "COMEDOR"
-
 [node name="Interactuables" type="Node" parent="."]
 
 [node name="Estantería" parent="Interactuables" instance=ExtResource("5_83h06")]
-position = Vector2(62, 416)
+position = Vector2(647, 161)
 dialogue_resource = ExtResource("6_8vg4e")
 dialogue_start = "estanteria"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactuables/Estantería"]
+position = Vector2(-3, 13.5)
 scale = Vector2(2.285, 2.285)
 shape = SubResource("RectangleShape2D_2av6s")
-
-[node name="ColorRect" type="ColorRect" parent="Interactuables/Estantería"]
-offset_left = -20.0
-offset_top = -55.0
-offset_right = 19.0
-offset_bottom = 57.0
-color = Color(0.372584, 0.258806, 0.130528, 1)
 
 [node name="Area2D" type="Area2D" parent="Interactuables/Estantería"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactuables/Estantería/Area2D"]
-position = Vector2(2, 0)
+position = Vector2(-3.5, -11)
 shape = SubResource("RectangleShape2D_h2ld4")
 
 [connection signal="body_entered" from="Interactuables/Estantería/Area2D" to="." method="_on_area_2d_body_entered"]

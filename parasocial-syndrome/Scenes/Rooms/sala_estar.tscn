@@ -173,12 +173,6 @@ polygon = PackedVector2Array(642, 478, 645, 429, 631, 425, 636, 396, 662, 397, 6
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="colisiones"]
 polygon = PackedVector2Array(524, 397, 570, 384, 573, 360, 559, 325, 540, 301, 519, 285, 494, 290, 468, 301, 460, 319)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-offset_left = 251.0
-offset_top = 338.0
-offset_right = 291.0
-offset_bottom = 378.0
-
 [editable path="Puertas/Puerta_S"]
 [editable path="Puertas/Puerta_E"]
 [editable path="Puertas/Puerta_O"]

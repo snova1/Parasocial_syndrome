@@ -52,7 +52,7 @@ func _physics_process(delta: float) -> void:
 	velocity=direction*move_speed
 	for i in get_slide_collision_count():
 		var c := get_slide_collision(i)
-		if c.get_collider() is RigidBody2D and Status.chair_status[1] == "push":
+		if c.get_collider() is RigidBody2D and (Status.chair_status[1] == "push" or Puzzle.chair_push):
 			var push_dir = -c.get_normal()
 			var target_velocity = self.velocity.project(push_dir)
 			c.get_collider().linear_velocity = 0.5*target_velocity

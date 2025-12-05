@@ -12,6 +12,8 @@ func _ready() -> void:
 	Status.cutscene.connect(_on_cutscene)
 	
 func _on_cutscene(name: String):
+	if(name=="appear"):
+		await get_tree().create_timer(1.0).timeout
 	animation_player.play(name)
 	await animation_player.animation_finished
 	await get_tree().create_timer(0.5).timeout
