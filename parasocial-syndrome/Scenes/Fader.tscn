@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0107ljxendt"]
+[gd_scene load_steps=10 format=3 uid="uid://b0107ljxendt"]
 
 [ext_resource type="Script" path="res://Scripts/fader.gd" id="1_xxpti"]
 [ext_resource type="Texture2D" uid="uid://cs1ttb7yj87du" path="res://Assets/Alessia_walking.png" id="2_ahk4o"]
 [ext_resource type="Texture2D" uid="uid://drbvpb0582dgq" path="res://Assets/alessia_kidnap.png" id="3_olvu7"]
+[ext_resource type="AudioStream" uid="uid://dvs1fs8ageumx" path="res://Assets/Sonidos/Hide_music.mp3" id="4_0bh66"]
 
 [sub_resource type="Animation" id="Animation_6ufr3"]
 length = 0.001
@@ -166,3 +167,6 @@ color = Color(1, 1, 1, 0)
 libraries = {
 "": SubResource("AnimationLibrary_c2ws8")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0bh66")

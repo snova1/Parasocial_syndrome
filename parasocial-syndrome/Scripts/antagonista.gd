@@ -5,6 +5,7 @@ extends CharacterBody2D
 #@onready var jugador = get_tree().get_root().get_node("Hallway/Jugador")
 @onready var animacion = $AnimationPlayer
 var move_speed: float = 200.0
+@onready var collision = $CollisionShape2D
 
 #func _process(delta: float):
 	#await get_tree().create_timer(1.5).timeout
