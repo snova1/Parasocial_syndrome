@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dwiksxqqrbg2t"]
+[gd_scene load_steps=35 format=3 uid="uid://dwiksxqqrbg2t"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/initial.gd" id="1_dsbi2"]
 [ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://Scenes/jugador.tscn" id="1_qhaxb"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cg6je5w4y5vig" path="res://Assets/Sonidos/cutting_free.wav" id="4_0d3pj"]
 [ext_resource type="Texture2D" uid="uid://b6i6o5mnwecgb" path="res://Assets/Pintura Sótano_003.png" id="6_43hku"]
 [ext_resource type="PackedScene" uid="uid://3w8u7nr6tcsg" path="res://Scenes/Silla.tscn" id="6_tobga"]
+[ext_resource type="Texture2D" uid="uid://tlfaypx8w2k0" path="res://Assets/mural.png" id="9_co7yk"]
 [ext_resource type="PackedScene" uid="uid://d0qh6dk3jleo4" path="res://Scenes/keypad.tscn" id="10_p8yxc"]
 [ext_resource type="PackedScene" uid="uid://dtsxtle37rays" path="res://Scenes/puerta.tscn" id="11_2wa05"]
 
@@ -352,12 +353,12 @@ offset_bottom = 267.0
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
 light_mask = 4
-offset_left = 209.0
-offset_top = -13.0
-offset_right = 1273.0
-offset_bottom = 1133.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_43hku")
+offset_left = 229.0
+offset_top = 46.0
+offset_right = 469.0
+offset_bottom = 286.0
+scale = Vector2(2, 2)
+texture = ExtResource("9_co7yk")
 
 [node name="Label" type="Label" parent="TextureRect"]
 visible = false
