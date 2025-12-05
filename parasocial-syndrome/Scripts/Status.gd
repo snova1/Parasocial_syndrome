@@ -12,6 +12,8 @@ var door_status: String="default"
 var curtain_status: String="default"
 var password: String="1234"
 var metalbox_status: String="default"
+var in_hiding: bool = false
+
 
 
 signal player_free

@@ -25,13 +25,13 @@ if (Puzzle.cajon_atorado):
 			*step step*
 			Alessia: ... Escucho pasos
 			Alessia: Necesito esconderme!
-			*Aqui va toda la secuencia de escondida*
 			set Puzzle.cajon_atorado=false
 		- No
 elif (!Puzzle.key_got):
 	Dentro del cajón hay una llave
 	Obtuviste una llave
 	set Puzzle.key_got=true
+	set Puzzle.cutscene_trigger = true
 else:
 	Dentro del cajón hay también una lista
 	Alessia: Salmón al horno, ensalada cesar, cheesecake de mora..
@@ -46,8 +46,25 @@ Alessia: Lo supuse
 => END
 
 ~ cabinete
-Está vacio
-Alessia: Este parece un buen sitio para esconderse
+if (not in_hiding):	
+	Está vacio
+	Quieres esconderte?
+	- Si
+		set in_hiding = true
+	- No
+	
+elif (in_hiding and not Puzzle.cutscene_trigger):
+	Alessia: Parece que no hay nadie
+	set in_hiding = false
+
+if (in_hiding and Puzzle.cutscene_trigger): 
+
+	do initial_cutscene("appear")
+	Kieran: Pense que habia escuchado algo viniendo de la cocina
+	Kieran: Seguro fue el viento
+	Kieran: ahora donde se habra metido
+	do initial_cutscene("walk out")
+	set Puzzle.cutscene_trigger = false
 => END
 
 ~ chair
