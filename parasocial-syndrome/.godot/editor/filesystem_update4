@@ -1,3 +1,2 @@
-res://Scenes/Rooms/initial.tscn
-res://Scripts/antagonista.gd
-res://Scenes/Rooms/Invernadero/Greenhouse.tscn
+res://Scenes/Rooms/cocina.tscn
+res://Scenes/Rooms/Greenhouse.tscn
