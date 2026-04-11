@@ -32,6 +32,7 @@ signal cutscene
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
+
 func go_kieran():
 	kieran_go.emit()
 
@@ -41,6 +42,7 @@ func flashback():
 func start_gameplay():
 	await get_tree().create_timer(1.0).timeout
 	await get_tree().process_frame
+	Music.start_exploration()
 	get_tree().change_scene_to_packed(scene_initial)
 
 func release_player():

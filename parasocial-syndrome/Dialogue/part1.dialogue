@@ -1,5 +1,5 @@
 ~ fridge_side
-Hay una nota pegada al lado del refrigerador
+Hay una nota pegada en el refrigerador
 "Recordatorio\: Lubricar el cajón de llaves
 	Mientras consigo a alguien que repare el cajón"
 set Puzzle.note_seen=true
