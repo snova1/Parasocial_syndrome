@@ -407,19 +407,19 @@ tile_set = SubResource("TileSet_ub7i5")
 
 [node name="Puertas" type="Node" parent="."]
 
-[node name="Puerta_S" parent="Puertas" instance=ExtResource("3_jdixl")]
+[node name="Puerta_N" parent="Puertas" instance=ExtResource("3_jdixl")]
 position = Vector2(454, 461)
 tag_habitacion_destino = "comedor"
-tag_puerta_destino = "N"
+tag_puerta_destino = "S"
 direccion_spawn = "abajo"
 
-[node name="CollisionShape2D" parent="Puertas/Puerta_S" index="0"]
+[node name="CollisionShape2D" parent="Puertas/Puerta_N" index="0"]
 position = Vector2(-248, -273.5)
 
-[node name="Spawn" parent="Puertas/Puerta_S" index="1"]
+[node name="Spawn" parent="Puertas/Puerta_N" index="1"]
 position = Vector2(-249, -221)
 
-[node name="Sprite2D5" type="Sprite2D" parent="Puertas/Puerta_S"]
+[node name="Sprite2D5" type="Sprite2D" parent="Puertas/Puerta_N"]
 position = Vector2(-248, -339)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_ugveh")
@@ -520,4 +520,4 @@ libraries = {
 "": SubResource("AnimationLibrary_jt2dh")
 }
 
-[editable path="Puertas/Puerta_S"]
+[editable path="Puertas/Puerta_N"]

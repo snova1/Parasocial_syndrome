@@ -21,10 +21,12 @@ if (Puzzle.cajon_atorado):
 		- Si
 			Alessia: Perfecto, ahora solo...HNGGGG
 			*CRASH*
+			do Music.stop_music()
 			Alessia: Dios, eso hizo mucho ruido...
 			*step step*
 			Alessia: ... Escucho pasos
 			Alessia: Necesito esconderme!
+			do Music.hide_music()
 			set Puzzle.cutscene_trigger = true
 			set Puzzle.cajon_atorado=false
 		- No
@@ -56,9 +58,11 @@ if (not in_hiding):
 elif (in_hiding and not Puzzle.cutscene_trigger):
 	Alessia: Parece que no hay nadie
 	set in_hiding = false
+	do Music.start_exploration()
 
 if (in_hiding and Puzzle.cutscene_trigger): 
 	do initial_cutscene("appear")
+	do Music.stop_music()
 	Kieran: Pense que habia escuchado algo viniendo de la cocina
 	Kieran: Seguro fue mi imaginación
 	Kieran: Ahora donde se habra metido...

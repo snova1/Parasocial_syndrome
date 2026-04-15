@@ -38,6 +38,7 @@ do start_gameplay()
 => END
 
 ~ out_of_basement
+do Music.stop_music()
 Alessia: Ugh...finalmente fuera de ese maldito sótano
 Alessia: *suspiro* Parece que ese loco me llevó a su casa
 Alessia: Bueno, igualmente debe haber una forma de escapar
@@ -65,7 +66,7 @@ Alessia: Pero en lo posible debo evitar encontrármelo
 Alessia: Tengo que estar atenta y esconderme si siento que está cerca
 Alessia: De lo contrario tendré que escapar de él, ya sea por las buenas
 Alessia: …O por las malas
-do screen_end()
+do Music.start_exploration()
 => END
 
 ~ end_demo

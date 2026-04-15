@@ -53,14 +53,13 @@ position = Vector2(431, 248)
 
 [node name="Puertas" type="Node" parent="."]
 
-[node name="Puerta_N" parent="Puertas" instance=ExtResource("3_s6myq")]
-position = Vector2(257, 269)
+[node name="Puerta_S" parent="Puertas" instance=ExtResource("3_s6myq")]
+position = Vector2(497, 523)
 tag_habitacion_destino = "cocina"
-tag_puerta_destino = "S"
-direccion_spawn = "derecha"
+tag_puerta_destino = "N"
 
-[node name="Spawn" parent="Puertas/Puerta_N" index="1"]
-position = Vector2(54, 0)
+[node name="Spawn" parent="Puertas/Puerta_S" index="1"]
+position = Vector2(0, -54)
 
 [node name="Puerta_E" parent="Puertas" instance=ExtResource("3_s6myq")]
 position = Vector2(731, 266)
@@ -91,5 +90,5 @@ shape = SubResource("RectangleShape2D_h2ld4")
 
 [connection signal="body_entered" from="Interactuables/Estantería/Area2D" to="." method="_on_area_2d_body_entered"]
 
-[editable path="Puertas/Puerta_N"]
+[editable path="Puertas/Puerta_S"]
 [editable path="Puertas/Puerta_E"]
