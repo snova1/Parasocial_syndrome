@@ -148,29 +148,33 @@ position = Vector2(7.5, -4.5)
 shape = SubResource("RectangleShape2D_h76t2")
 
 [node name="colisiones" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisiones"]
-visible = false
 build_mode = 1
 polygon = PackedVector2Array(266, 172, 688, 171, 688, 276, 721, 277, 723, 345, 690, 345, 686, 523, 514, 522, 514, 553, 443, 554, 443, 521, 267, 521)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="colisiones"]
+visible = false
 polygon = PackedVector2Array(358, 507, 383, 485, 374, 426, 329, 402, 305, 413, 301, 438, 285, 452)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="colisiones"]
+visible = false
 polygon = PackedVector2Array(366, 380, 403, 354, 470, 424, 439, 452)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="colisiones"]
+visible = false
 polygon = PackedVector2Array(337, 319, 393, 307, 374, 250, 347, 230, 327, 241, 320, 266)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="colisiones"]
+visible = false
 polygon = PackedVector2Array(581, 219, 584, 171, 656, 173, 657, 222)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="colisiones"]
+visible = false
 polygon = PackedVector2Array(642, 478, 645, 429, 631, 425, 636, 396, 662, 397, 669, 423, 655, 428, 652, 480, 660, 481, 660, 507, 633, 505, 633, 479)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="colisiones"]
+visible = false
 polygon = PackedVector2Array(524, 397, 570, 384, 573, 360, 559, 325, 540, 301, 519, 285, 494, 290, 468, 301, 460, 319)
 
 [editable path="Puertas/Puerta_S"]

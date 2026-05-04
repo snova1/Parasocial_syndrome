@@ -12,7 +12,7 @@ var direction: Vector2=Vector2.ZERO
 var move_speed: float
 var state: String="still"
 var control_enabled := true
-var testing =false
+var testing =true
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 

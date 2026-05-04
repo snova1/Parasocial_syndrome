@@ -198,6 +198,7 @@ color = Color(0.0110876, 0.0110876, 0.0110876, 1)
 [node name="colisiones" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="colisiones"]
+visible = false
 build_mode = 1
 polygon = PackedVector2Array(216, 182, 215, 540, 762, 539, 761, 182, 562, 183, 566, -4, 416, 0, 415, 181)
 

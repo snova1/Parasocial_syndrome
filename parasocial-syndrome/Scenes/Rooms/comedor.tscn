@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cextbrl66vs0"]
+[gd_scene load_steps=14 format=3 uid="uid://cextbrl66vs0"]
 
 [ext_resource type="Script" path="res://Scripts/Rooms/comedor.gd" id="1_xg0rp"]
 [ext_resource type="PackedScene" uid="uid://mxvq8r62c0re" path="res://Scenes/jugador.tscn" id="2_j2b4v"]
@@ -11,6 +11,12 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o08hr"]
 size = Vector2(47, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xq3u7"]
+size = Vector2(73, 96.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hppce"]
+size = Vector2(73, 140)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2av6s"]
 size = Vector2(37.6368, 18.8184)
@@ -50,6 +56,24 @@ shape = SubResource("RectangleShape2D_o08hr")
 
 [node name="Jugador" parent="." instance=ExtResource("2_j2b4v")]
 position = Vector2(431, 248)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+build_mode = 1
+polygon = PackedVector2Array(290, 165, 703, 167, 703, 236, 736, 235, 737, 306, 703, 305, 704, 511, 532, 511, 532, 545, 462, 544, 462, 510, 291, 509)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(340.5, 176.813)
+shape = SubResource("RectangleShape2D_xq3u7")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(543, 322, 551, 323, 553, 356, 570, 356, 570, 337, 650, 336, 652, 355, 664, 355, 665, 322, 672, 321, 676, 384, 679, 385, 680, 474, 670, 474, 669, 458, 651, 457, 651, 496, 639, 497, 639, 474, 583, 474, 583, 498, 572, 497, 571, 458, 561, 458, 561, 473, 550, 474, 550, 411, 543, 411)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(334.5, 423)
+shape = SubResource("RectangleShape2D_hppce")
 
 [node name="Puertas" type="Node" parent="."]
 
