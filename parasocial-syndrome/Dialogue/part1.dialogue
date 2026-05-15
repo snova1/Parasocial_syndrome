@@ -1,0 +1,97 @@
+~ fridge_side
+Hay una nota pegada en el refrigerador
+"Recordatorio\: Lubricar el cajón de llaves
+	Mientras consigo a alguien que repare el cajón"
+set Puzzle.note_seen=true
+=> END
+
+~ fridge_front
+Está lleno de comida
+Alessia: No estoy precisamente hambrienta, pero bueno saberlo supongo
+=> END!
+
+~ cajon
+if (Puzzle.cajon_atorado):
+	El cajón está atorado
+	Alessia: Por mucha fuerza que haga no puedo abrirlo
+	if (Puzzle.note_seen) and (!Puzzle.oil_got):
+		Alessia: La nota tiene razón, necesito algo con lo que lubricarlo
+	if (Puzzle.oil_got):
+		Deseas utilizar el aceite?
+		- Si
+			Alessia: Perfecto, ahora solo...HNGGGG
+			*CRASH*
+			do Music.stop_music()
+			Alessia: Dios, eso hizo mucho ruido...
+			*step step*
+			Alessia: ... Escucho pasos
+			Alessia: Necesito esconderme!
+			do Music.hide_music()
+			set Puzzle.cutscene_trigger = true
+			set Puzzle.cajon_atorado=false
+		- No
+elif (!Puzzle.key_got):
+	Dentro del cajón hay una llave
+	Obtuviste una llave
+	set Puzzle.key_got=true
+else:
+	Dentro del cajón hay también una lista
+	Alessia: Salmón al horno, ensalada cesar, cheesecake de mora..
+	Alessia: Mis comidas favoritas?
+	Alessia: Como averiguó todo esto?
+=> END
+
+##Tentativo dependiendo de arte
+~ cajon2
+Hay solo cucharas en el cajón
+Alessia: Lo supuse
+=> END
+
+~ cabinete
+if (not in_hiding):	
+	Está vacio
+	Quieres esconderte?
+	- Si
+		set in_hiding = true
+	- No
+	
+elif (in_hiding and not Puzzle.cutscene_trigger):
+	Alessia: Parece que no hay nadie
+	set in_hiding = false
+	do Music.start_exploration()
+
+if (in_hiding and Puzzle.cutscene_trigger): 
+	do initial_cutscene("appear")
+	do Music.stop_music()
+	Kieran: Pense que habia escuchado algo viniendo de la cocina
+	Kieran: Seguro fue mi imaginación
+	Kieran: Ahora donde se habra metido...
+	do initial_cutscene("walk out")
+	set Puzzle.cutscene_trigger = false
+=> END
+
+~ chair
+if (not Puzzle.chair_push) and (not Puzzle.oil_got):
+	Quieres empujar la silla?
+	- Si
+		set Puzzle.chair_push=true
+	- No
+=> END
+
+~ estanteria
+if (!Puzzle.oil_got):
+	Hay una botella de aceite en la estantería
+	if (Puzzle.note_seen):
+		Alessia: Quizás pueda usar eso para lubricar el cajón
+		Alessia: Pero está muy alto
+
+=> END
+
+~ obtenido
+Obtuviste aceite
+set Puzzle.oil_got=true
+=> END
+
+~ no_leave
+Alessia: Los pasos se vuelven más fuertes, tengo que esconderme aquí ya!
+=> END

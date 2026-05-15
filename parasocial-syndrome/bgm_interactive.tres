@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamInteractive" load_steps=3 format=3 uid="uid://chwdc1ow8r51a"]
+
+[ext_resource type="AudioStream" uid="uid://nm0l7iyvqeqt" path="res://Assets/Música/PS_Exploración_v1.0_VA_20260405.mp3" id="1_m3okn"]
+[ext_resource type="AudioStream" uid="uid://dvs1fs8ageumx" path="res://Assets/Sonidos/Hide_music.mp3" id="2_yqt50"]
+
+[resource]
+clip_count = 2
+clip_0/name = &"Exploración"
+clip_0/stream = ExtResource("1_m3okn")
+clip_0/auto_advance = 0
+clip_1/name = &"Hide_Now"
+clip_1/stream = ExtResource("2_yqt50")
+clip_1/auto_advance = 0

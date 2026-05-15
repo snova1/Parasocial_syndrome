@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhvmhn8i7imra"]
+
+[ext_resource type="Texture2D" uid="uid://ck2qr3rqxetsj" path="res://Assets/titulo2.png" id="1_0nakh"]
+[ext_resource type="Script" path="res://Scripts/Menus/end.gd" id="1_vbfd2"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vbfd2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 38.0
+offset_right = 582.0
+offset_bottom = 238.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_0nakh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 339.0
+offset_right = 656.0
+offset_bottom = 408.0
+theme_override_font_sizes/font_size = 50
+text = "Fin de la demo"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 444.0
+offset_right = 639.0
+offset_bottom = 472.0
+theme_override_font_sizes/font_size = 20
+text = "Presiona Esc para volver al menu"

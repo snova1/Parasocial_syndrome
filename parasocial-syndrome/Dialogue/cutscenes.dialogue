@@ -1,0 +1,89 @@
+~ inicio
+Alessia: Ngh...
+do initial_cutscene("fade_blur")
+Alessia: Pero, qué?
+do initial_cutscene("fade_normal")
+Alessia: Donde...estoy?
+do initial_cutscene("shaking_alessia")
+Alessia: Qué rayos?! Por qué estoy atada?! Qué demonios es este sitio?!
+Alessia: ...Dios, vale, necesito calmarme un poco.
+Alessia: Qué estaba haciendo antes de esto? Estaba en la firma de libros y...
+do flashback()
+Alessia: ...
+Alessia: Entonces, fui secuestrada?...Supongo que si pero
+Alessia: Quien o quienes lo hicieron?
+do initial_cutscene("kiran_appears")
+???: Ah mi querida Alessia! Finalmente estás despierta~
+do initial_cutscene("walk_alessia")
+???: Cómo estás? Despertaste bien? Te sientes cómoda?
+Alessia: Tu...Fuiste tu quien me secuestró? 
+Alessia: QUÉ QUIERES DE MI?! DEJAME IR DESQUICIADO!
+???: Vaya pero que temperamento... Aunque supongo que es normal, creo
+???: Se que no lo preguntaste pero me presento
+Kiran: Me llamo Kiran, y soy tu mayor admirador!
+Alessia: …A-Admirador?
+Kiran: Sip, he leído cada una de tus obras. Muy buenas por cierto
+Kiran: No solo eso, he leido todo sobre ti, he visto cada entrevista, cada foto, cada detalle de tu vida personal...
+Alessia: Q-qué? De qué estás hablando?
+Kiran: Puede que esto te parezca extraño. Pero a pesar de todo, quiero que estemos juntos
+Kiran: Me pareces alguien muy interesante, y quizás con el tiempo veas lo mismo de mi
+Alessia: ...Así que me vas a dejar encerrada aquí de por vida
+Kiran: Suena un poco agresivo cuando lo dices así...pero si supongo que eso haré
+Kiran: Pero no te preocupes, me aseguraré de cuidarte lo mejor posible
+Kiran: Hablando de eso aún tengo que terminar tu almuerzo. Ya vuelvo querida~
+do initial_cutscene("walk_back")
+Alessia: ...Este tipo está completamente desquiciado
+Alessia: Tengo que encontrar la forma de salir de aquí
+do start_gameplay()
+=> END
+
+~ out_of_basement
+do Music.stop_music()
+Alessia: Ugh...finalmente fuera de ese maldito sótano
+Alessia: *suspiro* Parece que ese loco me llevó a su casa
+Alessia: Bueno, igualmente debe haber una forma de escapar
+Alessia: O por lo menos de contactar a la policía e informar mi secuestro
+*swish*
+Alessia: Eh? 
+Alessia: Una nota? No había visto eso cuando salí
+do show_letter()
+"Querida Alessia,
+Si estás leyendo esto, significa que has sido tan brillante como siempre, y has encontrado una forma de salir del sótano.
+¡No me sorprende en absoluto! Aunque probablemente es porque olvidé la copia de la llave ahí abajo, o algo por el estilo.
+Sé que todo esto debe parecerte un poco raro, pero créeme, solo quiero que estemos juntos.
+Me has inspirado tanto en mis momentos de oscuridad… y sé que con el tiempo, tú también verás lo bonito que podemos ser juntos.
+Así que por favor, querida, vuelve al sótano.
+Si decides explorar más de lo que deberías, podríamos terminar en una situación que ninguno de los dos desea.
+No quiero tener que tomar medidas drásticas, te lo prometo.
+Con amor,
+	Tu más grande admirador,
+	Kiran <3
+P.D\: Hazlo por nosotros. Y por tu admirador. No me hagas hacer algo que no quiero hacer… te lo pido por favor."
+do hide_letter()
+Alessia: ...
+Alessia: Si ese psicópata piensa que eso me va a detener está más que equivocado
+Alessia: Pero en lo posible debo evitar encontrármelo
+Alessia: Tengo que estar atenta y esconderme si siento que está cerca
+Alessia: De lo contrario tendré que escapar de él, ya sea por las buenas
+Alessia: …O por las malas
+do Music.start_exploration()
+=> END
+
+~ end_demo
+Gracias por jugar la demo de Parasocial Syndrome!
+Tenemos unas cuantas más habitaciones de la casa de Kiran que puedes explorar
+Estas no representan la totalidad ni la calidad del juego final
+Deseas seguir explorando?
+- Si
+	En cualquier momento puedes presionar Escape si deseas terminar de explorar
+	do resume_gameplay()
+- No
+	do end_demo()
+=> END
+
+~ stop_exploring
+Deseas terminar de explorar?
+- Si
+	do end_demo()
+- No
+=> END
