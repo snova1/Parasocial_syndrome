@@ -1,0 +1,135 @@
+[gd_scene load_steps=13 format=3 uid="uid://bur3ph5w7mtcm"]
+
+[ext_resource type="Script" uid="uid://cejj1m585h50n" path="res://Scripts/antagonista.gd" id="1_y8bt1"]
+[ext_resource type="Texture2D" uid="uid://eux503gqp2i5" path="res://Assets/Kiran-17.png" id="2_rxylw"]
+[ext_resource type="Texture2D" uid="uid://dpdj83y7m7s7x" path="res://Assets/Temp/Vestibulo_V2.png" id="3_3tst7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2b6qv"]
+radius = 19.0263
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g5fa3"]
+diffuse_texture = ExtResource("2_rxylw")
+normal_texture = ExtResource("3_3tst7")
+texture_filter = 1
+texture_repeat = 1
+
+[sub_resource type="Animation" id="Animation_rswjx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="Animation" id="Animation_n2etc"]
+resource_name = "caminar_abajo"
+length = 0.6666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_ukx8a"]
+resource_name = "caminar_arriba"
+length = 0.6666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_0tj6v"]
+resource_name = "caminar_derecha"
+length = 0.6666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_fe817"]
+resource_name = "caminar_izquierda"
+length = 0.6666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2g1kb"]
+_data = {
+&"RESET": SubResource("Animation_rswjx"),
+&"caminar_abajo": SubResource("Animation_n2etc"),
+&"caminar_arriba": SubResource("Animation_ukx8a"),
+&"caminar_derecha": SubResource("Animation_0tj6v"),
+&"caminar_izquierda": SubResource("Animation_fe817")
+}
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l83sl"]
+closed = false
+polygon = PackedVector2Array(-15, 21, 13, 21)
+
+[node name="Antagonista" type="CharacterBody2D"]
+script = ExtResource("1_y8bt1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2b6qv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, -43)
+scale = Vector2(2, 2)
+texture = SubResource("CanvasTexture_g5fa3")
+hframes = 4
+vframes = 4
+frame = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2g1kb")
+}
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_l83sl")
+sdf_collision = false

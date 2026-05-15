@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://jwfskqdbyifu"]
+
+[ext_resource type="Script" path="res://Inventory/inv_ui.gd" id="1_j6n6s"]
+[ext_resource type="Texture2D" uid="uid://c7yber1fktahv" path="res://Inventory/inventory item art/inventory-background.png" id="2_0ifdj"]
+[ext_resource type="PackedScene" uid="uid://dokck0fuqgqrr" path="res://Inventory/inv_ui_slot.tscn" id="3_kf3k7"]
+
+[node name="Inv_Ui" type="Control"]
+process_mode = 3
+z_index = 3
+layout_mode = 3
+anchors_preset = 0
+offset_top = 1.0
+offset_right = 223.0
+offset_bottom = 115.0
+script = ExtResource("1_j6n6s")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 222.0
+offset_bottom = 124.0
+texture = ExtResource("2_0ifdj")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 3.0
+offset_right = 219.0
+offset_bottom = 207.0
+
+[node name="Inv_ui slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kf3k7")]
+custom_minimum_size = Vector2(210, 25)
+layout_mode = 2
+
+[node name="Inv_ui slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kf3k7")]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="Inv_ui slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kf3k7")]
+custom_minimum_size = Vector2(48, 25)
+layout_mode = 2
+
+[node name="Inv_ui slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kf3k7")]
+custom_minimum_size = Vector2(48, 25)
+layout_mode = 2

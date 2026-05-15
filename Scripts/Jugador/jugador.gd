@@ -1,0 +1,116 @@
+extends CharacterBody2D
+
+class_name Jugador
+
+var is_tied = true # Comienza atada
+@onready var tied: Sprite2D = $Tied
+@onready var normal: Sprite2D = $Normal
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var finder_interaccion: Area2D = $Int_area/Finder_interaccion
+var cardinal_direction: Vector2=Vector2.DOWN
+var direction: Vector2=Vector2.ZERO
+var move_speed: float
+var state: String="still"
+var control_enabled := true
+var forced_direction: Vector2 = Vector2.ZERO   # Vector2 or null
+var is_dir_forced := false
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+#Inventario
+@export var inv: Inv
+
+
+@export var item: InvItem
+
+
+func set_estado_atada():
+	is_tied=Status.player_tied
+	tied.visible = is_tied
+	normal.visible = !is_tied
+	if is_tied:
+		move_speed=50.0
+	else:
+		move_speed=200.0
+	
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Status.item_give.connect(collect_item)
+	Status.item_take.connect(use_item)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	set_estado_atada()
+	NavegacionManager.on_trigger_player_spawn.connect(_on_spawn)
+
+func _on_spawn(position: Vector2, direction: String):
+	global_position=position
+	animation_player.play("caminar_"+direction)
+	animation_player.stop()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta: float) -> void:
+	if not control_enabled:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
+	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	velocity=direction*move_speed
+	for i in get_slide_collision_count():
+		var c := get_slide_collision(i)
+		if c.get_collider() is RigidBody2D and Status.chair_status[1] == "push":
+			var push_dir = -c.get_normal()
+			var target_velocity = self.velocity.project(push_dir)
+			c.get_collider().linear_velocity = 0.5*target_velocity
+	move_and_slide()
+	
+	
+	var dir := forced_direction if is_dir_forced else cardinal_direction
+	if state == "moving":
+		if dir.y > 0:
+			animation_player.play("caminar_abajo")
+		elif dir.y < 0:
+			animation_player.play("caminar_arriba")
+		elif dir.x > 0:
+			animation_player.play("caminar_derecha")
+		elif dir.x < 0:
+			animation_player.play("caminar_izquierda")
+	elif state == "still":
+		animation_player.stop()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not control_enabled:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		return
+	
+	if Input.is_action_just_pressed("Interact"):
+		state="still"
+		direction = Vector2.ZERO
+		var actionables = finder_interaccion.get_overlapping_areas()
+		if actionables.size()>0:
+			actionables.sort_custom(func(a, b): return global_position.distance_to(a.global_position) < global_position.distance_to(b.global_position))
+			#if actionables[0] is not puerta:
+			if true:
+				actionables[0].action()
+			return
+	
+	
+	
+	direction.x=Input.get_action_strength("derecha")-Input.get_action_strength("izquierda")
+	direction.y=Input.get_action_strength("abajo")-Input.get_action_strength("arriba")
+	
+	if direction.length() > 0:
+		direction = direction.normalized()
+		state = "moving"
+		cardinal_direction = direction
+	else:
+		state = "still"
+	pass	
+	
+
+	
+func collect_item(item):
+	inv.insert(item)
+	
+func use_item(item):
+	inv.remove(item)
